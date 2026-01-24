@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Fendi's Content Graph</title>
     <!-- Tailwind CSS for styling -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -14,16 +14,18 @@
         body {
             background-color: #111111;
             color: #e5e5e5;
-            font-family: Arial, sans-serif; /* Changed to Arial */
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             overflow: hidden; /* Prevent scrolling on the main page */
             transition: background-color 0.3s ease, color 0.3s ease;
+            height: 100dvh; /* Use dynamic viewport height for mobile browsers */
+            width: 100vw;
         }
 
         #network-graph {
-            width: 100vw;
-            height: 100vh;
+            width: 100%;
+            height: 100%;
             outline: none;
         }
 
@@ -92,13 +94,25 @@
             padding: 10px 14px;
             border-radius: 6px;
             border: 1px solid #000000;
-            font-family: Arial, sans-serif; /* Changed to Arial */
+            font-family: Arial, sans-serif;
             font-size: 14px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.5);
             z-index: 9999;
             pointer-events: none; /* Let clicks pass through */
             max-width: 350px;
             display: none;
+            /* Prevent tooltip from going off screen on mobile */
+            left: 50%;
+            transform: translateX(-50%);
+            top: 60px; /* Default top position if not following mouse */
+        }
+        
+        @media (min-width: 768px) {
+            #custom-tooltip {
+                left: auto;
+                transform: none;
+                top: auto;
+            }
         }
 
         /* Modal Transitions */
@@ -153,14 +167,15 @@
     <div id="custom-tooltip"></div>
 
     <!-- Bottom Controls Container -->
-    <div class="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-[1000] w-full max-w-md px-4 flex items-center gap-2">
+    <div class="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-[1000] w-full max-w-md px-4 flex items-center gap-2 pb-safe">
         
         <!-- Info Button & Panel -->
         <div class="relative">
             <!-- Info Panel (Collapsible) -->
             <!-- UPDATED POSITION: bottom-full right-0 aligns the right edge of panel to right edge of button. 
-                 Since panel is wider, it grows to the LEFT, avoiding the search bar on the right. -->
-            <div id="info-panel" class="hidden absolute bottom-full right-0 mb-3 w-64 bg-[#1a1a1a] border border-[#444] rounded-lg shadow-xl p-4 text-sm text-[#e5e5e5] transition-colors duration-300">
+                 Since panel is wider, it grows to the LEFT, avoiding the search bar on the right. 
+                 Added max-w-[90vw] for mobile safety -->
+            <div id="info-panel" class="hidden absolute bottom-full left-0 mb-3 w-64 max-w-[85vw] bg-[#1a1a1a] border border-[#444] rounded-lg shadow-xl p-4 text-sm text-[#e5e5e5] transition-colors duration-300">
                 <div class="space-y-3">
                     <div>
                         <p class="text-xs text-gray-500 uppercase tracking-wide">Creator</p>
@@ -213,8 +228,9 @@
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
                     </svg>
                 </div>
+                <!-- UPDATED: text-base (16px) prevents iOS Safari auto-zoom on focus -->
                 <input type="text" id="search-input" 
-                    class="block w-full p-3 pl-10 text-sm text-white bg-[#1a1a1a] border border-[#444] rounded-lg focus:ring-purple-500 focus:border-purple-500 placeholder-gray-500 shadow-xl transition-all outline-none" 
+                    class="block w-full p-3 pl-10 text-base text-white bg-[#1a1a1a] border border-[#444] rounded-lg focus:ring-purple-500 focus:border-purple-500 placeholder-gray-500 shadow-xl transition-all outline-none" 
                     placeholder="Search nodes..." autocomplete="off">
             </div>
         </div>
@@ -241,7 +257,7 @@
                     <div class="w-3 h-3 rounded-full bg-[#9333ea]"></div>
                     <p class="text-xl font-bold" id="modal-title">Node Title</p>
                 </div>
-                <div class="modal-close cursor-pointer z-50 opacity-80 hover:opacity-100">
+                <div class="modal-close cursor-pointer z-50 opacity-80 hover:opacity-100 p-2">
                     <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
                         <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
                     </svg>
@@ -252,7 +268,7 @@
             <div class="modal-content px-6 py-4">
                 <h4 id="modal-subtitle" class="text-lg text-[#cccccc] mb-4 font-semibold">Subtitle</h4>
                 
-                <div class="flex gap-3 mb-6">
+                <div class="flex flex-wrap gap-3 mb-6">
                     <a id="modal-source-btn" href="#" target="_blank" class="px-4 py-2 bg-[#333] hover:bg-[#444] text-white border border-[#444] rounded text-sm transition-colors">View Source</a>
                     <a id="modal-linkedin-btn" href="#" target="_blank" class="px-4 py-2 bg-[#333] hover:bg-[#444] text-white border border-[#444] rounded text-sm transition-colors">View on LinkedIn</a>
                 </div>
@@ -347,7 +363,6 @@
             if (nodeCountEl) nodeCountEl.innerText = rawData.length;
 
             // A. Prepare Nodes
-            // SIZE REDUCTION: Changed base from 20 to 12, multiplier from 1.5 to 1.0
             const nodes = rawData.map(item => ({
                 id: item.id,
                 label: item.title,
@@ -363,9 +378,6 @@
                     border: '#7e22ce',
                     highlight: { background: '#9333ea', border: '#32cd32' }
                 },
-                
-                // IMPORTANT: REMOVED "font" property from here.
-                // We now set font via global options so it can be updated by the toggle.
                 
                 // SMALLER SIZE CALCULATION
                 size: 12 + ((item.keywords ? item.keywords.length : 0) * 1.0),
@@ -430,7 +442,9 @@
                 interaction: {
                     hover: true,
                     tooltipDelay: 0,
-                    hideEdgesOnDrag: true
+                    hideEdgesOnDrag: true,
+                    // Important for mobile: selectConnectedEdges allows easier tapping
+                    selectConnectedEdges: false 
                 }
             };
 
@@ -468,16 +482,52 @@
                 }, 500);
             });
 
+            // DESKTOP: Hover Node (Tooltip follows mouse)
             network.on("hoverNode", function(params) {
-                const nodeId = params.node;
-                const node = nodesDataset.get(nodeId);
-                const tooltip = document.getElementById('custom-tooltip');
-                tooltip.innerHTML = `<b>${node.label}</b><br>${node._subtitle || ''}`;
-                tooltip.style.display = 'block';
+                // Only use mouse-follow tooltip on non-touch devices if possible
+                // Vis.js doesn't easily distinguish, but we can check simple touch support
+                const isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+                
+                if (!isTouch) {
+                    const nodeId = params.node;
+                    const node = nodesDataset.get(nodeId);
+                    const tooltip = document.getElementById('custom-tooltip');
+                    tooltip.innerHTML = `<b>${node.label}</b><br>${node._subtitle || ''}`;
+                    tooltip.style.display = 'block';
+                }
             });
 
             network.on("blurNode", function(params) {
-                document.getElementById('custom-tooltip').style.display = 'none';
+                // Hide tooltip on blur (mouse out)
+                const isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+                if (!isTouch) {
+                    document.getElementById('custom-tooltip').style.display = 'none';
+                }
+            });
+
+            // MOBILE/TABLET: Click/Tap Event
+            network.on("click", function(params) {
+                const isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+                const tooltip = document.getElementById('custom-tooltip');
+                
+                if (params.nodes.length > 0) {
+                    // Node clicked/tapped
+                    const nodeId = params.nodes[0];
+                    const node = nodesDataset.get(nodeId);
+                    
+                    // Show Tooltip
+                    tooltip.innerHTML = `<b>${node.label}</b><br>${node._subtitle || ''}`;
+                    tooltip.style.display = 'block';
+
+                    // On Mobile, we center the tooltip or put it at top
+                    // CSS handles "left: 50%" on mobile
+                    
+                } else {
+                    // Clicked on background -> Hide tooltip
+                    if (isTouch) {
+                         tooltip.style.display = 'none';
+                    }
+                }
             });
 
             network.on("doubleClick", function(params) {
@@ -496,60 +546,38 @@
         
         // --- Rotation Animation ---
         function startRotationAnimation() {
-            // Cancel any existing loop
             if (animationFrameId) cancelAnimationFrame(animationFrameId);
-            
-            // Reset time
             lastTime = performance.now();
-            
-            // Target Speed: Radians per second
-            // 0.05 rad/s ~= 2.8 degrees per second (Slow and smooth)
             const rotationSpeed = 0.05; 
             
             function animate(currentTime) {
                 animationFrameId = requestAnimationFrame(animate);
                 
                 if (isInteracting || !network) {
-                    lastTime = currentTime; // Update time even if paused so we don't jump
+                    lastTime = currentTime; 
                     return;
                 }
 
-                // Calculate Delta Time (in seconds)
-                // This ensures consistency across different frame rates (e.g. 60hz vs 144hz vs lagging)
                 const deltaTime = (currentTime - lastTime) / 1000;
                 lastTime = currentTime;
-
-                // Calculate the angle to rotate for this specific frame
                 const angle = rotationSpeed * deltaTime;
-                
-                // Pre-calculate rotation matrix values for this small angle
                 const cos = Math.cos(angle);
                 const sin = Math.sin(angle);
                 
-                // Access internal nodes for speed (standard vis.js manipulation pattern)
                 const internalNodes = network.body.nodes;
                 const nodeIds = nodesDataset.getIds();
                 
                 for (let i = 0; i < nodeIds.length; i++) {
                     const nodeId = nodeIds[i];
                     const node = internalNodes[nodeId];
-                    
-                    if (!node) continue;
-                    if (node.options.fixed.x) continue;
-
+                    if (!node || node.options.fixed.x) continue;
                     const x = node.x;
                     const y = node.y;
-
-                    // Apply rotation matrix
-                    // This rotates the point around (0,0) by 'angle' amount
                     node.x = x * cos - y * sin;
                     node.y = x * sin + y * cos;
                 }
-                
-                // Force a redraw of the canvas
                 network.redraw();
             }
-            
             requestAnimationFrame(animate);
         }
 
@@ -564,7 +592,6 @@
                         easingFunction: "easeInOutQuad"
                     }
                 });
-                // Ensure rotation continues if it was somehow paused
                 isInteracting = false;
             }
         });
@@ -573,15 +600,18 @@
         const infoBtn = document.getElementById('info-btn');
         const infoPanel = document.getElementById('info-panel');
         
-        // Set update time
         document.getElementById('update-time').innerText = new Date().toLocaleString();
 
         infoBtn.addEventListener('click', function(e) {
             e.stopPropagation();
+            // Move info panel if on mobile to avoid offscreen
+            if (window.innerWidth < 768) {
+                infoPanel.style.left = '0';
+                infoPanel.style.right = 'auto';
+            }
             infoPanel.classList.toggle('hidden');
         });
 
-        // Close info panel when clicking elsewhere
         document.addEventListener('click', function(e) {
             if (!infoBtn.contains(e.target) && !infoPanel.contains(e.target)) {
                 infoPanel.classList.add('hidden');
@@ -596,12 +626,10 @@
             isDarkMode = !isDarkMode;
             document.body.classList.toggle('light-mode');
             
-            // Update Icon
             themeIcon.innerText = isDarkMode ? '🌙 Dark' : '☀️ Light';
 
-            // Update Vis.js Graph Colors (Node Labels)
             if (network) {
-                const fontColor = isDarkMode ? '#e5e5e5' : '#000000'; // Light gray vs Black
+                const fontColor = isDarkMode ? '#e5e5e5' : '#000000'; 
                 const options = {
                     nodes: {
                         font: { color: fontColor }
@@ -611,12 +639,16 @@
             }
         });
 
-        // --- Tooltip Positioning ---
+        // --- Tooltip Positioning (Desktop) ---
         document.addEventListener('mousemove', function(e) {
-            const tooltip = document.getElementById('custom-tooltip');
-            if (tooltip.style.display === 'block') {
-                tooltip.style.left = (e.pageX + 15) + 'px';
-                tooltip.style.top = (e.pageY + 15) + 'px';
+            // Only update position on non-touch devices or when mouse is present
+            const isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+            if (!isTouch) {
+                const tooltip = document.getElementById('custom-tooltip');
+                if (tooltip.style.display === 'block') {
+                    tooltip.style.left = (e.pageX + 15) + 'px';
+                    tooltip.style.top = (e.pageY + 15) + 'px';
+                }
             }
         });
 
@@ -645,7 +677,7 @@
 
             modal.classList.remove('opacity-0', 'pointer-events-none');
             document.body.classList.add('modal-active');
-            isInteracting = true; // Stop rotation when modal is open
+            isInteracting = true; // Stop rotation
         }
 
         function closeModal() {
@@ -665,7 +697,6 @@
         const searchInput = document.getElementById('search-input');
         const searchResults = document.getElementById('search-results');
         
-        // Removed debounce for instant results
         const handleSearch = function(e) {
             const val = e.target.value.toLowerCase().trim();
             searchResults.innerHTML = '';
@@ -680,7 +711,6 @@
             const allNodes = nodesDataset.get();
             const matches = allNodes.filter(node => {
                 const titleMatch = node.label.toLowerCase().includes(val);
-                // Added check for subtitle
                 const subtitleMatch = node._subtitle && node._subtitle.toLowerCase().includes(val);
                 const keywordMatch = node._keywords && node._keywords.some(k => k.toLowerCase().includes(val));
                 return titleMatch || subtitleMatch || keywordMatch;
@@ -708,7 +738,7 @@
             } else {
                 searchResults.classList.add('hidden');
             }
-        }; // Removed 300ms delay
+        }; 
 
         searchInput.addEventListener('input', handleSearch);
 
