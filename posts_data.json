@@ -163,6 +163,24 @@
     ]
   },
   {
+    "id": "ai-shift-polling",
+    "title": "Burn-Murdoch and O'Connor (2025)",
+    "subtitle": "The AI Shift: Is AI about to break polling?",
+    "summary": "Just finished reading \"The AI Shift: Is AI about to break polling?\" by John Burn-Murdoch and Sarah O'Connor from Financial Times.\n\nThis article is an essential reading for behavioural scientists exploring AI augmentation in interventions and research.\n\nThe first section shows a critical predicament for survey researchers: LLMs can now bypass bot defenses that they spent years building. This, as Burn-Murdoch noted, poisons the data wells that businesses, campaigns, and the public rely on to track opinions and preferences (reminding a paper I've read about recognising, anticipating and mitigating 'LLM Pollution' of online behavioural research: https://lnkd.in/ex8uQ8vg). \n\nThe arms race between survey researchers and 'bogus' respondents has, of course, escalated dramatically: surveys deploy Captcha puzzles and \"reverse shibboleths\" - questions easy for humans but difficult for LLMs. Companies like Prolific and Gorilla Experiment Builder offer authenticity checks to combat this.\n\nWhat I found intriguing is a recently published study by Sean Westwood (https://lnkd.in/ehTaq8BS), which Burn-Murdoch mentioned, demonstrates that bogus responders can operate at scale, raising the possibility of bad actors systematically nudging apparent public opinion to create false consensus. The finding deserves a deeper investigation.\n\nThe second section explores synthetic samples: AI-powered proxies generated from real data that simulate responses to novel questions. \n\nElisabeth Costa from BIT shared a research that conducted alongside with the UAE Behavioral Science Group. It revealed synthetic samples accurately predicted which air conditioning interventions would be most effective, but drastically overestimated their impact (predicting 80% uptake vs the actual 33%).\n\nI agree with O'Connor's point about LLM applications in qualitative research such as analyzing vast interview transcripts to identify theme, reminding me of a recent conversation with Paulina and Shantanu. Speed, indeed, does matter, but depth and accuracy matter more. Human evaluation remains essential.\n\nThe article exhibits a complex landscape: managing the risk of AI-generated responses in surveys while exploring synthetic participants' potential, reminding me of conversations I've had with Anushka and Julian about empirical findings and ethical use. Some critical questions, I suppose, emerge: \n\n(1) Is synthetic participant use context-dependent? \n(2) How should researchers deploy them transparently? \n(3) Could they serve as cost-effective pre-pilots for actual surveys, rather replacements for human insight?\n\nMany thanks to the authors for this thought-provoking piece, to Jaclyn for flagging this article! I look forward to more research on these critical topics.",
+    "sourceUrl": "https://www.ft.com/content/1298a2cd-5623-480c-b30e-ff81fc5c788d",
+    "linkedinUrl": "https://www.linkedin.com/posts/fenditsim_surveyresearch-behaviouralscience-aiethics-activity-7401175211351482369-ILww/",
+    "keywords": [
+      "SurveyResearch",
+      "BehaviouralScience",
+      "AIethics",
+      "LLM",
+      "ResearchMethods",
+      "DataQuality",
+      "SyntheticData",
+      "PollingIntegrity"
+    ]
+  },
+  {
     "id": "ai-should-challenge-not-obey",
     "title": "Sarkar (2024)",
     "subtitle": "AI Should Challenge, Not Obey",
