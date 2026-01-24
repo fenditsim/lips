@@ -658,6 +658,9 @@
         const modalOverlay = document.querySelector('.modal-overlay');
 
         function openModal(node) {
+            // Hide tooltip ensures it doesn't overlap the modal
+            document.getElementById('custom-tooltip').style.display = 'none';
+
             document.getElementById('modal-title').innerText = node.label;
             document.getElementById('modal-subtitle').innerText = node._subtitle || '';
             document.getElementById('modal-summary').innerText = node._summary || 'No summary available.';
