@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fendi's Content Graph</title>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Vis.js Network -->
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    
+    <style>
+        /* --- Base Styles (Dark Mode Default) --- */
+        body {
+            background-color: #111111;
+            color: #e5e5e5;
+            font-family: Arial, sans-serif; /* Changed to Arial */
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Prevent scrolling on the main page */
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        #network-graph {
+            width: 100vw;
+            height: 100vh;
+            outline: none;
+        }
+
+        /* --- Light Mode Overrides --- */
+        body.light-mode {
+            background-color: #f3f4f6; /* Light gray bg */
+            color: #1f2937; /* Dark gray text */
+        }
+
+        /* Light Mode: UI Components */
+        body.light-mode #info-panel,
+        body.light-mode #search-results,
+        body.light-mode .modal-container,
+        body.light-mode #custom-tooltip,
+        body.light-mode #search-input {
+            background-color: #ffffff;
+            border-color: #d1d5db; /* Gray-300 */
+            color: #1f2937;
+        }
+
+        /* Light Mode: Buttons */
+        body.light-mode #info-btn,
+        body.light-mode #restart-btn,
+        body.light-mode .modal-close,
+        body.light-mode #modal-source-btn,
+        body.light-mode #modal-linkedin-btn,
+        body.light-mode #theme-toggle-btn {
+            background-color: #ffffff;
+            border-color: #d1d5db;
+            color: #374151;
+        }
+        
+        body.light-mode #info-btn:hover,
+        body.light-mode #restart-btn:hover,
+        body.light-mode .modal-close:hover,
+        body.light-mode #modal-source-btn:hover,
+        body.light-mode #modal-linkedin-btn:hover,
+        body.light-mode #theme-toggle-btn:hover {
+            background-color: #f3f4f6;
+        }
+
+        /* Light Mode: Search Results Hover */
+        body.light-mode #search-results div:hover {
+            background-color: #f3f4f6;
+        }
+
+        /* Light Mode: Modal Text */
+        body.light-mode #modal-subtitle { color: #4b5563; }
+        body.light-mode #modal-summary { color: #374151; }
+        body.light-mode .modal-header { border-bottom-color: #e5e7eb; }
+        body.light-mode .modal-content hr { border-color: #e5e7eb; }
+        body.light-mode .modal-footer { border-top-color: #e5e7eb; }
+
+        /* Light Mode: Keywords */
+        body.light-mode #modal-keywords span {
+            background-color: #e5e7eb;
+            color: #374151;
+        }
+
+        /* --- Standard Styles --- */
+        /* Custom Tooltip Styling */
+        #custom-tooltip {
+            position: fixed;
+            background-color: #1a1a1a;
+            color: #e5e5e5;
+            padding: 10px 14px;
+            border-radius: 6px;
+            border: 1px solid #000000;
+            font-family: Arial, sans-serif; /* Changed to Arial */
+            font-size: 14px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            z-index: 9999;
+            pointer-events: none; /* Let clicks pass through */
+            max-width: 350px;
+            display: none;
+        }
+
+        /* Modal Transitions */
+        .modal {
+            transition: opacity 0.25s ease;
+        }
+        body.modal-active {
+            overflow-x: hidden;
+            overflow-y: hidden !important;
+        }
+
+        /* Scrollbar for modal content */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1a1a1a; 
+        }
+        body.light-mode ::-webkit-scrollbar-track {
+            background: #f3f4f6;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #444; 
+            border-radius: 4px;
+        }
+        body.light-mode ::-webkit-scrollbar-thumb {
+            background: #9ca3af;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555; 
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="fixed inset-0 bg-[#111111] z-[2000] flex flex-col justify-center items-center transition-opacity duration-500">
+        <svg width="120" height="120" viewBox="0 0 120 120">
+            <circle cx="60" cy="60" r="50" fill="none" stroke="#333" stroke-width="8"/>
+            <circle id="progress-circle" cx="60" cy="60" r="50" fill="none" stroke="#e31b1b" stroke-width="8" 
+                    stroke-linecap="round" stroke-dasharray="314.159" stroke-dashoffset="314.159"
+                    transform="rotate(-90 60 60)"/>
+            <text id="progress-text" x="60" y="65" text-anchor="middle" fill="#e5e5e5" font-size="20" font-family="Arial, sans-serif">0%</text>
+        </svg>
+        <p class="text-[#e5e5e5] mt-5 font-sans" style="font-family: Arial, sans-serif;">Loading Network Graph...</p>
+    </div>
+
+    <!-- The Graph Container -->
+    <div id="network-graph"></div>
+
+    <!-- Custom Tooltip Container -->
+    <div id="custom-tooltip"></div>
+
+    <!-- Bottom Controls Container -->
+    <div class="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-[1000] w-full max-w-md px-4 flex items-center gap-2">
+        
+        <!-- Info Button & Panel -->
+        <div class="relative">
+            <!-- Info Panel (Collapsible) -->
+            <!-- UPDATED POSITION: bottom-full right-0 aligns the right edge of panel to right edge of button. 
+                 Since panel is wider, it grows to the LEFT, avoiding the search bar on the right. -->
+            <div id="info-panel" class="hidden absolute bottom-full right-0 mb-3 w-64 bg-[#1a1a1a] border border-[#444] rounded-lg shadow-xl p-4 text-sm text-[#e5e5e5] transition-colors duration-300">
+                <div class="space-y-3">
+                    <div>
+                        <p class="text-xs text-gray-500 uppercase tracking-wide">Creator</p>
+                        <!-- Updated Name -->
+                        <p class="font-semibold">Señor Fendi</p>
+                    </div>
+                    <div>
+                        <p class="text-xs text-gray-500 uppercase tracking-wide">Links</p>
+                        <a href="https://www.linkedin.com/in/fenditsim/" target="_blank" class="block text-purple-400 hover:text-purple-300 mt-1">LinkedIn Profile</a>
+                        <a href="https://github.com/fenditsim/lips" target="_blank" class="block text-purple-400 hover:text-purple-300">GitHub Repository</a>
+                    </div>
+                    
+                    <!-- Stats & Info -->
+                    <div class="pt-2 border-t border-[#333]">
+                        <!-- Node Count -->
+                        <p class="text-xs text-gray-500 mb-1">Total Nodes: <span id="node-count" class="font-bold text-purple-400">0</span></p>
+                        <p class="text-xs text-gray-500">Updated: <span id="update-time"></span></p>
+                    </div>
+
+                    <!-- Theme Toggle -->
+                    <div class="pt-2 border-t border-[#333] flex justify-between items-center">
+                        <span class="text-xs text-gray-500 uppercase">Appearance</span>
+                        <button id="theme-toggle-btn" class="px-3 py-1 bg-[#333] hover:bg-[#444] rounded text-xs border border-[#444] transition-colors">
+                            <span id="theme-icon">🌙 Dark</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Info Toggle Button -->
+            <button id="info-btn" class="p-3 bg-[#1a1a1a] border border-[#444] rounded-lg text-white hover:bg-[#333] transition-colors shadow-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Search Container (Middle) -->
+        <div class="relative group flex-grow">
+            <!-- Search Results (Pop-up) -->
+            <div id="search-results" class="hidden bg-[#1a1a1a] border border-[#444] rounded-t-lg shadow-lg max-h-60 overflow-y-auto mb-0 w-full absolute bottom-full left-0 right-0 transition-colors duration-300">
+                <!-- Results injected here -->
+            </div>
+            
+            <div class="relative">
+                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                    <svg class="w-4 h-4 text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                    </svg>
+                </div>
+                <input type="text" id="search-input" 
+                    class="block w-full p-3 pl-10 text-sm text-white bg-[#1a1a1a] border border-[#444] rounded-lg focus:ring-purple-500 focus:border-purple-500 placeholder-gray-500 shadow-xl transition-all outline-none" 
+                    placeholder="Search nodes..." autocomplete="off">
+            </div>
+        </div>
+
+        <!-- Restart Button (Right) -->
+        <button id="restart-btn" class="p-3 bg-[#1a1a1a] border border-[#444] rounded-lg text-white hover:bg-[#333] transition-colors shadow-lg focus:outline-none focus:ring-2 focus:ring-purple-500" title="Reset View">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+                <path d="M3 3v5h5"></path>
+            </svg>
+        </button>
+
+    </div>
+
+    <!-- Modal (Hidden by default) -->
+    <div id="node-modal" class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center z-[3000]">
+        <div class="modal-overlay absolute w-full h-full bg-black opacity-75"></div>
+        
+        <div class="modal-container bg-[#1a1a1a] w-11/12 md:max-w-2xl mx-auto rounded shadow-lg z-50 overflow-y-auto border border-[#444] text-[#e5e5e5] max-h-[90vh] transition-colors duration-300">
+            
+            <!-- Modal Header -->
+            <div class="modal-header flex justify-between items-center px-6 py-4 border-b border-[#333]">
+                <div class="flex items-center gap-3">
+                    <div class="w-3 h-3 rounded-full bg-[#9333ea]"></div>
+                    <p class="text-xl font-bold" id="modal-title">Node Title</p>
+                </div>
+                <div class="modal-close cursor-pointer z-50 opacity-80 hover:opacity-100">
+                    <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+                        <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Modal Body -->
+            <div class="modal-content px-6 py-4">
+                <h4 id="modal-subtitle" class="text-lg text-[#cccccc] mb-4 font-semibold">Subtitle</h4>
+                
+                <div class="flex gap-3 mb-6">
+                    <a id="modal-source-btn" href="#" target="_blank" class="px-4 py-2 bg-[#333] hover:bg-[#444] text-white border border-[#444] rounded text-sm transition-colors">View Source</a>
+                    <a id="modal-linkedin-btn" href="#" target="_blank" class="px-4 py-2 bg-[#333] hover:bg-[#444] text-white border border-[#444] rounded text-sm transition-colors">View on LinkedIn</a>
+                </div>
+
+                <hr class="border-[#333] mb-4">
+
+                <!-- Keywords -->
+                <div id="modal-keywords" class="flex flex-wrap gap-2 mb-4">
+                    <!-- Spans injected here -->
+                </div>
+
+                <p id="modal-summary" class="leading-relaxed text-[#dddddd] whitespace-pre-wrap">
+                    Summary goes here...
+                </p>
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="flex justify-end pt-2 pb-4 px-6 border-t border-[#333]">
+                <button class="modal-close px-4 py-2 bg-[#333] hover:bg-[#444] text-white rounded text-sm border border-[#444]">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- Configuration & State ---
+        let network = null;
+        let nodesDataset = null;
+        let edgesDataset = null;
+        let animationFrameId = null; // Used for rotation loop
+        let isInteracting = false;   // Flag to pause animation
+        let isDarkMode = true;
+        let lastTime = 0; // For delta time calculation
+
+        // --- 1. Fetch Data ---
+        async function loadData() {
+            try {
+                const response = await fetch('posts_data.json');
+                if (!response.ok) throw new Error("JSON file not found, using fallback data");
+                const data = await response.json();
+                initGraph(data);
+            } catch (e) {
+                console.warn(e.message);
+                console.log("Using fallback demo data.");
+                // FALLBACK DATA 
+                const fallbackData = [
+                    {
+                        "id": 1,
+                        "title": "Generative AI in 2025",
+                        "subtitle": "The future of LLMs",
+                        "summary": "An exploration of how Large Language Models will evolve...",
+                        "sourceUrl": "#",
+                        "linkedinUrl": "#",
+                        "keywords": ["AI", "LLM", "Future", "Tech"]
+                    },
+                    {
+                        "id": 2,
+                        "title": "Machine Learning Basics",
+                        "subtitle": "Getting started",
+                        "summary": "A primer on supervised vs unsupervised learning.",
+                        "sourceUrl": "#",
+                        "linkedinUrl": "#",
+                        "keywords": ["AI", "ML", "Data Science"]
+                    },
+                    {
+                        "id": 3,
+                        "title": "Tech Trends",
+                        "subtitle": "What to watch",
+                        "summary": "Analyzing the biggest shifts in the industry.",
+                        "sourceUrl": "#",
+                        "linkedinUrl": "#",
+                        "keywords": ["Tech", "Future", "Innovation"]
+                    },
+                    {
+                        "id": 4,
+                        "title": "Data Visualization",
+                        "subtitle": "Seeing is believing",
+                        "summary": "Using R and JS to visualize complex networks.",
+                        "sourceUrl": "#",
+                        "linkedinUrl": "#",
+                        "keywords": ["Data Science", "Visualization", "R"]
+                    }
+                ];
+                initGraph(fallbackData);
+            }
+        }
+
+        // --- 2. Process Data & Initialize Graph ---
+        function initGraph(rawData) {
+            
+            // Set Node Count
+            const nodeCountEl = document.getElementById('node-count');
+            if (nodeCountEl) nodeCountEl.innerText = rawData.length;
+
+            // A. Prepare Nodes
+            // SIZE REDUCTION: Changed base from 20 to 12, multiplier from 1.5 to 1.0
+            const nodes = rawData.map(item => ({
+                id: item.id,
+                label: item.title,
+                _subtitle: item.subtitle,
+                _summary: item.summary,
+                _sourceUrl: item.sourceUrl,
+                _linkedinUrl: item.linkedinUrl,
+                _keywords: item.keywords,
+                
+                shape: 'dot',
+                color: {
+                    background: '#9333ea',
+                    border: '#7e22ce',
+                    highlight: { background: '#9333ea', border: '#32cd32' }
+                },
+                
+                // IMPORTANT: REMOVED "font" property from here.
+                // We now set font via global options so it can be updated by the toggle.
+                
+                // SMALLER SIZE CALCULATION
+                size: 12 + ((item.keywords ? item.keywords.length : 0) * 1.0),
+                shadow: true,
+                title: "" 
+            }));
+
+            // B. Prepare Edges
+            const edges = [];
+            const normalize = (str) => str.toLowerCase().replace(/[\s-]/g, '');
+
+            for (let i = 0; i < rawData.length - 1; i++) {
+                for (let j = i + 1; j < rawData.length; j++) {
+                    const k1 = rawData[i].keywords || [];
+                    const k2 = rawData[j].keywords || [];
+                    const s1 = new Set(k1.map(normalize));
+                    const s2 = new Set(k2.map(normalize));
+                    const intersection = [...s1].filter(x => s2.has(x));
+
+                    if (intersection.length > 0) {
+                        edges.push({
+                            from: rawData[i].id,
+                            to: rawData[j].id,
+                            width: intersection.length, 
+                            color: { color: '#333333', highlight: '#32cd32', opacity: 0.4 }
+                        });
+                    }
+                }
+            }
+
+            nodesDataset = new vis.DataSet(nodes);
+            edgesDataset = new vis.DataSet(edges);
+
+            const container = document.getElementById('network-graph');
+            const data = { nodes: nodesDataset, edges: edgesDataset };
+            
+            const options = {
+                nodes: { 
+                    borderWidth: 2, 
+                    shadow: true,
+                    // DEFAULT FONT SET HERE (Dark Mode Default + Arial)
+                    font: { color: '#e5e5e5', size: 16, face: 'Arial' }
+                },
+                edges: { smooth: { type: 'continuous' } },
+                physics: {
+                    stabilization: {
+                        enabled: true,
+                        iterations: 1000,
+                        updateInterval: 25,
+                    },
+                    solver: 'forceAtlas2Based',
+                    forceAtlas2Based: {
+                        gravitationalConstant: -100,
+                        centralGravity: 0.003,
+                        springLength: 200,
+                        springConstant: 0.05,
+                        damping: 0.4,
+                        avoidOverlap: 0.5
+                    },
+                    minVelocity: 0.75
+                },
+                interaction: {
+                    hover: true,
+                    tooltipDelay: 0,
+                    hideEdgesOnDrag: true
+                }
+            };
+
+            network = new vis.Network(container, data, options);
+
+            // --- 3. Events ---
+
+            // Loading Progress
+            network.on("stabilizationProgress", function(params) {
+                const progress = params.iterations / params.total;
+                const percent = Math.round(progress * 100);
+                const circle = document.getElementById('progress-circle');
+                const text = document.getElementById('progress-text');
+                if (circle && text) {
+                    const circumference = 314.159;
+                    const offset = circumference * (1 - progress);
+                    circle.style.strokeDashoffset = offset;
+                    text.textContent = percent + '%';
+                }
+            });
+
+            network.on("stabilizationIterationsDone", function() {
+                document.getElementById('progress-text').textContent = '100%';
+                document.getElementById('progress-circle').style.strokeDashoffset = 0;
+                const loadingScreen = document.getElementById('loading-screen');
+                
+                // IMPORTANT: Disable Physics to save CPU and improve animation smoothness
+                network.setOptions({ physics: { enabled: false } });
+
+                loadingScreen.style.opacity = '0';
+                setTimeout(() => {
+                    loadingScreen.style.display = 'none';
+                    // START ROTATION ANIMATION
+                    startRotationAnimation();
+                }, 500);
+            });
+
+            network.on("hoverNode", function(params) {
+                const nodeId = params.node;
+                const node = nodesDataset.get(nodeId);
+                const tooltip = document.getElementById('custom-tooltip');
+                tooltip.innerHTML = `<b>${node.label}</b><br>${node._subtitle || ''}`;
+                tooltip.style.display = 'block';
+            });
+
+            network.on("blurNode", function(params) {
+                document.getElementById('custom-tooltip').style.display = 'none';
+            });
+
+            network.on("doubleClick", function(params) {
+                if (params.nodes.length > 0) {
+                    const nodeId = params.nodes[0];
+                    const node = nodesDataset.get(nodeId);
+                    openModal(node);
+                }
+            });
+            
+            // --- Pause Animation on Interaction ---
+            network.on("dragStart", () => { isInteracting = true; });
+            network.on("dragEnd", () => { isInteracting = false; });
+            network.on("zoom", () => { isInteracting = true; setTimeout(() => isInteracting = false, 500); });
+        }
+        
+        // --- Rotation Animation ---
+        function startRotationAnimation() {
+            // Cancel any existing loop
+            if (animationFrameId) cancelAnimationFrame(animationFrameId);
+            
+            // Reset time
+            lastTime = performance.now();
+            
+            // Target Speed: Radians per second
+            // 0.05 rad/s ~= 2.8 degrees per second (Slow and smooth)
+            const rotationSpeed = 0.05; 
+            
+            function animate(currentTime) {
+                animationFrameId = requestAnimationFrame(animate);
+                
+                if (isInteracting || !network) {
+                    lastTime = currentTime; // Update time even if paused so we don't jump
+                    return;
+                }
+
+                // Calculate Delta Time (in seconds)
+                // This ensures consistency across different frame rates (e.g. 60hz vs 144hz vs lagging)
+                const deltaTime = (currentTime - lastTime) / 1000;
+                lastTime = currentTime;
+
+                // Calculate the angle to rotate for this specific frame
+                const angle = rotationSpeed * deltaTime;
+                
+                // Pre-calculate rotation matrix values for this small angle
+                const cos = Math.cos(angle);
+                const sin = Math.sin(angle);
+                
+                // Access internal nodes for speed (standard vis.js manipulation pattern)
+                const internalNodes = network.body.nodes;
+                const nodeIds = nodesDataset.getIds();
+                
+                for (let i = 0; i < nodeIds.length; i++) {
+                    const nodeId = nodeIds[i];
+                    const node = internalNodes[nodeId];
+                    
+                    if (!node) continue;
+                    if (node.options.fixed.x) continue;
+
+                    const x = node.x;
+                    const y = node.y;
+
+                    // Apply rotation matrix
+                    // This rotates the point around (0,0) by 'angle' amount
+                    node.x = x * cos - y * sin;
+                    node.y = x * sin + y * cos;
+                }
+                
+                // Force a redraw of the canvas
+                network.redraw();
+            }
+            
+            requestAnimationFrame(animate);
+        }
+
+        // --- UI Interactions ---
+
+        // 1. Restart Button
+        document.getElementById('restart-btn').addEventListener('click', function() {
+            if (network) {
+                network.fit({
+                    animation: {
+                        duration: 1000,
+                        easingFunction: "easeInOutQuad"
+                    }
+                });
+                // Ensure rotation continues if it was somehow paused
+                isInteracting = false;
+            }
+        });
+
+        // 2. Info Panel Toggle
+        const infoBtn = document.getElementById('info-btn');
+        const infoPanel = document.getElementById('info-panel');
+        
+        // Set update time
+        document.getElementById('update-time').innerText = new Date().toLocaleString();
+
+        infoBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            infoPanel.classList.toggle('hidden');
+        });
+
+        // Close info panel when clicking elsewhere
+        document.addEventListener('click', function(e) {
+            if (!infoBtn.contains(e.target) && !infoPanel.contains(e.target)) {
+                infoPanel.classList.add('hidden');
+            }
+        });
+
+        // 3. Theme Toggle
+        const themeBtn = document.getElementById('theme-toggle-btn');
+        const themeIcon = document.getElementById('theme-icon');
+
+        themeBtn.addEventListener('click', function() {
+            isDarkMode = !isDarkMode;
+            document.body.classList.toggle('light-mode');
+            
+            // Update Icon
+            themeIcon.innerText = isDarkMode ? '🌙 Dark' : '☀️ Light';
+
+            // Update Vis.js Graph Colors (Node Labels)
+            if (network) {
+                const fontColor = isDarkMode ? '#e5e5e5' : '#000000'; // Light gray vs Black
+                const options = {
+                    nodes: {
+                        font: { color: fontColor }
+                    }
+                };
+                network.setOptions(options);
+            }
+        });
+
+        // --- Tooltip Positioning ---
+        document.addEventListener('mousemove', function(e) {
+            const tooltip = document.getElementById('custom-tooltip');
+            if (tooltip.style.display === 'block') {
+                tooltip.style.left = (e.pageX + 15) + 'px';
+                tooltip.style.top = (e.pageY + 15) + 'px';
+            }
+        });
+
+        // --- Modal Logic ---
+        const modal = document.getElementById('node-modal');
+        const modalClose = document.querySelectorAll('.modal-close');
+        const modalOverlay = document.querySelector('.modal-overlay');
+
+        function openModal(node) {
+            document.getElementById('modal-title').innerText = node.label;
+            document.getElementById('modal-subtitle').innerText = node._subtitle || '';
+            document.getElementById('modal-summary').innerText = node._summary || 'No summary available.';
+            document.getElementById('modal-source-btn').href = node._sourceUrl || '#';
+            document.getElementById('modal-linkedin-btn').href = node._linkedinUrl || '#';
+            
+            const kwContainer = document.getElementById('modal-keywords');
+            kwContainer.innerHTML = '';
+            if (node._keywords && Array.isArray(node._keywords)) {
+                node._keywords.forEach(kw => {
+                    const span = document.createElement('span');
+                    span.className = "bg-[#333] px-2 py-1 rounded-[10px] text-xs text-[#bbb]";
+                    span.innerText = "#" + kw;
+                    kwContainer.appendChild(span);
+                });
+            }
+
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            document.body.classList.add('modal-active');
+            isInteracting = true; // Stop rotation when modal is open
+        }
+
+        function closeModal() {
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            document.body.classList.remove('modal-active');
+            isInteracting = false; // Resume rotation
+        }
+
+        modalClose.forEach(btn => btn.addEventListener('click', closeModal));
+        modalOverlay.addEventListener('click', closeModal);
+        document.onkeydown = function(evt) {
+            evt = evt || window.event;
+            if (evt.keyCode == 27) closeModal();
+        };
+
+        // --- Search Logic ---
+        const searchInput = document.getElementById('search-input');
+        const searchResults = document.getElementById('search-results');
+        
+        // Removed debounce for instant results
+        const handleSearch = function(e) {
+            const val = e.target.value.toLowerCase().trim();
+            searchResults.innerHTML = '';
+            
+            if (val.length === 0) {
+                searchResults.classList.add('hidden');
+                return;
+            }
+
+            if (!nodesDataset) return;
+
+            const allNodes = nodesDataset.get();
+            const matches = allNodes.filter(node => {
+                const titleMatch = node.label.toLowerCase().includes(val);
+                // Added check for subtitle
+                const subtitleMatch = node._subtitle && node._subtitle.toLowerCase().includes(val);
+                const keywordMatch = node._keywords && node._keywords.some(k => k.toLowerCase().includes(val));
+                return titleMatch || subtitleMatch || keywordMatch;
+            });
+
+            if (matches.length > 0) {
+                searchResults.classList.remove('hidden');
+                matches.forEach(node => {
+                    const div = document.createElement('div');
+                    div.className = "p-3 hover:bg-[#333] cursor-pointer text-sm border-b border-[#333] last:border-0";
+                    div.innerHTML = `<div class="font-bold text-[#e5e5e5]">${node.label}</div><div class="text-xs text-gray-400 truncate">${node._subtitle || ''}</div>`;
+                    
+                    div.addEventListener('click', () => {
+                        network.focus(node.id, {
+                            scale: 1.2,
+                            animation: { duration: 1000, easingFunction: "easeInOutQuad" }
+                        });
+                        network.selectNodes([node.id]);
+                        searchInput.value = '';
+                        searchResults.classList.add('hidden');
+                    });
+                    
+                    searchResults.appendChild(div);
+                });
+            } else {
+                searchResults.classList.add('hidden');
+            }
+        }; // Removed 300ms delay
+
+        searchInput.addEventListener('input', handleSearch);
+
+        document.addEventListener('click', function(e) {
+            if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
+                searchResults.classList.add('hidden');
+            }
+        });
+
+        // --- Init ---
+        loadData();
+
+    </script>
+</body>
+</html>
