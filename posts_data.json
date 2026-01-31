@@ -565,6 +565,24 @@
     ]
   },
   {
+    "id": "genai-product-safety-standard",
+    "title": "Department of Education (2026)",
+    "subtitle": "Guidance for Generative AI: product safety standards",
+    "summary": "Just finished reading 'Guidance for Generative AI: product safety standards' published by the Department for Education last week. \n\nI appreciate this document addresses several critical dimensions about GenAI in education: cognitive development, emotional/social development, mental health, and manipulation.\n\nIn the cognitive development section, I appreciate the highlight of the 'friction by design' principle. The guidance suggests prompting learners for input before providing answers, tracking cognitive offloading, and maintaining process-focused learning. I wonder: could developers create tools that let educators calibrate difficulty levels based on individual student capability? This, indeed, preserves educator agency while leveraging AI.\n\nTo me, the behavioural science opportunities here are rich: preventing cognitive offloading, and building metacognitive skills achieve similar goals through behavioural interventions (the SCAN framework that Alina and I developed offers a great basis; https://lnkd.in/eanDnGbm). I suspect detection methods could include response speed and cursor movement patterns (similar to authenticity protocols from Gorilla Experiment Builder and Prolific).\n\nTracking cognitive offloading is, of course, intriguing. However, implementation questions remain: How do we make educational AI compelling enough that students choose it over tools that enable offloading in the long term (reminding me of Tris' fascinating presentation on 'veracity offloading'; https://lnkd.in/e8HJg--k)? I suspect social proof and gamification are potential solutions.\n\nThe emotional development section's emphasis on psychological safety and preventing emotional dependence is great. Yet - does implementation requires genuine educator consultation beforehand? What monitoring autonomy do teachers need? What actually works in their daily practice?\n\nRegarding the mental health and manipulation sections, my concerns with these guidelines are that they sound excellent, but recent empirical research shows AI sycophancy increases over extended conversations. Hence, how do we prevent these safeguards from degrading as student-AI interactions continue?\n\nWhile the guidance provides a thoughtful framework, implementation is, I think, going to require a deep collaboration between developers, educators, and researchers. For instance:\n\n(1) What facilitates compatibility between the triangular relationship (teachers, students, and GenAI)?\n\n(2) Do we need to have more clarity on learning outcomes, i.e. what students genuinely need to learn vs. what they can automate?\n\n(3) How do teachers and GenAI share knowledge delivery (thoughtful learning design)?",
+    "sourceUrl": "https://www.gov.uk/government/publications/generative-ai-product-safety-standards/generative-ai-product-safety-standards",
+    "linkedinUrl": "https://www.linkedin.com/posts/fenditsim_generativeai-edtech-aiineducation-activity-7421431760351019008-cVr9/",
+    "keywords": [
+      "GenerativeAI",
+      "EdTech",
+      "AIinEducation",
+      "EducationalTechnology",
+      "AIEthics",
+      "LearningDesign",
+      "CognitiveScience",
+      "AIGovernance"
+    ]
+  },
+  {
     "id": "gpt4-persuasiveness",
     "title": "Salvi et al. (2025)",
     "subtitle": "On the conversational persuasiveness of GPT-4",
@@ -1000,6 +1018,24 @@
       "CriticalThinking",
       "DigitalTransformation",
       "AIImplementation"
+    ]
+  },
+  {
+    "id": "using-ai-assistance-accelerate-skills-decay",
+    "title": "Macnamara et al. (2024)",
+    "subtitle": "Does using artificial intelligence assistance accelerate skill decay and hinder skill development without performers' awareness?",
+    "summary": "Just finished reading \"Does using artificial intelligence assistance accelerate skill decay and hinder skill development without performers' awareness?\" by Macnamara et al. \n\nAlthough most works cited predate ChatGPT's rise, the issues they highlight are, I think, more prevalent and concerning for knowledge workers and students.\n\nIn this paper, the researchers examined how automated systems can induce automation bias, cognitive offloading, and confirmation bias - even when users believe they're maintaining their expertise.\n\nThe automation bias paradox the authors highlighted is intriguing. Users favour AI recommendations even when they conflict with human expertise and the AI is demonstrably wrong. The research shows the 'crossover point' from benefits to detriments is around 70% accuracy in high-workload conditions. Yet, people continued relying on systems with far lower accuracy. This, I suspect, connects to first impressions with AI, and reinforced beliefs from early interactions. The ease and speed of AI systems can, unsurprisingly, mask their limitations.\n\nI appreciate authors' emphasis on cognitive skill decay operates below conscious awareness: experts using AI assistance may believe their skills remain sharp as they continue performing successfully, without realizing how dependent they've become on the AI. This 'illusion of cognitive skills staticity' is particularly concerning for high-stakes fields like medicine, aviation, and military operations.\n\nWhat's critical to consider is the distinction on performance (outcome) or learning (process). Learners with AI assistance show rapid improvement but perform worse when AI is removed - what the authors call 'a pattern opposite of latent learning'. This reminds me of a saying: \"pulling up seedlings to help them grow\". Perhaps following the old way of learning mathematics: we learnt without calculators first, then with them? This, of course, prevents overreliance while building the foundational skills needed to use calculators effectively.\n\nI wonder: Which fields will flourish with full AI automation, and which require maintained human expertise for novel problem-solving? Education, of course, bears significant responsibility here, such as rethinking learning outcomes for fundamental skills like reading and writing when AI enters the picture.\n\nMany thanks to Brooke Macnamara, Ibrahim Berber, M. Cenk Cavusoglu, Elizabeth Krupinski, Naren N., Noelle Nelson, Philip J. Smith, Amy Wilson-Delfosse, and Soumya Ray for this insightful research.\n\nAs our reliance on GenAI deepens over time, we need to rethink our interactions with GenAI before this self-reinforcing cycle of cognitive skills decay becomes irreversible.",
+    "sourceUrl": "https://doi.org/10.1186/s41235-024-00572-8",
+    "linkedinUrl": "https://www.linkedin.com/posts/fenditsim_does-using-ai-accelerate-cognitive-skill-activity-7422161427727118336-bpL3/",
+    "keywords": [
+      "ArtificialIntelligence",
+      "SkillDevelopment",
+      "CognitiveScience",
+      "AIEthics",
+      "MachineLearning",
+      "HumanAIInteraction",
+      "FutureOfWork",
+      "EducationalTechnology"
     ]
   },
   {
