@@ -72,6 +72,24 @@
     ]
   },
   {
+    "id": "ai-based-learning-tool-design-assessment",
+    "title": "Luo et al. (2025)",
+    "subtitle": "Design and assessment of AI-based learning tools in higher education: a systematic review",
+    "summary": "Just finished reading \"Design and assessment of AI-based learning tools in higher education: a systematic review\" by Luo et al..\n\nThis is a synthesis of 63 peer-reviewed studies examining how AI tools are being designed and deployed in higher education effectively, and more important, responsibly.\n\nEmploying Kraiger et al. (1993)'s framework to assess three learning outcome dimensions (cognitive, skill-based, and affective), they revealed a fascinating pattern: while AI-based learning tools excel at enhancing cognitive knowledge acquisition and affective learning outcomes (enhanced motivation, engagement, and self-efficacy), their impact on higher-order thinking and skill development were mixed.\n\nThree key insights I found very intriguing:\n\n1. The black box problem persists\nUnlike traditional instructional tools with predefined rules, many AI tools operate opaquely, obscuring decision-making processes. This opacity particularly hinders complex reasoning in mathematics, physics, and medicine.\n\n2. Design matters more than we think\nThe finding about AI-enabled personalised video recommendations is insightful. It only benefited moderately motivated learners, as high achievers had already mastered the content, while less motivated ones remained disengaged. Perhaps it is a calibration issue that invites the concept of Flow?\n\n3. The human element is irreplaceable\nCurrent AI tools excel at providing instant, contextual answers but often lack the strategic pedagogical depth of expert human tutors. The review warns of declining critical thinking and growing AI dependency: concerns that align with recent research on metacognition and cognitive offloading.\n\nThe authors propose a \"design-to-evaluation\" framework emphasising five principles: \n- human-centered design that incorporates learner traits beyond performance metrics\n- multimodal content strategically tailored to learning objectives\n- transparent decision-making processes\n- inclusive design for marginalized students\n- ethical safeguards for privacy and bias\n\nThis review, to me, reinforces the notion that AI tools work best when they complement, rather than replace, human expertise. Continuous teacher calibration, metacognitive scaffolding, digital literacy (the SCAN framework that Alina and I developed: https://lnkd.in/eanDnGbm), and strategic task assignment and application of multimodal approaches tailored to specific learning objectives and student needs remain essential. \n\nMany thanks to Jihao Luo, Chenxu Zheng, Jiamin Yin, and Hock Hai Teo for this insightful work that pushes us toward more intentional, human-centered AI design in higher education.\n\nAs we race to integrate AI in education, we need equal rigor in understanding how and when these tools genuinely enhance learning.",
+    "sourceUrl": "https://doi.org/10.1186/s41239-025-00540-2",
+    "linkedinUrl": "https://www.linkedin.com/posts/fenditsim_design-and-assessment-of-ai-based-learning-activity-7423968444984995841-TqsB/",
+    "keywords": [
+      "AIinEducation",
+      "HigherEducation",
+      "EdTech",
+      "ArtificialIntelligence",
+      "LearningScience",
+      "EducationalTechnology",
+      "PedagogicalInnovation",
+      "FutureOfLearning"
+    ]
+  },
+  {
     "id": "ai-cognitive-ease-cost",
     "title": "Stadler et al. (2024)",
     "subtitle": "Cognitive ease at a cost: LLMs reduce mental effort but compromise depth in student scientific inquiry",
@@ -621,6 +639,24 @@
       "CreativeTasks",
       "SystematicReview",
       "FutureOfWork"
+    ]
+  },
+  {
+    "id": "how-ai-impacts-skill-formation",
+    "title": "Shen & Tamkin (2026)",
+    "subtitle": "How AI Impacts Skill Formation",
+    "summary": "Just finished reading a preprint \"How AI Impacts Skill Formation\" by Judy Hanwen Shen and Alex Tamkin from Anthropic.\n\nAs we pursue human-AI augmentation and productivity gains, perhaps we're overlooking a critical question: what happens to skill acquisition, retention, or decay over time?\n\nIn this empirical, mixed-methods study, they conduct randomised experiments to study how developers gained mastery of a new asynchronous programming library with and without AI assistance. \n\nTheir main finding is that developers using AI assistance to learn a new programming library scored 17% lower on skill assessments compared to those learning without AI - even though AI didn't significantly speed up task completion. Participants in treatment group felt 'lazy' and reported 'gaps in understanding' afterward, which is an indicator of cognitive offloading (works of Prof. Dr. Michael Gerlich).\n\nThis connects to Macnamara et al.'s on cognitive skill decay in GenAI era I reviewed. The question I keep returning to is what Tris calls 'veracity offloading': how does such cognitive delegation compound across expertise levels over time? \n\nIt's also the \"Iron Man paradox\" question I emphasised in webinar: \"What do you do when you're without the armor?\"\n\nWhat's also intriguing is six distinct AI interaction patterns researchers identified. High scorers asked conceptual questions or requested explanations alongside code, while low scorers simply delegated to AI without engagement. This mirrors the task identification dynamics in the SCAN framework that Alina and I developed: whether users identify tasks as Substitute (automation) versus Aid/Complement (augmentation/critical engagement).\n\nThe debugging skills gap was significant. As researchers noted: if workers' skill formation is inhibited by AI assistance, they may lack the necessary skills to validate and debug AI-generated code. This, I think, exemplifies the upskilling-deskilling paradox we emphasised in SCAN: tasks oscillating between Aid and Complement subzones over time.\n\nAs researchers noted, we've historically moved from 'producer' to 'supervisor'. In the GenAI era, however, how does a person become a competent supervisor without being a producer first - the very role GenAI now occupies?\n\nWhen considering AI as 'a scaffold', perhaps metacognitive prompting framework (like CIA framework Shantanu and I developed) could help reduce automation bias and illusion of understanding?\n\nThe study was rigorously controlled (impressive pilot work addressing non-compliance and confounding variables), but it's a one-off snapshot. What we  need, I suspect, is longitudinal studies tracking these dynamics over months and years. \n\nMany thanks to the researchers for this timely work. I'm looking forward to seeing how this research direction evolves.",
+    "sourceUrl": "https://doi.org/10.48550/arXiv.2601.20245",
+    "linkedinUrl": "hhttps://www.linkedin.com/posts/fenditsim_how-ai-impacts-skill-formation-activity-7424330862713806848-eVHB/",
+    "keywords": [
+      "ArtificialIntelligence",
+      "SkillDevelopment",
+      "HumanAICollaboration",
+      "CognitiveScience",
+      "LifelongLearning",
+      "FutureOfWork",
+      "AIAugmentation",
+      "MetacognitiveAI"
     ]
   },
   {
