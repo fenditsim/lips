@@ -54,6 +54,24 @@
     ]
   },
   {
+    "id": "ai-as-amplifier",
+    "title": "Ehsan et al. (2026)",
+    "subtitle": "From Future of Work to Future of Workers: Addressing Asymptomatic AI Harms for Dignified Human-AI Interaction",
+    "summary": "Just finished reading a preprint \"From Future of Work to Future of Workers: Addressing Asymptomatic AI Harms for Dignified Human-AI Interaction\" by Ehsan et al..\n\nI appreciate this research challenges the dominant 'future of work' narrative by recentering the 'future of workers' - their dignity, craft, and more importantly, identity. \n\nIn this paper, researchers conducted a year-long longitudinal study in radiation oncology by tracking 42 participants across 24 interviews, 5 workshops, and 52 think-aloud sessions. \n\nThe research reveals what the authors call the 'AI-as-Amplifier Paradox': AI systems can erode the very capabilities they're built to support. It documented how early efficiency gains (15% faster treatment planning) masked a troubling progression, from\n- Asymptomatic effects (\"my intuition is rusting\")\n- Chronic harms (demonstrable skill degradation) to \n- Identity commoditization (fear of being 'hollowed out' - still employed, but with diminished meaning).\n\nThis aligns with the 'upskilling-deskilling' paradox Alina and I highlighted in SCAN, and Tris' presentation on 'veracity offloading'.\n\nWhat's intriguing, to me, is that workers fear the loss of what makes them uniquely valuable. As one participant asked: \"What happens when the AI fails and we've forgotten how to think?\" - echoing my \"Iron Man without the suit\" thought experiment about capability dependencies.\n\nI like the powerful medical metaphor researchers introduced: AI's effects as 'asymptomatic' - behavioural shifts that escape standard performance metrics. A physicist captured it aptly: \"Old AI was clunky...it had friction and kept us thinking. The new AI is seamless...makes overreliance effortless, offloading the very act of thinking.\" It's a use-now, pay-later effect, which, to me, is an efficiency today - at the cost of expertise tomorrow.\n\nWhat I found thought-provoking is the countermeasures some participants deploy. They self-imposed 'friction': running manual plans weekly to 'sharpen the blade', or creating coffee bets to predict AI outputs before running them. The latter highlights as 'sparked spirited exchanges' that function as 'collective reflection': the very moment when metacognition and social support can interrupt the erosion cascade.\n\nThe authors' framework \"Dignified Human-AI Interaction\" operates on three levels: \n- Worker (mindful engagement)\n- Technology (friction by design, Social Transparency), and \n- Organisational (systemic safeguards). \n\nIt aims to preserve human agency, expertise, self-worth alongside productivity gains (reminding me of MEL's work on psychological readiness).\n\nMany thanks to Dr. Upol E., Samir Passi, Koustuv Saha, Todd McNutt, Mark Riedl, and Sara Alcorn for this deeply researched and timely contribution. Looking forward to seeing how this evolves.",
+    "sourceUrl": "https://doi.org/10.48550/arXiv.2601.21920",
+    "linkedinUrl": "https://www.linkedin.com/posts/fenditsim_ai-as-amplifier-paradox-activity-7426606228773969920-FJ_K/",
+    "keywords": [
+      "FutureOfWork",
+      "AIEthics",
+      "CognitiveDeskilling",
+      "HumanAICollaboration",
+      "WorkerDignity",
+      "OrganizationalPsychology",
+      "DigitalTransformation",
+      "ResponsibleAI"
+    ]
+  },
+  {
     "id": "ai-assisted-promises",
     "title": "Greevink et al. (2024)",
     "subtitle": "AI-Powered Promises: The Influence of ChatGPT on Trust and Trustworthiness",
@@ -163,6 +181,24 @@
     ]
   },
   {
+    "id": "ai-intensifies-work",
+    "title": "Ranganathan & Ye (2026)",
+    "subtitle": "AI Doesn't Reduce Work—It Intensifies It",
+    "summary": "Just finished reading a Harvard Business Review article \"AI Doesn't Reduce Work—It Intensifies It\" by Aruna Ranganathan and Maggie Ye.\n\nTheir research reveals an interesting paradox: AI doesn't free up time - it accelerates work into a 'self-reinforcing cycle'. \n\nIn their 8-month study at a tech company, employees worked faster, took on broader tasks, and extended work into more hours, often voluntarily. One engineer captured it aptly: \"You had thought that maybe you could work less. But really, you don't work less. You just work the same amount or even more.\"\n\nWhat's most thought-provoking is, to me, the behavioural dimension (due to reading Ganna Pogrebna, PhD, FHEA's new book recently, I suspect). Many companies focus on driving AI adoption without considering both cognitive and behavioural consequences. Without proper behavioural scaffolding, we risk cognitive offloading, skill decay, and the illusion that 'speed equals how skilful one is'.\n\nThe authors highlight critical risks: workload creep masks as productivity, cognitive fatigue weakens decision-making, and the 'productivity surge' can deteriorate into lower quality work and burnout. \n\nThe research shows that workers expanded into, and thus offloaded cognitively, unfamiliar tasks (what SCAN framework that Alina and I developed calls 'Substitute tasks'; https://lnkd.in/eanDnGbm), becoming vulnerable to AI sycophancy without task specific knowledge to verify outputs. Meanwhile, engineers spent more time reviewing, correcting, and guiding AI-generated or AI-assisted work produced by colleagues - spreading fatigue across teams eventually.\n\nThe authors introduced an 'AI practice' with intentional norms as solution. This social element is crucial: it's in these dialogues and reflections where we restore perspective, and thus generate creative insights that AI's single synthesised viewpoint cannot provide.\n\nAlso, these 'AI practice' with intentional norms are, I think, rules that create 'decision pauses' for metacognition and critical thinking (two crucial elements for effective Human-AI interactions) in sequenced work. These help reduce cognitive fragmentation (echoing Cal Newport's \"Deep Work\"), and protected time for human connection - what we deeply care about. \n\nOrganisations must, I believe, preserve moments for recovery and System 2 thinking, especially for high-stakes decisions. This seems to matter across industries - I wonder whether healthcare, education, or consulting face similar paradoxes, and more interestingly, what 'protective' norms they've been developing.\n\nMany thanks to the authors for this insightful research.",
+    "sourceUrl": "https://hbr.org/2026/02/ai-doesnt-reduce-work-it-intensifies-it",
+    "linkedinUrl": "https://www.linkedin.com/posts/fenditsim_artificialintelligence-futureofwork-cognitivescience-activity-7427592308839149568-7Omh/",
+    "keywords": [
+      "ArtificialIntelligence",
+      "FutureOfWork",
+      "CognitiveScience",
+      "OrganizationalBehavior",
+      "ProductivityParadox",
+      "BehavioralScience",
+      "WorkplaceWellbeing",
+      "DigitalTransformation"
+    ]
+  },
+  {
     "id": "ai-performance-metacognition",
     "title": "Fernandes et al. (2025)",
     "subtitle": "AI makes you smarter but none the wiser: The disconnect between performance and metacognition",
@@ -234,6 +270,24 @@
       "OrganizationalBehaviour",
       "AIResearch",
       "Collaboration"
+    ]
+  },
+  {
+    "id": "aisi-measure-ai-productivity-gains",
+    "title": "AI Security Institute (2026)",
+    "subtitle": "AI and the Future of Work: Measuring AI-driven productivity gains for workplace tasks",
+    "summary": "Just finished reading AI Security Institute's blog on \"AI and the Future of Work: Measuring AI-driven productivity gains for workplace tasks\".\n\nIn this blog, researchers presented findings of a pilot study they conducted to explore how much AI models increase worker productivity for common tasks. Note that they acknowledge these are preliminary indicators requiring further analysis. \n\nUsing Occupational Information Network (O*NET)'s Generalised Work Activities, they created benchmarks across 4 work activity category:\n- Information Input (Task 1): Monitoring Processes, Materials, or Surroundings\n- Work Output (Task 2): Drafting, Laying Out, and Specifying Technical Devices, Parts, and Equipment\n- Mental Processes (Task 3): Organising, Planning, and Prioritising Work\n- Interacting with Others (Task 4): Interpreting the Meaning of Information for Others\n\nThe RCT methodology with 500 participants showed an average 25% quality improvement, and 61% gain in points per minute for AI-augmented workers. It also shows that tasks requiring structured analysis (Task 1, 2, and 4) showed significant productivity gains, while open-ended strategic planning (Task 3) showed no measurable uplift. \n\nTask 4 did catch my attention. AI improved speed by 42% but didn't enhance quality. Perhaps humans maintain pride and ownership in interpretation work?\n\nThe study, I suspect, overlooks something critical for the future of work: workers' cognitive skill development. The research measures immediate productivity but doesn't examine cognitive skill acquisition, retention, or more importantly, decay. \n\nI'm curious about several questions the data raises:\n\n1. Metacognition as moderator\nDoes metacognitive ability predict who benefits most from AI assistance? We've seen high-metacognitive individuals amplify gains while low-metacognitive ones struggle (https://lnkd.in/egiSeSUc).\n\n2. The performance-learning tradeoff\nWould we be witnessing cognitive decay where AI systems erode the very capabilities they're built to support (reminding me of Dr. Upol E. and his colleagues' recent work on 'AI as Amplifier Paradox': https://lnkd.in/eyrzK2Sa)? The upskilling-deskilling paradox in SCAN that Alina and I developed, indeed, deserves deeper investigation.\n\n3. Task type matters\nTask 3's null result seems to align with Michelle Vaccaro and her colleagues' findings on decision task types (https://lnkd.in/eGqDfQRG). When humans already know what needs to do, augmentation adds little to none value.\n\nI agree with their plan to expand the Work Activities suite and benchmark agentic systems. Perhaps re-running this experiment annually to track how human-AI collaboration evolves?\n\nMany thanks to AISI, and the new Future of Work Unit for this thought-provoking research. Looking forward to seeing how this evolves.",
+    "sourceUrl": "https://www.aisi.gov.uk/blog/ai-and-the-future-of-work-measuring-ai-driven-productivity-gains-for-workplace-tasks",
+    "linkedinUrl": "https://www.linkedin.com/posts/fenditsim_futureofwork-aiproductivity-humanaicollaboration-activity-7427229931765682176-PB9Z",
+    "keywords": [
+      "FutureOfWork",
+      "AIProductivity",
+      "HumanAICollaboration",
+      "CognitiveSkills",
+      "WorkplaceAI",
+      "AIResearch",
+      "ProductivityGains",
+      "LabourMarket"
     ]
   },
   {
@@ -647,7 +701,7 @@
     "subtitle": "How AI Impacts Skill Formation",
     "summary": "Just finished reading a preprint \"How AI Impacts Skill Formation\" by Judy Hanwen Shen and Alex Tamkin from Anthropic.\n\nAs we pursue human-AI augmentation and productivity gains, perhaps we're overlooking a critical question: what happens to skill acquisition, retention, or decay over time?\n\nIn this empirical, mixed-methods study, they conduct randomised experiments to study how developers gained mastery of a new asynchronous programming library with and without AI assistance. \n\nTheir main finding is that developers using AI assistance to learn a new programming library scored 17% lower on skill assessments compared to those learning without AI - even though AI didn't significantly speed up task completion. Participants in treatment group felt 'lazy' and reported 'gaps in understanding' afterward, which is an indicator of cognitive offloading (works of Prof. Dr. Michael Gerlich).\n\nThis connects to Macnamara et al.'s on cognitive skill decay in GenAI era I reviewed. The question I keep returning to is what Tris calls 'veracity offloading': how does such cognitive delegation compound across expertise levels over time? \n\nIt's also the \"Iron Man paradox\" question I emphasised in webinar: \"What do you do when you're without the armor?\"\n\nWhat's also intriguing is six distinct AI interaction patterns researchers identified. High scorers asked conceptual questions or requested explanations alongside code, while low scorers simply delegated to AI without engagement. This mirrors the task identification dynamics in the SCAN framework that Alina and I developed: whether users identify tasks as Substitute (automation) versus Aid/Complement (augmentation/critical engagement).\n\nThe debugging skills gap was significant. As researchers noted: if workers' skill formation is inhibited by AI assistance, they may lack the necessary skills to validate and debug AI-generated code. This, I think, exemplifies the upskilling-deskilling paradox we emphasised in SCAN: tasks oscillating between Aid and Complement subzones over time.\n\nAs researchers noted, we've historically moved from 'producer' to 'supervisor'. In the GenAI era, however, how does a person become a competent supervisor without being a producer first - the very role GenAI now occupies?\n\nWhen considering AI as 'a scaffold', perhaps metacognitive prompting framework (like CIA framework Shantanu and I developed) could help reduce automation bias and illusion of understanding?\n\nThe study was rigorously controlled (impressive pilot work addressing non-compliance and confounding variables), but it's a one-off snapshot. What we  need, I suspect, is longitudinal studies tracking these dynamics over months and years. \n\nMany thanks to the researchers for this timely work. I'm looking forward to seeing how this research direction evolves.",
     "sourceUrl": "https://doi.org/10.48550/arXiv.2601.20245",
-    "linkedinUrl": "hhttps://www.linkedin.com/posts/fenditsim_how-ai-impacts-skill-formation-activity-7424330862713806848-eVHB/",
+    "linkedinUrl": "https://www.linkedin.com/posts/fenditsim_how-ai-impacts-skill-formation-activity-7424330862713806848-eVHB/",
     "keywords": [
       "ArtificialIntelligence",
       "SkillDevelopment",
