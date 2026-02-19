@@ -1165,6 +1165,24 @@
     ]
   },
   {
+    "id": "who-gets-replaced-by-ai-and-why",
+    "title": "Yildirim (2026)",
+    "subtitle": "Who Gets Replaced by AI and Why?",
+    "summary": "Just finished reading \"Who Gets Replaced by AI and Why?\" by Pinar Yildirim and Knowledge at Wharton staff.\n\nIn this article, Yildirim presented a new research that reveals how AI can impact employee motivation when implemented in the wrong part of a team’s workflow. \n\nThe research reveals that automating high-cost roles first to maximise cost savings fundamentally misunderstands how AI reshapes team dynamics and motivation. In sequential workflows, replacing human roles with AI rewires peer monitoring, effort sustainability, and more importantly, motivation structures.\n\nI find that 'the domino effect' insight intriguing. As Yildirim noted, in sequential work, each team member monitors upstream quality and calibrates their effort accordingly. This creates natural accountability: shirking triggers 'a cascade of disengagement'. \n\nI appreciate the emphasis that workers can't always distinguish AI from human work, which in turn, forcing them to form beliefs that alter incentive structures. This suggests a feedback loop: perceptions shape current decisions, which inform future AI interactions. I believe this feedback loop involves with 'the labour illusion' or 'effort heuristic': a cognitve bias that visible effort increases perceived value.\n\nThe transparency question, indeed, becomes critical. An empirical study \"Humans learn to prefer trustworthy AI over human partners\" by Jiang et al. (https://lnkd.in/eVRFwBaY) shows that in a trust game when AI trustee's effort isn't visible, people misattribute AI performance to human trustee, leading to suboptimal choices.\n\nI find that the four deployment rules thought-provoking, especially:\n\n\"Don’t “hard‑wire” AI into one position — randomise it\"\nThis preserves uncertainty that maintains peer discipline. I wonder: would 'task-based' assignment (SCAN framework that Alina and I developed; https://lnkd.in/eDRMxm3f) rather than 'position-based' replacement would be a better approach as time goes on?\n\n\"You might be better off leaving some AI capacity unused\"\nWhen AI is always present, individual effort feels less consequential, thus amplifying 'cognitive and social loafing'. Perhaps implementing behavioural KPIs for a better capture of workers' productivity?\n\nAs Yildirim notes: \"Automation decisions are organisational design decisions.\" I'd extend this: they're also behavioural, social, and cognitive decisions. Replacing one person with AI disrupts team cohesion, unwritten norms, and relational bonds. This, to me, requires social and behavioural solutions, more than technical ones.\n\nMany thanks to Pinar Yildirim for this thought-provoking research.",
+    "sourceUrl": "https://knowledge.wharton.upenn.edu/article/who-gets-replaced-by-ai-and-why/",
+    "linkedinUrl": "https://www.linkedin.com/posts/fenditsim_artificialintelligence-futureofwork-organizationalbehaviour-activity-7429041861736095744-0dqW/",
+    "keywords": [
+      "ArtificialIntelligence",
+      "FutureOfWork",
+      "OrganizationalBehaviour",
+      "WorkforceStrategy",
+      "AIAdoption",
+      "TeamDynamics",
+      "HumanAICollaboration",
+      "BehaviouralScience"
+    ]
+  },
+  {
     "id": "why-ai-boosts-creativity-difference",
     "title": "Lu et al. (2026)",
     "subtitle": "Why AI Boosts Creativity for Some Employees but Not Others",
