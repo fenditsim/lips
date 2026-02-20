@@ -89,6 +89,7 @@
         body.light-mode .modal-header { border-bottom-color: #e5e7eb; }
         body.light-mode .modal-content hr { border-color: #e5e7eb; }
         body.light-mode .modal-footer { border-top-color: #e5e7eb; }
+        body.light-mode #modal-related-section { border-top-color: #e5e7eb; }
 
         /* Light Mode: Keywords */
         body.light-mode #modal-keywords span {
@@ -293,6 +294,14 @@
                 <p id="modal-summary" class="leading-relaxed text-[#dddddd] whitespace-pre-wrap">
                     Summary goes here...
                 </p>
+
+                <!-- Related Posts Section -->
+                <div id="modal-related-section" class="mt-6 pt-4 border-t border-[#333] hidden transition-colors duration-300">
+                    <h5 class="text-xs text-gray-500 uppercase tracking-wide mb-2">Related Posts</h5>
+                    <div id="modal-related-posts" class="flex flex-col gap-1">
+                        <!-- Related links injected here -->
+                    </div>
+                </div>
             </div>
 
             <!-- Modal Footer -->
@@ -709,6 +718,52 @@
                     span.innerText = "#" + kw;
                     kwContainer.appendChild(span);
                 });
+            }
+
+            // --- Calculate 3-5 Most Relevant Nodes ---
+            const connectedEdges = edgesDataset.get({
+                filter: function (item) {
+                    return item.from === node.id || item.to === node.id;
+                }
+            });
+
+            // Sort edges by weight (width) descending to find strongest connections
+            connectedEdges.sort((a, b) => b.width - a.width);
+
+            // Get top 5 most relevant connections
+            const topEdges = connectedEdges.slice(0, 5);
+
+            const relatedContainer = document.getElementById('modal-related-posts');
+            const relatedSection = document.getElementById('modal-related-section');
+            
+            if (topEdges.length > 0) {
+                relatedSection.classList.remove('hidden');
+                relatedContainer.innerHTML = '';
+                
+                topEdges.forEach(edge => {
+                    const relatedId = edge.from === node.id ? edge.to : edge.from;
+                    const relatedNode = nodesDataset.get(relatedId);
+                    
+                    if (relatedNode) {
+                        const a = document.createElement('a');
+                        a.className = "block text-purple-400 hover:text-purple-300 text-sm mb-1 truncate cursor-pointer transition-colors";
+                        a.innerHTML = `→ ${relatedNode.label}`;
+                        a.onclick = (e) => {
+                            e.preventDefault();
+                            // Focus the graph on the new node
+                            network.focus(relatedNode.id, {
+                                scale: 1.2,
+                                animation: { duration: 800, easingFunction: "easeInOutQuad" }
+                            });
+                            network.selectNodes([relatedNode.id]);
+                            // Open modal for the clicked related node
+                            openModal(relatedNode);
+                        };
+                        relatedContainer.appendChild(a);
+                    }
+                });
+            } else {
+                relatedSection.classList.add('hidden');
             }
 
             modal.classList.remove('opacity-0', 'pointer-events-none');
