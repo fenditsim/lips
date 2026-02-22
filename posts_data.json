@@ -894,6 +894,24 @@
     ]
   },
   {
+    "id": "same-feedback-different-source",
+    "title": "Morris & Maes (2026)",
+    "subtitle": "Same Feedback, Different Source: How AI vs. Human Feedback Shapes Learner Engagement",
+    "summary": "Just finished reading a preprint \"Same Feedback, Different Source: How AI vs. Human Feedback Shapes Learner Engagement\" by Caitlin Morris and Professor Pattie Maes.\n\nIn this study, they are interested in whether learners invest more effort when they believe a human or AI is reviewing their work. \n\nIn their experiment, all participants receive an identical LLM-generated feedback (via Anthropic's Claude #Sonnet4). However, half of them were told it's from an AI ('AI condition'), while the other half were told that it comes from a human teaching assistant ('TA condition'; note that they were debriefed regarding the simulated human feedback). This design isolates 'the attribution effect' that prior comparative studies couldn't, as they always confounded source with content.\n\nThey find that learners in the TA condition spent significantly more time and effort on tasks than those in the AI condition despite receiving identical feedback. The gap also grew across later modules, suggesting that source framing shaped sustained engagement. \n\nApart from that, variables that predicted feedback ratings differed by condition: AI-attributed ratings were driven by prior trust in AI, while TA-attributed ratings were predicted by perceived genuineness. Interestingly, high ratings in the AI condition didn't translate to deeper engagement, suggesting that believing feedback is helpful isn't the same as being motivated to act on it.\n\nA few questions I wonder:\n1. Would some linguistic cues in the feedback itself (e.g., the response's length, specific phrasing patterns, sentence structures like \"it's not about X, it's about Y\" and even em-dashes) leak 'signals' about whether feedback is AI-generated, despite when source attribution is controlled? It's worth considering in future designs.\n\n2. What would happen with an 'AI-assisted' condition (where a TA approves AI-drafted feedback; 'human-in-the-loop')? Would the human element still motivate students' engagement, or get diluted by the AI's visible involvement? \n\nAnd would the ratio between human- and AI-generated content even matter, or would it be binary (AI-touched = AI-perceived) once AI was mentioned?\n\n3. How would attribution effects shift with repeated exposure over time? And how might these dynamics play out in contexts like flipped classrooms, where in-class and post-class activities create different forms of engagement?\n\nI appreciate researchers' note that this is a pilot study (N=25), and the authors are appropriately transparent about its limitations such as the deception design, single-session scope, and need for replication. \n\nMany thanks to the researchers for this thought-provoking work, and to Dr Philippa Hardman for sharing this study in her recent substack post (https://lnkd.in/ec8cWH2X).",
+    "sourceUrl": "https://doi.org/10.48550/arXiv.2602.11311",
+    "linkedinUrl": "https://www.linkedin.com/posts/fenditsim_same-feedback-with-different-source-activity-7430529386640064535-jLja",
+    "keywords": [
+      "AIinEducation",
+      "LearningDesign",
+      "EdTech",
+      "HumanAICollaboration",
+      "FeedbackDesign",
+      "LearnerEngagement",
+      "EducationalResearch",
+      "HybridLearning"
+    ]
+  },
+  {
     "id": "scan-framework",
     "title": "Tsim and Gutoreva (2025)",
     "subtitle": "SCAN: A Decision-Making Framework for Task Assignment with Generative AI",
