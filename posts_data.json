@@ -510,6 +510,24 @@
     ]
   },
   {
+    "id": "digital-twin-twin-2k-500",
+    "title": "Toubia et al. (2025)",
+    "subtitle": "Database Report: Twin-2K-500: A Data Set for Building Digital Twins of over 2,000 People Based on Their Answers to over 500 Questions",
+    "summary": "Just finished reading \"Database Report: Twin-2K-500: A Data Set for Building Digital Twins of over 2,000 People Based on Their Answers to over 500 Questions\" by Toubia et al..\n\nIt's a paper about digital twins that I'd been recommended, and have been fascinated with reading since.\n\nIn this study, the researchers introduced a large-scale, publicly available dataset covering 2,058 U.S. participants who each completed over 500 questions spanning demographics, personality, cognition, economic preferences, and replicated behavioral economics experiments across four survey waves.\n\nThe dataset replicates almost all known behavioural economics findings (except the base rate fallacy), and achieves a test-retest accuracy of 81.72%. Digital twins hit 71.72% accuracy at the individual level (87.67% of the test-retest ceiling). At the aggregate level, they replicate almost half of between- and within-subject effects. \n\nI appreciate authors' acknowledgement of LLM limitations as digital twins: LLMs are sensitive to prompt architecture, struggle to simulate representative human opinion distributions, and, as Grizzard et al. (2025) show, don't replicate the full range of moral judgement responses well either (https://lnkd.in/ecdSEgKa). \n\nThe three-part modular JSON architecture (Persona, Evaluation, Retest files) is a great entry point for those of us learning how to construct digital twins in practice. \n\nWhat's most thought-provoking, to me, is the question of whether digital twins should be 'improved' humans. Do digital twins serve for correcting cognitive biases, or faithful mirrors that also replicate human irrationality and knowledge gaps?\n\nMany thanks to Prof Olivier Toubia, George (Zhida) Gui, Tianyi Peng, Daniel J. Merlau, Leon Li, Haozhe (Tony) Chen for making this openly available. Looking forward to exploring the materials in their GitHub repository further!",
+    "sourceUrl": "https://doi.org/10.1287/mksc.2025.0262",
+    "linkedinUrl": "https://www.linkedin.com/posts/fenditsim_digitaltwins-behaviouralscience-llm-activity-7433028124906467328-yRxn/",
+    "keywords": [
+      "DigitalTwins",
+      "BehaviouralScience",
+      "LLM",
+      "AIResearch",
+      "MarketingScience",
+      "BehaviouralEconomics",
+      "OpenData",
+      "AIEthics"
+    ]
+  },
+  {
     "id": "digital-we",
     "title": "Riva (2025)",
     "subtitle": "Digital 'We': Human Sociality and Culture in the Era of Social Media and Artificial Intelligence",
