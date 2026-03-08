@@ -412,7 +412,7 @@
                 
                 // SMALLER SIZE CALCULATION
                 size: 12 + ((item.keywords ? item.keywords.length : 0) * 1.0),
-                shadow: true
+                shadow: false
             }));
 
             // B. Prepare Edges
@@ -447,7 +447,7 @@
             const options = {
                 nodes: { 
                     borderWidth: 2, 
-                    shadow: true,
+                    shadow: false,
                     // DEFAULT FONT SET HERE (Dark Mode Default + Arial)
                     font: { color: '#e5e5e5', size: 16, face: 'Arial' }
                 },
