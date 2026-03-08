@@ -31,6 +31,15 @@
             width: 100%;
             height: 100%;
             outline: none;
+            contain: strict; /* CSS containment: isolates repaints so the browser doesn't re-check the rest of the page on every frame */
+        }
+
+        /* Force Firefox to promote the canvas to its own GPU compositor layer.
+           Chrome/Safari do this automatically; Firefox needs an explicit hint.
+           backface-visibility:hidden is the most reliable cross-browser trigger. */
+        #network-graph canvas {
+            backface-visibility: hidden;
+            -moz-backface-visibility: hidden;
         }
         
         /* Force hide default vis.js tooltip to prevent "white box" */
@@ -569,7 +578,13 @@
         function startRotationAnimation() {
             if (animationFrameId) cancelAnimationFrame(animationFrameId);
             lastTime = performance.now();
-            const rotationSpeed = 0.05; 
+            const rotationSpeed = 0.05;
+
+            // FIX: Cache node IDs once here, outside the per-frame loop.
+            // Calling nodesDataset.getIds() every frame allocates a new array each tick,
+            // creating constant GC pressure. Firefox's tighter GC pauses make this
+            // visibly choppy in a way Chrome/Safari hide with larger heaps.
+            const nodeIds = nodesDataset.getIds();
             
             function animate(currentTime) {
                 animationFrameId = requestAnimationFrame(animate);
@@ -579,14 +594,18 @@
                     return;
                 }
 
-                const deltaTime = (currentTime - lastTime) / 1000;
+                // FIX: Cap deltaTime to a max of ~3 frames (50ms).
+                // If the browser tab is briefly backgrounded or the rAF scheduler
+                // hiccups, the next frame would get a huge delta and the graph
+                // would visibly "jump". Firefox's rAF scheduler is more sensitive
+                // to these pauses than Chrome/Safari.
+                const deltaTime = Math.min((currentTime - lastTime) / 1000, 0.05);
                 lastTime = currentTime;
                 const angle = rotationSpeed * deltaTime;
                 const cos = Math.cos(angle);
                 const sin = Math.sin(angle);
                 
                 const internalNodes = network.body.nodes;
-                const nodeIds = nodesDataset.getIds();
                 
                 for (let i = 0; i < nodeIds.length; i++) {
                     const nodeId = nodeIds[i];
