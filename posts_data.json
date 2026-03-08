@@ -309,6 +309,24 @@
     ]
   },
   {
+    "id": "baii-open-letter",
+    "title": "Sacher et al. (2026)",
+    "subtitle": "The missing discipline in AI: a call for behavioural science",
+    "summary": "Just finished reading \"The missing discipline in AI: a call for behavioural science\" by Sacher et al..\n\nIt is an open letter on Wellcome Open Research that articulates behavioural science is foundational infrastructure for responsible AI, not an optional add-on.\n\nIn this open letter, the authors \n(1) outline why behavioural science should be treated as a core component of responsible AI practice\n(2) describe where behavioural risks arise in practice and outline what good practice looks like, and \n(3) propose practical steps for funders, researchers, and developers to embed behavioural expertise and behavioural evaluation across the AI lifecycle.\n\nWhile reading this, I wonder: \n1. Why technical metrics fall short\nI agree with authors' highlight that much responsible AI practice evaluates what systems output are, instead of the behavioural mechanisms their outputs trigger such as automation bias, anthropomorphism, inappropriate trust calibration, social mimicry. To me, they're predictable consequences of repeated interaction at scale.\n\n2. Language, framing, and AI's perceived confidence\nThey are powerful levers: small differences in wording shape motivation, authority attribution, and emotional response. This connects to research on AI persuasiveness, and users treating AI as advisors or thinking partners - including the possibility of 'belief offloading' over time, Tris' Veracity Offloading, and MEL's Human Readiness.\n\n3. Personalisation risks\nSystems adapting to user behaviour can unintentionally reinforce existing beliefs or vulnerabilities, reminding me of the unethical Reddit personalisation experiments. \n\nI appreciate the authors' introduction of 'psychological competence': an AI system's ability to respond in emotionally appropriate, behaviourally responsible ways across repeated interactions. This reframe is useful, and more importantly, timely.\n\nThe cost argument, I suspect, is applicable here: embedding behavioural expertise early is cheaper than mitigating harm post-deployment in the long run. \n\nMany thanks to Dr Paul Sacher, Prof. Susan Michie, Prof. Oliver Hauser, Antoine Ferrère, Samuel Salzer, Amy Rodger, Jana Schaich Borg, Prof. Ganna Pogrebna, PhD, FHEA, and Prof. Susan A Murphy for this insightful piece. This is a crucial read for anyone working at the intersection of AI and human behaviour - including BehSci Meets AI, of course. \n\nLooking forward to seeing what the Behavioral AI Institute builds on this foundation.",
+    "sourceUrl": "https://wellcomeopenresearch.org/articles/11-152/v1",
+    "linkedinUrl": "https://www.linkedin.com/posts/fenditsim_the-missing-discipline-in-ai-a-call-for-activity-7434477686812528640-nquZ/",
+    "keywords": [
+      "BehaviouralScience",
+      "ResponsibleAI",
+      "AIEthics",
+      "HumanAIInteraction",
+      "AIGovernance",
+      "BehaviouralSafety",
+      "AIResearch",
+      "InterdisciplinaryAI"
+    ]
+  },
+  {
     "id": "behave-ai-2025",
     "title": "Behave (2025)",
     "subtitle": "The RenAIssance: Closing the gaps to unlock AI's full potential",
@@ -450,6 +468,24 @@
       "AIEthics",
       "DataScience",
       "HumanAIInteraction"
+    ]
+  },
+  {
+    "id": "cognitive-ai-framework",
+    "title": "Gonzalez & Heidari (2025)",
+    "subtitle": "A Cognitive Approach to Human–AI Complementarity in Dynamic Decision-Making",
+    "summary": "Just finished reading \"A Cognitive Approach to Human–AI Complementarity in Dynamic Decision-Making\" by Prof. Cleotilde Gonzalez and Hoda Heidari.\n\nIt's a paper I've been craving to read as it's related to building AI systems through the lens of cognitive psychology.\n\nIn this paper the researchers propose 'cognitive AI' - a computational approach that models human cognitive processes to create AI systems that learn and decide in human-aligned ways. It is a promising path to achieving true human–AI complementarity in dynamic decision-making environments: context with evolving conditions, high stakes, and time pressure.\n\nWhile reading, I wondered: \n1. Cognitive AI as a scaffold\nTo me, cognitive AI seems to scaffold rather than replace data-driven AI. By tracing human knowledge states, modelling mental models, and personalising decision support in real time, cognitive AI bridges the gap between opaque statistical systems and the interpretable, adaptive collaboration humans actually need. This aligns with work like Marianna B. Ganapini and her colleagues' SOFAI (https://lnkd.in/eeYebmrG) as well as Sam Johnson and his colleagues' on building 'wise' machine (https://lnkd.in/ejj_Jhwy).\n\n2. The human–AI teaming problem\nThe paper frames human–AI complementarity as a 'functional' integration instead of an anthropomorphic one. Thus, teammates here means shared goals and coordinated roles instead of emotional resemblance. This distinction is critical, and it connects to questions I've been thinking: \n- Who determines role assignment? \n- How does trust evolve over time? \n- What happens to humans cognitively when they repeatedly defer to AI?\n\n3. Overreliance and cognitive skill decay\nI appreciate their concerns on the possibility that human decision-makers could become overly dependent on cognitive AI, leading to a decline in critical thinking and problem-solving skills, leading to upskilling and deskilling (SCAN framework that Alina and I developed capture both; https://lnkd.in/eanDnGbm). Some friction might be necessary to keep to ensure decision-makers are cognitively engaged. \n\nOverall, I enjoyed reading this paper. It leaves many questions open such as knowledge tracing, choice architecture adaptation, shared mental models (fascinating concept!), human flourishing (reminding of works of MEL's on Human Readiness), and the long-term societal implications of deploying cognitive AI at scale.\n\nMany thanks to Prof. Cleotilde Gonzalez and Hoda Heidari for this thought-provoking work. Highly recommended this for anyone at the intersection of cognitive science, AI systems design, and human factors.",
+    "sourceUrl": "https://doi.org/10.1038/s44159-025-00499-x",
+    "linkedinUrl": "https://www.linkedin.com/posts/fenditsim_humanaicomplementarity-cognitiveai-dynamicdecisionmaking-activity-7435564856470036480-Ki6n/",
+    "keywords": [
+      "HumanAIComplementarity",
+      "CognitiveAI",
+      "DynamicDecisionMaking",
+      "HumanAITeaming",
+      "CognitivePsychology",
+      "AIAlignment",
+      "BehaviouralScience",
+      "ResponsibleAI"
     ]
   },
   {
@@ -616,6 +652,24 @@
       "AcademicResearch",
       "AIinResearch",
       "ScientificInnovation"
+    ]
+  },
+  {
+    "id": "flipped-learning-blooms-taxonomy-genai",
+    "title": "Kwan et al. (2025)",
+    "subtitle": "Reimagining Flipped Learning via Bloom’s Taxonomy and Student–Teacher–GenAI Interactions",
+    "summary": "Just finished reading \"Reimagining Flipped Learning via Bloom's Taxonomy and Student–Teacher–GenAI Interactions\" by Kwan et al..\n\nIn this paper, the researchers propose the Flipped Pedagogy and GenAI (FPGA) model, which maps via Bloom's taxonomy and GenAI's role across pre-class, in-class, and post-class phases of the flipped learning. For instance: \n\nPre-class: lower-order cognitive tasks (remembering, understanding)\nIn-class: higher-order tasks (application, analysis)\nPost-class: higher-order tasks (evaluation, creation)\n\nGenAI, as they suggest, steps in as both a learning scaffold for students, and a teaching enhancement tool for teachers.\n\nWhat I found intriguing is the triadic interaction the model centers on (student–teacher, student–GenAI, and teacher–GenAI), and how each dynamic can enrich educational experiences when designed intentionally. For instance, GenAI can work as a 'mini TA' by being delegated with repetitive, lower-order tasks (e.g. quiz generation, grading, content curation), so that teachers can redirect energy toward higher-impact, relational teaching. This is a great example of the Complement task in the SCAN framework that Alina and I developed (https://lnkd.in/eanDnGbm).\n\nWhile reading this, I wonder: \n1. In-class note-taking with GenAI\nThe paper proposes GenAI for in-class note-taking, but recent research (e.g., on AI-assisted note-taking and cognitive engagement) suggests that offloading this task reduces cognitive load in ways that may actually hinder deeper encoding and memory retrieval. \n\n2. Feedback quality gap\nAs for post-class activities, I am concerned about delegating feedback to GenAI fully. A growing body of work comparing teacher vs. AI feedback suggests that human feedback often produces more meaningful revision and engagement than AI ones.\n\n3. Socio-cognitive approach instead?\nOne of the most distinctive features in the flipped learning is its emphasis on collaborative, social in-class learning. Thus, a socio-cognitive, rather than a purely cognitive, approach, to me, seems more appropriate, for instance, considering how GenAI can facilitate peer interaction, and more importantly, community-building and sense of belonging.\n\nOverall, this framework is a great reference point for educators considering GenAI integration in flipped classrooms. \n\nMany thanks to Paul Kwan, Rajan Kadel, Tayab Memon, and Saad Hashmi, Ph.D. for this insightful work.",
+    "sourceUrl": "https://doi.org/10.3390/educsci15040465",
+    "linkedinUrl": "https://www.linkedin.com/posts/fenditsim_flipped-learning-with-blooms-taxonomy-and-activity-7434115301627199489-SwS7/",
+    "keywords": [
+      "FlippedLearning",
+      "GenerativeAI",
+      "EdTech",
+      "HigherEducation",
+      "BloomsTaxonomy",
+      "AIinEducation",
+      "PedagogicalInnovation",
+      "LearningDesign"
     ]
   },
   {
