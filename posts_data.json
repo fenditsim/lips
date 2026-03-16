@@ -546,6 +546,24 @@
     ]
   },
   {
+    "id": "complementary-intelligence",
+    "title": "Gonzalez & Malloy (2026)",
+    "subtitle": "Toward Complementary Intelligence: Integrating Cognitive and Machine AI",
+    "summary": "Just finished reading \"Toward Complementary Intelligence: Integrating Cognitive and Machine AI\" by Prof. Cleotilde Gonzalez and Tailia Malloy. \n\nIt's my favourite read since sharing Gonzalez & Heidari's \"A Cognitive Approach to Human–AI Complementarity in Dynamic Decision-Making\" last week.\n\nIn this article, they propose an integrative framework connecting:\n- Cognitive AI: grounded in psychology, cognitive science, and neuroscience to model how humans perceive, learn, and decide\n- Machine AI: extracting statistical regularities from large datasets for scalable performance\n\nThey suggest four concrete integration routes: embedding integration, instruction encoding, training agents, and coevolving agents.\n\nI appreciate their reframe of intelligence as 'complementarity' like joint human-machine reasoning, learning, and adaptation - reminding me of \"Symbiotic Division of Cognitive Labour\" discussion in Massimo Chiriatti and his colleague's 'system 0'. \n\nWhile reading this, I wonder:\n1. Training agents route\nUsing cognitive models to generate synthetic data opens up paths in behavioural science and AI alignment. Theory-grounded synthetic data is promising especially where human data is scarce, sensitive, or biased.\n\nIn this route, I wonder whether some interesting techniques from cognitive neuroscience can be another potential pathway forward (related to the work that Alina, Tris and I have been working on).\n\n2. Coevolving agents route\nThis is where cognitive and machine AI continuously adapt to each other and the human. The relationship is bidirectional, and I suppose, self-sustaining in the long run. \n\nI wonder if some frictions are required in practice? Suppose the task is challenging 'enough', it, indeed, pushes humans toward flow state, metacognition, and genuine skill development, rather than passive cognitive offloading (or Tris' veracity offloading), and thus keeps both systems growing.\n\n3. How would our mental model in human-AI teaming shift?\nThis is a question I kept returning to as complementary intelligence matured. Trust, overreliance, cognitive offloading, skill atrophy, human-in-the-loop (who's in the loop now? Which one should be in control?) - these are, of course, central design considerations now and in the future.\n\nMoving forward: I see an interesting space where SCAN framework (developed by Alina and myself on mapping three human-AI decision making modes across task difficulties) could integrate with their framework. SCAN captures the systematic task-level structure that shapes mental models of the task in human-AI teaming.\n\nMany thanks to both researchers for such a thought-provoking contribution, and more importantly, to Prof. Cleotilde Gonzalez for sharing this and other paper.\n\nLooking forward to reading more in this direction!!",
+    "sourceUrl": "https://doi.org/10.1177/09637214251407571",
+    "linkedinUrl": "https://www.linkedin.com/posts/fenditsim_humanai-complementaryintelligence-cognitiveai-activity-7437376785249435648-HS_N/",
+    "keywords": [
+      "HumanAI",
+      "ComplementaryIntelligence",
+      "CognitiveAI",
+      "DecisionMaking",
+      "HumanAITeaming",
+      "BehaviouralScience",
+      "AIAlignment",
+      "FutureOfWork"
+    ]
+  },
+  {
     "id": "digital-twin-twin-2k-500",
     "title": "Toubia et al. (2025)",
     "subtitle": "Database Report: Twin-2K-500: A Data Set for Building Digital Twins of over 2,000 People Based on Their Answers to over 500 Questions",
