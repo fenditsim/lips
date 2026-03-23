@@ -564,6 +564,24 @@
     ]
   },
   {
+    "id": "deskilling-ai-assisted-design",
+    "title": "Shukla et al. (2025)",
+    "subtitle": "De-skilling, Cognitive Offloading, and Misplaced Responsibilities: Potential Ironies of AI-Assisted Design",
+    "summary": "Recently finished reading \"De-skilling, Cognitive Offloading, and Misplaced Responsibilities: Potential Ironies of AI-Assisted Design\" by Shukla et al.\n\nIn this paper, the researchers analysed 120+ UX practitioners discussions across Reddit and design blogs to understand how GenAI is reshaping design work. \n\nThey find optimism about AI reducing repetitive work, albeit real anxiety about overreliance, cognitive offloading, and erosion of foundational design skills. \n\nWhile reading this, I wonder: \n1. Deskilling\nBainbridge's \"Ironies of Automation\" is relevant (reminding me of Ganna's newsletter). As roles shift from producer to supervisor when completing a task, skill erosion happens gradually. This explains well with the SCAN framework that Alina and I developed: over time, task identification shifts from Complement (Collaboration) to Aid (Augmentation), leading to deskilling.\n\n2. The \"Substitution Myth\"\nThe persistent assumption that AI can simply slot into human roles without reshaping the work itself is, to me, fascinating. As work itself changes, so do responsibilities, and then roles (reminding me of Dr. Upol Ehsan, PhD and his colleagues' intriguing work on the future of work(er)). \n\nWith that, though, how does the human role evolve around GenAI at work? How do shared mental models in human-AI teaming look like?\n\n3. Creativity\nMichelle Vaccaro and her colleagues' meta-analysis shows that task type matters in human-AI augmentation: gains in creation tasks, not decision tasks. This paper, however, seems to raise an intriguing concern: if AI accelerates or bypasses early ideation stages, designers lose incubation time. \n\nAren't those messy, non-linear moments where novel ideas emerge all of a sudden? Are homogenous design outputs and reduced divergent thinking thus real risks (reminding me of Anil Doshi and Oliver Hauser's work)?\n\n4. Monitoring AI output\nIt requires expertise. If AI is, however, replacing the very processes through which expertise is built usually, where does the next generation of expert evaluators come from?\n\nOverall, many of the challenges identified here sounds like behavioural problems to me. They require behavioural solutions. \n\nI'd love to see how this line of research extended to other high-stakes and heavily regulated domains (radiology, finance, law), and across organisational hierarchy. For instance:\n- Are senior professionals less prone to deskilling than junior ones?\n- How does task-specific knowledge buffer against over-reliance?\n\nFollow-up research on this will, I suspect, converge more with the future of worker, rather than the work itself (citing Ehsan et al.'s framing).\n\nMany thanks to Prakash Shukla, Jasmine B., Sean Levy, Max Kowalski, Ali Baigelenov, and Paul Parsons for this contribution. Looking forward to where the follow-up empirical work leads.",
+    "sourceUrl": "https://doi.org/10.1145/3706599.3719931",
+    "linkedinUrl": "https://www.linkedin.com/posts/fenditsim_potential-ironies-of-ai-assisted-design-activity-7439940731118518272-Rovz/",
+    "keywords": [
+      "HumanAIInteraction",
+      "UXDesign",
+      "AILiteracy",
+      "CognitiveScience",
+      "FutureOfWork",
+      "GenAI",
+      "HCI",
+      "BehaviouralScience"
+    ]
+  },
+  {
     "id": "digital-twin-twin-2k-500",
     "title": "Toubia et al. (2025)",
     "subtitle": "Database Report: Twin-2K-500: A Data Set for Building Digital Twins of over 2,000 People Based on Their Answers to over 500 Questions",
