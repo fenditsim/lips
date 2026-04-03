@@ -822,6 +822,24 @@
     ]
   },
   {
+    "id": "human-ai-research-need-to-be-embedded-in-psychological-theory",
+    "title": "Bigman et al. (2026)",
+    "subtitle": "Human–AI interaction research needs to be embedded in psychological theory",
+    "summary": "Just finished reading \"Human–AI interaction research needs to be embedded in psychological theory\" by Bigman et al..\n\nIn this comment, they argue that research should meaningfully rely on psychological theory to explain, predict and anticipate human–AI interaction, ensuring cumulative insights that outlast the latest model release.\n\nI appreciate their argument that psychological theories clarify which constructs matter, how they relate, and under what conditions. These make explanation, prediction, and cumulative science possible. \n\nWhile reading this, I wonder:\n\n1. Theory complementarity\nI've shared a few related works before, including Prof. Cleotilde Gonzalez and Tailia Malloy's \"Complementary Intelligence\": showing how cognitive science and AI systems are mutually reinforcing. LLMs can encode instructions into structured cognitive model inputs, while cognitive models can supply synthetic, human-grounded data to train AI. \n\n2. Emerging research areas\nI think of a few: how trust towards AI and AI's trustworthiness are learned and updated (see Jiang et al., 2025; Greevink et al., 2024), given LLMs' human-like interactional features. The same applies to AI persuasiveness, AI deception, groupthink in AI-assisted group decisions, and AI as \"cognitive extension\".\n\n3. Publication pressure\nThey flag a real tension: the speed at which AI advances makes \"novel phenomena\" irresistible to publish, but speed undermines theoretical grounding. \n\nIt's not surprising to see that AI-assisted literature reviews now compress days into minutes. Powerful it is. Yet, it implicitly sets an expectation that research should move just as fast. That gets amplifed with herding behaviour, fatigue, and mediocre outputs.\n\nI appreciate the three 'anchors' they proposed: \n- Coherence (Does this connect to existing theory?)\n- Distinctiveness (How is human-AI interaction genuinely different from human-human interaction?)\n- Generalizability (Will this insight outlast the current model?)\n\nRe generalizability: some areas will, I speculate, remain relevant regardless of how AI evolves, such as attention, learning, memory, flow states, and social dynamics among humans when AI is present (a tool, an agent, or neither). \n\nThe challenge, then, is building the collective infrastructure: theoretically grounded designs, and collecting great quality of human-generated data (especially as bots contaminate online experiments, which in turn, I suspect, making a convincing case for more laboratory and field experiments).\n\nMany thanks to Yochanan Bigman, Roman Briker and Markus Langer for this piece. I end with a sentence from their work: \n\n\"Whereas phenomenological insights on technologies might be outdated with the next version update, human psychology changes more gradually.\"",
+    "sourceUrl": "https://doi.org/10.1038/s44159-026-00551-4",
+    "linkedinUrl": "https://www.linkedin.com/posts/fenditsim_humanaiinteraction-psychologicaltheory-airesearch-activity-7444247056044556288-HKCh/",
+    "keywords": [
+      "HumanAIInteraction",
+      "PsychologicalTheory",
+      "AIResearch",
+      "CognitiveScience",
+      "BehaviouralScience",
+      "AIEthics",
+      "HumanComputerInteraction",
+      "ResearchMethodology"
+    ]
+  },
+  {
     "id": "human-generated-datasets-for-ai-safety-fine-tuning",
     "title": "Mustafa and Wu (2025)",
     "subtitle": "Human-Generated Datasets for AI safety Fine-Tuning",
