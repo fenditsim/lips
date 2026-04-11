@@ -745,6 +745,24 @@
     ]
   },
   {
+    "id": "genai-mko-medical-education",
+    "title": "Tran et al. (2025)",
+    "subtitle": "Generative artificial intelligence: the 'more knowledgeable other' in a social constructivist framework of medical education",
+    "summary": "Recently finished reading \"Generative artificial intelligence: the 'more knowledgeable other' in a social constructivist framework of medical education\" by Tran et al..\n\nIn this comment, the authors propose that GenAI can fulfil the role of the 'more knowledgeable other' (MKO) within a social constructivist framework in medical education: scaffolding learning, augmenting the zone of proximal development (ZPD), and enabling human-AI co-construction of knowledge. \n\nWhile reading, I wonder: \n1. LLMs and communities of practice\nSome argue LLMs cannot replicate the interpersonal, experiential nature of learning. Valid it is. Yet, I suspect, it depends on where they should be augmented with, for instance, simulating role-play, act as sparring partners, and create challenging scenarios. \n\nFrameworks like SCAN (Alina and I developed) or AI Assessment Scale (AIAS) could help map out where AI use is appropriate, given the task type and associated trade-offs.\n\n2. Role assignment, choice and responsibilities\nWhat roles are we assigning to GenAI - a tool, a partner, or MKO? I suspect it is context-dependent: the role emerges from the situation. This matters, as it determines the choices and responsibilities that follow.\n\n3. Learner's Internalisation\nThe scaffolding provided by an MKO is what gets internalised over time - this is Vygotsky's insight at its core. With GenAI as MKO, the critical issue is directing learners into the ZPD, keeping them aware of its boundary, and preventing offloading cognitive tasks entirely (and thus missing out learning that comes from productive struggle).\n\n4. GenAI's Sycophancy\nI think GenAI's sycophantic nature is underexplored in this paper. If learners arrived with task-specific but partially incorrect knowledge, would AI risk reinforcing those gaps?\n\nA potential solution would be both behavioural and cognitive: prompting LLMs to act as \"thinking partners\" (flagging incoherence without auto-correcting, like a red underline on a typo) or adopting the Socratic method.\n\nMany thanks to Michael Tran, Chinthaka Balasooriya, Carolyn Semmler and Joel Rhee for this insightful piece.",
+    "sourceUrl": "https://www.nature.com/articles/s41746-025-01823-8",
+    "linkedinUrl": "https://www.linkedin.com/posts/fenditsim_genai-as-more-knowledgeable-other-in-medical-activity-7448233317042237440--Xo4/",
+    "keywords": [
+      "MedicalEducation",
+      "GenerativeAI",
+      "SocialConstructivism",
+      "AIinEducation",
+      "ZoneOfProximalDevelopment",
+      "PedagogyDesign",
+      "HumanAICollaboration",
+      "HealthProfessionsEducation"
+    ]
+  },
+  {
     "id": "genai-product-safety-standard",
     "title": "Department of Education (2026)",
     "subtitle": "Guidance for Generative AI: product safety standards",
@@ -801,6 +819,24 @@
       "CreativeTasks",
       "SystematicReview",
       "FutureOfWork"
+    ]
+  },
+  {
+    "id": "haic-benchmark",
+    "title": "Aristidou (2026)",
+    "subtitle": "AI benchmarks are broken. Here's what we need instead.",
+    "summary": "Just finished reading MIT Technology Review's \"AI benchmarks are broken. Here's what we need instead.\" by Prof. Angela Aristidou from UCL School of Management.\n\nIt confirms some thoughts I've been wondering for a while since my recent exploration on (Gen)AI benchmarking.\n\nIn this article, Aristidou argued that AI is almost never used the way it is benchmarked. Current evaluations, as she mentioned, test performance in isolation. Real-world AI, however, operates within messy human workflows, multidisciplinary teams, and evolving organisational contexts. \n\nI suspect this has a trust dimension that deserves more attention. Investors and clients might rely on benchmark scores as 'a proxy' for credibility. When those scores repeatedly fail to translate into real-world value, organisational and public confidence erodes. How does one build sustainable trust on a foundation that keeps shifting?\n\nShe proposed HAIC benchmarks (Human–AI, Context-Specific Evaluation) - shifting the unit of analysis from individual task performance to team and workflow performance, and expands the time horizon from one-off tests to longitudinal evaluation. It looks at group-level dynamics, and I suspect some social psychology factors like groupthink and power asymmetries can be considered.\n\nWhile reading this, I wonder:\n\n1. Benchmarking with behavioural criteria?\nBehavioural signals like conversation length, user deferral rates, sycophancy patterns, and error detectability could, of course, tell us far more than point-in-time accuracy scores (reminding me of Prof. Ganna Pogrebna, PhD, FHEA's new book \"The Missing B in AI\").\n\n\n2. Standardised HAIC benchmark?\nIf every organisation develops its own HAIC benchmark as she proposes, how do clients trust it? In-house benchmarks are powerful, but their credibility definitely needs external validation structures.\n\nTo me, her HAIC framework connects to Dr Paul Sacher from Behavioral AI Institute and his colleagues' recent open letter on introducing \"psychological competence\" in AI systems: an AI system's ability to respond in emotionally appropriate, behaviourally responsible ways across repeated interactions.\n\nFor those working on AI evaluation, trust, or responsible deployment, give this article a read. \n\nMany thanks to Prof. Aristidou for this insightful piece, and for sharing it!",
+    "sourceUrl": "https://www.technologyreview.com/2026/03/31/1134833/ai-benchmarks-are-broken-heres-what-we-need-instead/",
+    "linkedinUrl": "https://www.linkedin.com/posts/fenditsim_aibenchmarking-responsibleai-humanaicollaboration-activity-7446783755559677952-rsUY/",
+    "keywords": [
+      "AIBenchmarking",
+      "ResponsibleAI",
+      "HumanAICollaboration",
+      "AIEvaluation",
+      "TrustInAI",
+      "AIDeployment",
+      "BehaviouralScience",
+      "AIGovernance"
     ]
   },
   {
