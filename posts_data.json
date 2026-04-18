@@ -108,6 +108,24 @@
     ]
   },
   {
+    "id": "ai-brain-fry",
+    "title": "Bedard et al. (2026)",
+    "subtitle": "When Using AI Leads to 'Brain Fry'",
+    "summary": "Just finished reading Harvard Business Review article \"When Using AI Leads to 'Brain Fry'\" by Bedard et al..\n\nThis article reminds me of another one called \"AI does not reduce work but intensifies it\".\n\nIn this article, the authors introduce a concept called \"AI brain fry\": mental fatigue from excessive use or oversight of AI tools beyond one's cognitive capacity. \n\nIn their study of 1,488 full-time US-based workers, participants described a \"buzzing\" feeling, mental fog, slower decision-making, and headaches. Meanwhile, the business costs are: 33% more decision fatigue, 39% more major errors, and a 39% rise in intent to quit among those experiencing it.\n\nThe study finds that when AI replaces repetitive tasks, burnout decreases, but mental fatigue does not. The distinction matters: burnout is emotional exhaustion while brain fry is cognitive. AI can ease the former while intensifying the latter.\n\nWorkers aren't freed up for meaningful tasks. Instead, they're left with juggling more cognitively demanding work while simultaneously monitoring AI outputs (a mode-switching tax that drains attention faster and accelerates fatigue). \n\nAfter reading this, I wonder:\n\n1. What does the human in the loop mean in this context?\nAre we, truly, exercising judgment, or are we button-clicking outputs at speed, which erodes our epistemic standards quietly in the process?\n\n2. What skills are being developed, and which ones are being lost?\nIf junior professionals are offloading reasoning to AI before they've built the metacognitive foundation to evaluate its outputs, how do their professional expertise form in the long run?\n\n3. What are the long-term behavioural consequences?\nWhen workers are chronically overwhelmed, it is not surprising that they default to \"the path of least resistance\", like offloading cognitive tasks, accepting mediocre outputs, and surrendering epistemic judgement (reminding me of Tris' Veracity Offloading). \n\nOver time, this eliminates divergent thinking, disrupts professional development, and questions what it means to grow expertise at all. \n\nThe solution, I suspect, is more intentional design of tools, workflows (SCAN framework that Alina and I developed), team norms, and organisational messaging, with human cognition and wellbeing as the North star (reminding me of MEL's Cognitive Readiness).\n\nA longitudinal study tracking these patterns over time would be, of course, invaluable. Also, behavioural frameworks like COM-B are essential for designing interventions that actually change how people work with AI in a sustainable fashion.\n\nMany thanks to Julie Bedard, Matthew Kropp, Megan H., Olivia Karaman, Jason Hawes and Gabriella Rosen Kellerman, MD for this insightful work.",
+    "sourceUrl": "https://hbr.org/2026/03/when-using-ai-leads-to-brain-fry",
+    "linkedinUrl": "https://www.linkedin.com/posts/fenditsim_futureofwork-aiatwork-cognitiveload-activity-7450407668889866240-nEOV/",
+    "keywords": [
+      "FutureOfWork",
+      "AIAtWork",
+      "CognitiveLoad",
+      "HumanInTheLoop",
+      "BehaviouralScience",
+      "EmployeeWellbeing",
+      "AILeadership",
+      "HumanCapital"
+    ]
+  },
+  {
     "id": "ai-cognitive-ease-cost",
     "title": "Stadler et al. (2024)",
     "subtitle": "Cognitive ease at a cost: LLMs reduce mental effort but compromise depth in student scientific inquiry",
@@ -1035,6 +1053,24 @@
       "LLM",
       "DataScience",
       "ExperimentalDesign"
+    ]
+  },
+  {
+    "id": "preserving-clinical-skills-in-the-age-of-ai",
+    "title": "Berzin & Topol (2025)",
+    "subtitle": "Preserving clinical skills in the age of AI assistance",
+    "summary": "Recently finished reading \"Preserving clinical skills in the age of AI assistance\" by Tyler Berzin, MD, FASGE, FACG and Eric Topol, MD.\n\nIn this perspective, they look at how clinicians preserve core clinical skills in an era of algorithmic assistance.\n\nThe article examines three risks as AI embeds itself into clinical practice: \n- Deskilling: losing skills due to lack of practice\n- Mis-skilling: reinforcing with AI's biases and errors\n- Never-skilling: failing to develop competence in the first place\n\nA Polish study the authors cited illustrates the first one: experienced colonoscopists who relied on AI polyp detection for three months saw their unaided performance drop below their own pre-AI baseline when the system was switched off. \n\nYet, what's most thought-provoking is why some endoscopists maintained performance while others didn't. I suspect it is due to metacognition: the capacity for real-time evaluation, reflection, and deliberate learning. This, of course, connects to the SCAN framework Alina and I developed, which proposes that effective human-AI task boundaries aren't fixed; they shift with a learner's self awareness and task-specific knowledge, functioning as a self-correcting mechanism against both automation bias and automation neglect.\n\nBerzin and Topol draw a parallel with aviation and nuclear industries. To me, this show that deskilling isn't unique to medicine. What's encouraging, to me, is that those industries responded: deliberate \"AI-off\" intervals and productive struggle. For clinical reasoning development, especially in training contexts, triggering productive struggle seems to be one of the most effective long-term strategies.\n\nThe never-skilling issue is quite concerning. Rather than viewing it purely as a risk, I see it as a design opportunity: \n- How do we build clinical reasoning development from the ground up in an AI-native environment? \n- How do we alert learners early, so they develop judgment before it's eroded?\n\nThis connects to a recurring question I've had conversations with Tris and Roop lately: what is the most valuable skill for knowledge workers in an AI-saturated world? I suspect one of them is the epistemic judgment: the capacity to evaluate the quality and trustworthiness of a knowledge source. Fostering it will, I guess, require rethinking how expertise is formed, not just preserved.\n\nMany thanks to the authors for this important piece, and to Susan for sharing it with me! 🙏",
+    "sourceUrl": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(25)02075-6/abstract",
+    "linkedinUrl": "https://www.linkedin.com/posts/fenditsim_medicaleducation-clinicalai-aiinhealthcare-activity-7449682856643198976-yWl-/",
+    "keywords": [
+      "MedicalEducation",
+      "ClinicalAI",
+      "AIinHealthcare",
+      "ClinicalReasoning",
+      "MedEd",
+      "HealthcareInnovation",
+      "Deskilling",
+      "HumanAICollaboration"
     ]
   },
   {
