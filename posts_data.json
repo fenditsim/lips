@@ -1074,6 +1074,42 @@
     ]
   },
   {
+    "id": "promoting-clinical-expertise-in-ai-age",
+    "title": "Keren, Desai & West (2026)",
+    "subtitle": "Promoting Clinical Expertise in the Age of AI: No Struggle, No Mastery",
+    "summary": "Recently finished reading \"Promoting Clinical Expertise in the Age of AI: No Struggle, No Mastery\" by Keren, Desai and West.\n\nIn this article, the authors discuss essential requirements for the development of mastery in clinical training (e.g., effortful engagement with authentic problems, accumulated experience over time, and metacognitive awareness), as well as intentional design and implementation strategies in the GenAI era.\n\nThe authors frame three AI-induced risks to clinical skill development: deskilling (losing what you had), mis-skilling (learning the wrong things), and most importantly, never-skilling: failing to acquire cognitive foundations as AI delivered the answer before the productive struggle could happen.\n\nI am concerned about neverskilling among all three. Mastery, whether in clinical reasoning or any professional domain, cannot be achieved without effortful engagement. \n\nThe underlying issue is, I suspect, behavioural. \n\nLet us follow this thread a bit further. When the cost of getting an output via AI approaches zero, and reasoning through a problem yourself is cognitively expensive, it is not surprising to see that learners will naturally choose \"the path of least resistance\".\n\nThe solution, as I am happy to suggest from behavioural standpoint, is to redesign the cost structure. Perhaps making the AI interaction effortful enough to force procactive engagement, then gradually lowering the scaffold as competence grows?\n\n(\"The foot-in-the-door principle, aye?\" whispers Palpatine Fendi.)\n\nI appreciate several compelling design strategies they offer, such as commit-then-compare protocols, AI as Socratic coach, AI-free zones, and staged AI access tied to demonstrated competency. \n\nI like commit-then-compare and AI as Socratic coach most. The former requires a trainee to commit to a clinical reasoning path before AI reveals its suggestion. This mirrors how we already train in any professional domain: present before orders are written. \n\nIn the latter, rather than providing answers, AI asks \"What's the most dangerous diagnosis you need to rule out?\" - harnessing the learner's own judgment rather than replacing it.\n\nMany thanks to Dr. Ron Keren, Prof. Bimal Desai MD, MBI, FAAP, FAMIA, and Prof. Daniel West for this insightful piece, and to Prof. Nicole Dubosh for sharing it.",
+    "sourceUrl": "https://jamanetwork.com/journals/jama/article-abstract/2848742",
+    "linkedinUrl": "https://www.linkedin.com/feed/update/urn:li:activity:7459467396064456704/",
+    "keywords": [
+      "MedicalEducation",
+      "ClinicalReasoning",
+      "AIinHealthcare",
+      "MedEd",
+      "ArtificialIntelligence",
+      "FutureOfLearning",
+      "ProfessionalDevelopment",
+      "Mastery"
+    ]
+  },
+  {
+    "id": "psychological-debt-ai-adoption",
+    "title": "Champniss (2026)",
+    "subtitle": "The Psychological Costs of Adopting AI",
+    "summary": "Just finished reading a Harvard Business Review article \"The Psychological Costs of Adopting AI\" by Guy Champniss, Ph.D. MBA.\n\nIn this article, Champniss introduces the concept of \"Psychological Debt\" in AI Adoption: a cluster of six negative effects that silently erode how employees engage with AI at work including: \n- Cognitive offloading \n- Reduced autonomy\n- Diminished competence\n- Weakened social connection\n- Credibility loss\n- Identity threat\n\nWhat I found intriguing was the finding: \"higher psychological debt was strongly associated with lower AI usage, less sophisticated application, and greater avoidance — even when employees acknowledged AI's value.\" This gap between knowing and doing is, to me, a classic behavioural problem. Before designing interventions, we need to understand what drives this association in the first place.\n\nWhile reading this, I wondered:\n1. Neverskilling\nEarly-career workers reported significantly higher psychological debt than senior colleagues, suggesting AI may be undermining skill development precisely when it matters most (\"never-skilling\"). The long-term organisational cost of this (reminding me of Tris' \"Veracity Offloading\") could be significant, and is still largely underexplored.\n\n2. AI adoption is a behavioural problem\nWhat cannot be resolved psychologically, I think, cannot be resolved with a technical solution. Framing adoption purely around productivity and efficiency misses the human constraint entirely. Effective adoption demands a fundamentally different framing - one that starts with understanding human motivation rather than optimising workflows (reminding me of recent conversations with Jason on AI Adoption). This aligns closely with deliberate friction or frameworks like SCAN (which Alina and I developed) for deciding when to automate, augment, or delegate to AI - tailored to both the task and the individual.\n\n3. Human baseline remains \"non-negotiable\"\nA recent study (https://lnkd.in/egpM9VyN) from Harvard Medical School and Beth Israel Deaconess Medical Center found that an LLM outperformed physicians on several clinical tasks. Yet, the researchers were clear: \"Humans should be the ultimate baseline when it comes to evaluating performance and safety.\" \n\nThis, to me, captures something important about identity and competency debt in high-stakes professions. AI can sharpen a clinician's precision and free up their expertise. However, it cannot replace the clinical reasoning that decades of practice builds. The same logic applies across organisations: augment, AI should; substitute humans, it does not.\n\nMany thanks to Guy Champniss, Ph.D. MBA for this thought-provoking piece.",
+    "sourceUrl": "https://hbr.org/2026/05/the-psychological-costs-of-adopting-ai",
+    "linkedinUrl": "https://www.linkedin.com/feed/update/urn:li:activity:7461715637229473792/",
+    "keywords": [
+      "AIAdoption",
+      "FutureOfWork",
+      "BehaviouralScience",
+      "OrganisationalPsychology",
+      "HumanAICollaboration",
+      "ChangeManagement",
+      "WorkplaceWellbeing",
+      "DigitalTransformation"
+    ]
+  },
+  {
     "id": "psychometric-framework",
     "title": "Serapio-García et al. (2025)",
     "subtitle": "A psychometric framework for evaluating and shaping personality traits in large language models",
