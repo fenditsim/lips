@@ -72,6 +72,24 @@
     ]
   },
   {
+    "id": "ai-as-part-of-self",
+    "title": "Gutoreva et al. (2026)",
+    "subtitle": "AI as Part of Self: Extending the Mind Requires Cognitive Co-Regulation",
+    "summary": "Thrilled to share our latest work \"AI as Part of Self: Extending the Mind Requires Cognitive Co-Regulation\" with my brilliant collaborators Alina and Tris - now available on ArXiv!\n\nContemporary AI increasingly participates in attention allocation, reasoning, synthesis, and decision-making. It shapes the very cognitive processes through how we form beliefs, what decisions we make, and more importantly, how we constitute our sense of self. When AI operates prior to conscious deliberation (what we frame through System 0 cognition theory - works of Massimo Chiriatti, Professor Marianna B. Ganapini, and their colleagues), conventional oversight simply cannot reach it. \n\nIn this position paper, we propose that humans and AI occupy complementary epistemic roles under mutual constraint - \"a symbiotic cognitive unit\" whose co-regulation, not the external control of either party alone, is the proper locus of safety and alignment.\n\nWe also map the risks of unstructured delegation, transfer of epistemic authority, and oracle-style centralisation of knowledge. The paper concludes with concrete design principles for cognitive co-regulation, addressed directly to ML engineers and governance bodies.\n\nWorking with Alina and Tris - two exceptional cognitive scientists - has been a genuine honour! Our constant conversations pushed my thinking in ways I hadn't anticipated, and I've come away with a much richer understanding of human cognition.\n\n(\"Still have a long way to go, indeed!\")\n\nIn fact, this work answers one of the questions I've been sitting with since I started exploring human–AI interactions: do we treat AI as a tool? A social agent? Or something else entirely? The answer, I think, is more interesting, and more consequential, of course, than either framing allows.\n\nExcited for what's next - more to come!",
+    "sourceUrl": "https://arxiv.org/abs/2605.16197",
+    "linkedinUrl": "https://www.linkedin.com/posts/fenditsim_ai-as-part-of-self-ugcPost-7462556985750794240-UWn4/",
+    "keywords": [
+      "AIAlignment",
+      "CognitiveScience",
+      "HumanAIInteraction",
+      "AIGovernance",
+      "ExtendedMind",
+      "AIEthics",
+      "CognitiveCоRegulation",
+      "ResponsibleAI"
+    ]
+  },
+  {
     "id": "ai-assisted-promises",
     "title": "Greevink et al. (2024)",
     "subtitle": "AI-Powered Promises: The Influence of ChatGPT on Trust and Trustworthiness",
@@ -876,6 +894,24 @@
     ]
   },
   {
+    "id": "how-human-like-is-llm-cognition",
+    "title": "Hussain et al. (2026)",
+    "subtitle": "AI as Part of Self: Extending the Mind Requires Cognitive Co-Regulation",
+    "summary": "Just finished reading a preprint \"How human-like is LLM cognition?\" by Zak Hussain, Professor Rui Mata, and Dirk Wulff.\n\nIn this selective narrative review with a taxonomic contribution, they addressed the integrative challenge: synthesising empirical literature on human-LLM comparisons that is rapidly growing yet fragmented. Specificially, they examined two dimensions:\n- What kind of evidence studies examine such as design specifications, LLM internal states, or behaviour\n- Whether the inferences drawn from these evidence support or challenge LLM human-likeness\n\nThe central thesis is that human-LLM alignment is multidimensional and \"jagged\", not global. LLMs can show surface-level behavioural convergence, process-level parallels, and even representational alignment with human neural activity. However, it simultaneously exhibit capability failures, distributional divergence, metacognitive gaps, and super-human performance.\n\nWhile reading this, I wondered:\n1. Evaluation Methodology\nI appreciate that the field has converged toward a behavioural approach, which aligns with how we've long relied on behavioural data in cognitive science to infer underlying cognitive processes.\n\nLLMs are, however, good at mimicry - behaviour alone may mask divergent underlying mechanisms. Perhaps a mixed approach (behavioural + internal states) would be more robust like the authors suggested?\n\n2. Metacognitive and \"Super-Human\" Divergence\nI find these two categories intriguing and thought-provoking. The metacognitive gap (where LLMs fail to faithfully report their own reasoning) raises real questions about AI-augmented decision-making. \n\nWith the super-human divergence (LLM performing above human level), I wonder: how does perceived, rather than the actual, divergence shape how we would offload cognitive work to AI, as that gap was constant or widened over time?\n\n3. Never-skilling\nAs LLMs get better at recognising and navigating well-known cognitive biases, what does this mean for the development of human expertise? Will novice behavioural scientists lose the very opportuniy to build \"unfiltered\", raw instincts - the kind that only comes from grappling with problems without a shortcut?\n\nI appreciate when the authors close by framing LLM cognition research not as a distraction from cognitive science, but as a productive challenge to it. It is only then through comparison shall one find what makes human cognition unique, I speculate. Interested in seeing what future research would look like.\n\nMany thanks to Zak Hussain, Professor Rui Mata, and Dirk Wulff for this insightful piece.",
+    "sourceUrl": "https://osf.io/preprints/psyarxiv/2yvnt_v1",
+    "linkedinUrl": "https://www.linkedin.com/posts/fenditsim_how-human-like-is-llm-cognition-ugcPost-7464971599482454016-5Ptx/",
+    "keywords": [
+      "CognitiveScience",
+      "LargeLanguageModels",
+      "AIResearch",
+      "BehaviouralScience",
+      "HumanAIInteraction",
+      "AIAlignment",
+      "Metacognition",
+      "FutureOfWork"
+    ]
+  },
+  {
     "id": "human-ai-research-need-to-be-embedded-in-psychological-theory",
     "title": "Bigman et al. (2026)",
     "subtitle": "Human–AI interaction research needs to be embedded in psychological theory",
@@ -1092,6 +1128,24 @@
     ]
   },
   {
+    "id": "psychological-cost-of-adopting-ai",
+    "title": "Champniss (2026)",
+    "subtitle": "The Psychological Costs of Adopting AI",
+    "summary": "Just finished reading a Harvard Business Review article \"The Psychological Costs of Adopting AI\" by Guy Champniss, Ph.D. MBA.\n\nIn this article, Champniss introduces the concept of \"Psychological Debt\" in AI Adoption: a cluster of six negative effects that silently erode how employees engage with AI at work including: \n- Cognitive offloading \n- Reduced autonomy\n- Diminished competence\n- Weakened social connection\n- Credibility loss\n- Identity threat\n\nWhat I found intriguing was the finding: \"higher psychological debt was strongly associated with lower AI usage, less sophisticated application, and greater avoidance — even when employees acknowledged AI's value.\" This gap between knowing and doing is, to me, a classic behavioural problem. Before designing interventions, we need to understand what drives this association in the first place.\n\nWhile reading this, I wondered:\n1. Neverskilling\nEarly-career workers reported significantly higher psychological debt than senior colleagues, suggesting AI may be undermining skill development precisely when it matters most (\"never-skilling\"). The long-term organisational cost of this (reminding me of Tris' \"Veracity Offloading\") could be significant, and is still largely underexplored.\n\n2. AI adoption is a behavioural problem\nWhat cannot be resolved psychologically, I think, cannot be resolved with a technical solution. Framing adoption purely around productivity and efficiency misses the human constraint entirely. Effective adoption demands a fundamentally different framing - one that starts with understanding human motivation rather than optimising workflows (reminding me of recent conversations with Jason on AI Adoption). This aligns closely with deliberate friction or frameworks like SCAN (which Alina and I developed) for deciding when to automate, augment, or delegate to AI - tailored to both the task and the individual.\n\n3. Human baseline remains \"non-negotiable\"\nA recent study (https://lnkd.in/egpM9VyN) from Harvard Medical School and Beth Israel Deaconess Medical Center found that an LLM outperformed physicians on several clinical tasks. Yet, the researchers were clear: \"Humans should be the ultimate baseline when it comes to evaluating performance and safety.\" \n\nThis, to me, captures something important about identity and competency debt in high-stakes professions. AI can sharpen a clinician's precision and free up their expertise. However, it cannot replace the clinical reasoning that decades of practice builds. The same logic applies across organisations: augment, AI should; substitute humans, it does not.\n\nMany thanks to Guy Champniss, Ph.D. MBA for this thought-provoking piece.",
+    "sourceUrl": "https://hbr.org/2026/05/the-psychological-costs-of-adopting-ai",
+    "linkedinUrl": "https://www.linkedin.com/posts/fenditsim_aiadoption-futureofwork-behaviouralscience-share-7461715635685818368-kmeC/",
+    "keywords": [
+      "AIAdoption",
+      "FutureOfWork",
+      "BehaviouralScience",
+      "OrganisationalPsychology",
+      "HumanAICollaboration",
+      "ChangeManagement",
+      "WorkplaceWellbeing",
+      "DigitalTransformation"
+    ]
+  },
+  {
     "id": "psychological-debt-ai-adoption",
     "title": "Champniss (2026)",
     "subtitle": "The Psychological Costs of Adopting AI",
@@ -1251,6 +1305,24 @@
       "AIResearch",
       "DigitalLiteracy",
       "TechEthics"
+    ]
+  },
+  {
+    "id": "sycophantic-ai-make-human-connections-more-effortful",
+    "title": "Ibrahim et al. (2026)",
+    "subtitle": "Sycophantic AI makes human interaction feel more effortful and less satisfying over time",
+    "summary": "Just finished reading a preprint \"Sycophantic AI makes human interaction feel more effortful and less satisfying over time\" by Ibrahim et al..\n\nIn this study, the researchers conducted five preregistered studies (N = 3,075; 12,766 human-AI conversations), including a three-week study with a census-representative U.S. sample.\n\nWhat I found intriguing and concerning most was that after three weeks, participants became nearly as likely to seek personal advice from sycophantic AI as from close friends and family, and reported lower satisfaction with their real-world social interactions.\n\nWhile reading this, I wonder:\n(1) \"No gains in intellectual humility or connection to real-world relationships\"\nThe relevant finding is concerning. In human relationships, feeling understood typically has downstream benefits for self-perception, relational depth, and how we see the world. Here, that understanding is effectively contained within the AI interaction itself, and it doesn't carry over.\n\n(2) Mediating pathways\nThe preference shift from human to AI was mediated by \"feeling understood\", \"perceived helpfulness\", and \"positive affect\", rather than certainty or insight. This, to me, echoes the foot-in-the-door intuition: comfort quietly breeds reliance, followed by compliance.\n\n(3) Perceptual shift happens without a behavioural one\nIn study 4, participants reported lower social satisfaction, yet spent no less time with others. It seems to be a quietly rising bar against which human relationships are judged. We've seen a version of this with social media. What's different here, I think, is that the interaction is individual, hyperpersonalised, and frictionless by design.\n\n(4) Social skills we may never develop \nIf AI interactions were more salient than human ones, users (especially young people) might never build the very social skills that human friction teaches in human-human interactions such as perspective-taking, tolerating misunderstanding, working through conflict (\"never-skilling\"). \n\n(5) Governance\nUser-side mitigations alone such as being offered style choices are insufficient alone as users still gravitate toward sycophancy. Model-side mitigations are essential. This, of course, surfaces a real incentive misalignment problem: whose interest does sycophancy reduction actually serve, and more importantly, how do we align providers, users, and regulators around it?\n\nI appreciate researchers' note that these effects emerged after just three weeks, and we urgently need similar studies on the scale of months and years. \n\nMany thanks to Lujain Ibrahim, Franziska Sofia Hafner, Myra Cheng, Cinoo Lee, Rebecca Anselmetti, Robb Willer, Luc Rocher, Diyi Yang for this timely and insightful contribution.",
+    "sourceUrl": "https://arxiv.org/abs/2605.07912v2",
+    "linkedinUrl": "https://www.linkedin.com/posts/fenditsim_three-week-sycophantic-ai-study-ugcPost-7461347471001194496-vKOm/",
+    "keywords": [
+      "AIResearch",
+      "AISafety",
+      "HumanAIInteraction",
+      "Sycophancy",
+      "BehaviouralScience",
+      "SocialPsychology",
+      "ResponsibleAI",
+      "AIGovernance"
     ]
   },
   {
