@@ -896,7 +896,7 @@
   {
     "id": "how-human-like-is-llm-cognition",
     "title": "Hussain et al. (2026)",
-    "subtitle": "AI as Part of Self: Extending the Mind Requires Cognitive Co-Regulation",
+    "subtitle": "How human-like is LLM cognition?",
     "summary": "Just finished reading a preprint \"How human-like is LLM cognition?\" by Zak Hussain, Professor Rui Mata, and Dirk Wulff.\n\nIn this selective narrative review with a taxonomic contribution, they addressed the integrative challenge: synthesising empirical literature on human-LLM comparisons that is rapidly growing yet fragmented. Specificially, they examined two dimensions:\n- What kind of evidence studies examine such as design specifications, LLM internal states, or behaviour\n- Whether the inferences drawn from these evidence support or challenge LLM human-likeness\n\nThe central thesis is that human-LLM alignment is multidimensional and \"jagged\", not global. LLMs can show surface-level behavioural convergence, process-level parallels, and even representational alignment with human neural activity. However, it simultaneously exhibit capability failures, distributional divergence, metacognitive gaps, and super-human performance.\n\nWhile reading this, I wondered:\n1. Evaluation Methodology\nI appreciate that the field has converged toward a behavioural approach, which aligns with how we've long relied on behavioural data in cognitive science to infer underlying cognitive processes.\n\nLLMs are, however, good at mimicry - behaviour alone may mask divergent underlying mechanisms. Perhaps a mixed approach (behavioural + internal states) would be more robust like the authors suggested?\n\n2. Metacognitive and \"Super-Human\" Divergence\nI find these two categories intriguing and thought-provoking. The metacognitive gap (where LLMs fail to faithfully report their own reasoning) raises real questions about AI-augmented decision-making. \n\nWith the super-human divergence (LLM performing above human level), I wonder: how does perceived, rather than the actual, divergence shape how we would offload cognitive work to AI, as that gap was constant or widened over time?\n\n3. Never-skilling\nAs LLMs get better at recognising and navigating well-known cognitive biases, what does this mean for the development of human expertise? Will novice behavioural scientists lose the very opportuniy to build \"unfiltered\", raw instincts - the kind that only comes from grappling with problems without a shortcut?\n\nI appreciate when the authors close by framing LLM cognition research not as a distraction from cognitive science, but as a productive challenge to it. It is only then through comparison shall one find what makes human cognition unique, I speculate. Interested in seeing what future research would look like.\n\nMany thanks to Zak Hussain, Professor Rui Mata, and Dirk Wulff for this insightful piece.",
     "sourceUrl": "https://osf.io/preprints/psyarxiv/2yvnt_v1",
     "linkedinUrl": "https://www.linkedin.com/posts/fenditsim_how-human-like-is-llm-cognition-ugcPost-7464971599482454016-5Ptx/",
@@ -909,6 +909,42 @@
       "AIAlignment",
       "Metacognition",
       "FutureOfWork"
+    ]
+  },
+  {
+    "id": "how-people-are-really-using-ai-in-2026",
+    "title": "Zao-Sanders (2026)",
+    "subtitle": "How People Are Really Using AI in 2026",
+    "summary": "Just finished reading Harvard Business Review article \"How People Are Really Using AI in 2026\" by Marc Zao-Sanders. \n\nIt is the third installment of the \"AI in the Wild\" study with 12,637 AI use cases (online sources including LinkedIn, TikTok, and other social media platforms). They found that people are adopting generative AI for an ever-widening range of uses in 2026.\n\nWhile reading this, I wondered:\n1. \"Thinkslop\"\nThe authors' term for lazy thinking engendered by excessive AI use. I'd frame it as \"choosing the path of least resistance\" instead. The risk appears the moment we stop noticing when it does thinking for us.\n\nThis connects to the triad of cognitive skills failures from clinical education literature:\n- Deskilling: losing capabilities via disuse when delegating tasks AI can handle\n- Never-skilling: failing to build competencies that require sustained deliberate practice\n- Mis-skilling: internalising incorrect mental models from AI outputs\n\nPerhaps the Socratic method (i.e., prompting LLMs to ask questions rather than give answers) offers an antidote? User owns the reasoning process (Endowment effect) while questioned, and avoid the illusion of explanatory depth that comes from passively consuming AI outputs. \n\nMore rabbit holes, of course, open up. Done well - it can create the conditions for \"flow\": optimal immersion in a challenging cognitive task.\n\n2. A question the study raises but doesn't fully answer\nAs AI usage grows in breadth and depth, what are we simultaneously gaining and losing? The data captures what people use AI for. It says less about the quieter metacognitive shifts underneath, for instance, how epistemic judgement, contextual interpretation, and the ability to read human signals are gradually being reshaped.\n\n3. Emotional reliance\nThe data is striking: therapy/companionship is now the No. 1 AI use case, constituting 11% of the dataset (reminding me of Hamilton Morrin, Tom Pollak, and their colleague's work on \"AI Psychosis\", and Tris' work on beliefs reinforcement).\n\nHuman-to-human communication is more than words: a significant portion is non-verbal. If we consistently outsourced the interpretation of interpersonal signals to AI, would we risk atrophying skills that professional development and lifelong learning depend on?\n\nI like how the article ends with: \"How much of our agency can survive such a powerful, ubiquitous, always-on service? Some of that will be up to the AI companies. But most is still up to us.\" The SCAN framework that Alina and I developed tries to address this. Extending Vygotsky's Zone of Proximal Development in GenAI era, it offers a human-centric lens for effective task allocation with GenAI.\n\nMany thanks to Marc Zao-Sanders and Sara Biuk for this thought-provoking study.",
+    "sourceUrl": "https://hbr.org/2026/06/how-people-are-really-using-ai-in-2026",
+    "linkedinUrl": "https://www.linkedin.com/posts/fenditsim_ailiteracy-humanaicollaboration-behaviouralscience-share-7467526877642080256-zrHH/",
+    "keywords": [
+      "AILiteracy",
+      "HumanAICollaboration",
+      "BehaviouralScience",
+      "CognitiveSkills",
+      "FutureOfWork",
+      "GenerativeAI",
+      "ThinkSlop",
+      "LearningAndDevelopment"
+    ]
+  },
+  {
+    "id": "human-ai-interactions-reshape-our-self-and-our-social-netwotks",
+    "title": "Teixeira, Shergill & Laban (2026)",
+    "subtitle": "Human–AI interactions reshape the self and our social networks",
+    "summary": "Just finished reading \"Human–AI interactions reshape the self and our social networks\" by Andreia Sofia Teixeira, Professor Sukhi Shergill and Guy Laban.\n\nIn this correspondence, they argue that, grounded in evidence from networked platforms and social contagion, habits adapted from LLM interaction routines could diffuse through social ties, reorganising linguistic styles, conversational norms, and redistributing attention within families, teams, and communities.\n\nWhile reading this, I wondered:\n1. The \"echo chamber of One\"\nUnlike traditional echo chambers shaped by selective exposure to like-minded content, this \"individualised\" loop emerges from direct interactions with LLM trained to validate (LLM's sycophancy) rather than challenge. This reminds me of several papers that I share in the comment section.\n\n2. The mis-skilling and never-skilling problem\nLearning interpersonal skills via LLM, to me, is very concerning. We may be learning social and affective skills that don't transfer to real life, or worse, overshooting expectations of empathy in human relationships (mis-skilling).\n\nImportantly - non-verbal communication, which dominates human–human interaction, is entirely absent from the conversation. Suppose someone leans back in one's chair, that is a behavioural data that we can interpret while LLMs can't teach (never-skilling).\n\n3. LLMs as (potential) \"digital pacifiers\"\nOur nature pushes us toward the path of the least resistance, and frictionless LLM accelerates that. Yet, it's precisely, as authors highlighted, in the pushbacks, negotiations, and mis-attunements of daily life where prosocial skills are forged. That erosion of friction is the quiet cost.\n\nWe've watched what growing up with iPads did to children's relational attention. That parallel deserves more than a footnote, right?\n\nOverall, this paper is, to me, a call to action for cross-disciplinary psychology (clinical, developmental, cognitive, and social) to start collaborating on a shared research agenda, reminding me of MEL's recent announcement of IEEE Global Standard for #organizational #readiness for human-AI interaction.\n\nInterestingly, this correspondence sorts of reinforce why the SCAN Framework Alina and I developed (which is originally for knowledge workers and students) may extend into personal and relational settings.\n\nDespite the weight of these concerns, I do view this as an opportunity for mitigating via behavioural interventions, design choices, and multi-stakeholder regulation - before the spillover becomes the norm.\n\nMany thanks to the authors for this thought-provoking piece.",
+    "sourceUrl": "https://www.nature.com/articles/s42256-026-01248-2",
+    "linkedinUrl": "https://www.linkedin.com/posts/fenditsim_organizational-readiness-humanaiinteraction-share-7466417405150494720-ck0n/",
+    "keywords": [
+      "HumanAIInteraction",
+      "AIAndSociety",
+      "SocialPsychology",
+      "LargeLanguageModels",
+      "AIWellbeing",
+      "BehaviouralScience",
+      "HumanBehaviour",
+      "AIResearch"
     ]
   },
   {
