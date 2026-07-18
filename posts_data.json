@@ -600,6 +600,24 @@
     ]
   },
   {
+    "id": "dark-triad-model-organism-misalignment",
+    "title": "Lulla et al. (2026)",
+    "subtitle": "Dark Triad Model Organisms of Misalignment: Narrow Fine-Tuning Mirrors Human Antisocial Behavior",
+    "summary": "Just finished reading a preprint \"Dark Triad Model Organisms of Misalignment: Narrow Fine-Tuning Mirrors Human Antisocial Behavior\" by Lulla et al..\n\nIn this empirical study, they investigate if antisocial human personality structures (narcissism, psychopathy, and Machiavellianism; the Dark Triad) can be reliably induced in LLMs through narrow fine-tuning. I like this approach as it is theory driven (and The Dark Triad is psychologically validated) when mapping onto behaviours we most want to avoid in AI systems: strategic deception, manipulation, and reward-seeking.\n\nI appreciate their two-stage design. Study 1 builds comprehensive behavioural profiles from 318 human participants using both psychometric and game-theoretic tasks (including a sender-receiver deception paradigm that reminded me of my PhD work on inspection games). Study 2 tests whether those same profiles can be induced in frontier LLMs via narrow fine-tuning. The finding shows that models generalise beyond training items, suggesting out-of-context reasoning rather than memorisation.\n\nWhile reading this, I wondered: \n1. Emergent Misalignment\nThis is an intriguing angle. Small, seemingly benign fine-tuning interventions activate latent persona structures already present in models. This raises two questions: \n- How does prolonged interaction with LLMs possessing these traits, due to emergent misalignment, reshape human-to-human behaviour? This reminds me of Andreia Sofia Teixeira, Professor Prof Sukhi Shergill and Guy Laban's \"Human–AI interactions reshape the self and our social networks\").\n- Given that LLMs are increasingly treated as moral advisors in interpersonal contexts, what are the downstream effects on users' wellbeing?\n\n2. Narcissism models dominates the deception task\nThis was one of the surprising findings for me in study 2. I expected Machiavellianism to dominate the deception task, given its strategic framing. Instead, narcissistic models showed the strongest shift - mirroring the human data, where self-serving deception is a core behavioural manifestation of narcissism across both biological and artificial systems.\n\nThe philosophical closing from the discussion is intriguing, too. Being strategic, morally flexible, or outcome-oriented isn't \"inherently\" maladaptive. I agree with their direction that it is about how much 'darkness', or/and \"lightness' perhaps, we want in our models, and whether we've thought that through carefully.\n\nMany thanks to Roshni Lulla, Ph.D., Fiona Collins, Sanaya Parekh, Thilo Hagendorff and Jonas Kaplan for this insightful piece. We are fortunate to have Roshni joining us tonight at our BehSci Meets AI event at Encode Club to talk about her PhD work and her work at the Institute for Humane Robotics - especially timely during London Tech Week. Looking forward!",
+    "sourceUrl": "https://doi.org/10.48550/arXiv.2603.06816",
+    "linkedinUrl": "https://www.linkedin.com/posts/fenditsim_dark-triad-model-organisms-of-misalignment-ugcPost-7470447789521477632-RaYN/",
+    "keywords": [
+      "AIAlignment",
+      "AIEthics",
+      "AISafety",
+      "BehaviouralScience",
+      "MachinePsychology",
+      "HumanAIInteraction",
+      "EmergentMisalignment",
+      "LondonTechWeek"
+    ]
+  },
+  {
     "id": "deskilling-ai-assisted-design",
     "title": "Shukla et al. (2025)",
     "subtitle": "De-skilling, Cognitive Offloading, and Misplaced Responsibilities: Potential Ironies of AI-Assisted Design",
@@ -999,6 +1017,42 @@
       "CognitiveOffloading",
       "FutureOfWork",
       "TechEthics"
+    ]
+  },
+  {
+    "id": "is-ai-making-us-stupid",
+    "title": "Cash et al. (2026)",
+    "subtitle": "Is AI making us stupid?",
+    "summary": "Just finished reading \"Is AI making us stupid?\" by Cash et al..\n\nIn this article, the authors distinguish two facets of cognition that reframes the whole debate: \n- skills (learned, practice-dependent behaviours like arithmetic or flying a plane)\n- basic cognitive abilities (domain-general capacities like working memory and attention)\n\nThis distinction matters. Skills decay when we stop practising them: the authors cite a study where students who used an AI tool to fully offload practice problems performed better in the moment but worse on a later unaided test (reminding me of \"Triad of skill failure\" in clinical training literature). Yet, basic cognitive abilities appear far more resilient, largely as the cognitive training research shows improvement tends to be task-specific rather than a broad increase in capacity.\n\nWhat I find intriguing is \"how\", more than \"whether\", you offload matters. In the same study, a third group used an AI tutor designed to probe knowledge and fill gaps rather than hand over answers. Those students showed no skill decay at all. The mechanism of offloading, not the act itself, determines the cost.\n\nI've been thinking this question occasionally since Tris' introduction of \"Veracity Offloading\" (long-term cognitive offloading) in our first BehSci Meets AI event: Is cognitive offloading inherently good or bad? I wonder: Is it the right question to ask? Cognitive offloading is an action, and we often tend to judge an action by the outcome(s) it is associated with. \n\nThe authors also note that AI's impact on cognition depends on the form offloading takes: full delegation vs review vs asking for a suggestion. This, to me, is a problem of how to allocate cognitive labour between human and AI effectively (related to the SCAN framework Alina and I developed).\n\nThree questions I've been wondering since reading this: \n1. Is one's judgement part of \"basic cognitive abilities,\" or does it decay alongside the skills it depends on? \n\n2. Does removing the \"friction\" of keyword search (Google era) versus natural-language prompting (LLM era) amplify the illusion of knowledge and understanding more than we do?\n\n3. Can individuals learn to strategically offload to AI, and is that itself a learnable skill?\n\nI appreciate their conclusion. There's a real risk that AI makes us \"stupid\" - but only insofar as we hand over our skills and knowledge to it entirely. The foundational cognitive capacities that make us smart to begin with seem far less likely to erode. \n\nThis article reminds me of Mariana Lenharo's Nature Portfolio piece, \"Is AI ruining our skills? Early results are in — and they're not good\".\n\nMany thanks to Trent Cash, Megan O. Kelly, Brooke N. Macnamara, and Evan F. Risko for a thought-provoking read.",
+    "sourceUrl": "https://www.cell.com/trends/cognitive-sciences/fulltext/S1364-6613(26)00131-2",
+    "linkedinUrl": "https://www.linkedin.com/posts/fenditsim_is-ai-making-us-stupid-ugcPost-7482889044838981632-jqic/",
+    "keywords": [
+      "CognitiveOffloading",
+      "ArtificialIntelligence",
+      "HumanAICollaboration",
+      "CognitiveScience",
+      "FutureOfLearning",
+      "EdTech",
+      "BehavioralScience",
+      "AIandCognition"
+    ]
+  },
+  {
+    "id": "is-ai-ruining-our-skills",
+    "title": "Lenharo (2026)",
+    "subtitle": "Is AI ruining our skills? Early results are in — and they’re not good",
+    "summary": "Just finished reading Nature Portfolio News \"Is AI ruining our skills? Early results are in — and they're not good.\" by Mariana Lenharo.\n\nIn this article, Lenharo reported early evidence of reliance on AI tools that can measurably erode professionals' underlying skills for endoscopists and software engineers, and surveyed how researchers are now grappling with how to prevent or reverse deskilling.\n\nI appreciate the simple question Lenharo opens with: could professionals' skills atrophy as they lean on AI? Perhaps it depends on expertise level, on whether someone has found genuine augmentation while preserving cognitive resilience, and on sector-specific norms shaping adoption?\n\nWhile reading this, I wonder: \n1. Fear of losing skills \nA recent survey found the large majority of nurses and physicians worry about losing skills to over-reliance on AI. It'd be great to investigate empirically where that fear comes from. \n\nI suspect that it is due to unstructured AI use. People reach for it without a clear sense of which tasks to hand over. The SCAN framework that Alina and I developed addresses by offering guidance on systematic human-AI task allocation. It's also what our recent BehSci Meets AI workshop \"Thinking with AI\" explored by Jason and myself, where attendees were asked to identify, without AI, which decisions still demand their own judgement.\n\n2. When the safety net is removed in Medicine\nPolish endoscopists' adenoma detection rates dropped from 28.4% to 22.4% once they grew used to AI assistance and then had to work without it. This is a concerning finding. Yet, I'd want a third condition in that design (no AI, unstructured AI, and structured AI) if possible. We can then see whether the drop is about AI itself (with/out AI use), or about how it was used (structured vs unstructured). \n\nIf possible, we could trace offloading over time within these conditions. It's close to what I explored at the BlueDot Impact x London Initiative for Safe AI hackathon on Luke's \"Observatory\" platform. I aimed to build a cognitive offloading score that quantifies how much cognitive responsibility has shifted from human to chatbots in a multi-turn conversation. \n\nOverall, I suspect the fix - despite trivial it is - is about building human-centric structure around AI usage: deliberate intervals of AI and non-AI practice, honest awareness of what's being offloaded, and behavioural interventions designed to revert the erosion rather than just diagnose it. That's what I've been building with \"Souka\" - a Socratic thinking Claude skill with principles from cognitive psychology and behavioural science that keeps the human doing the thinking, with AI as a thought partner.\n\nMany thanks to Mariana Lenharo for this insightful article.",
+    "sourceUrl": "https://www.nature.com/articles/d41586-026-01947-1",
+    "linkedinUrl": "https://www.linkedin.com/posts/fenditsim_artificialintelligence-humanai-futureofwork-share-7474399526297047040-LdE9/",
+    "keywords": [
+      "ArtificialIntelligence",
+      "HumanAI",
+      "FutureOfWork",
+      "CognitiveScience",
+      "BehaviouralScience",
+      "Deskilling",
+      "AIliteracy",
+      "HumanInTheLoop"
     ]
   },
   {
@@ -1522,6 +1576,24 @@
       "WorkforceTransformation",
       "EducationInnovation",
       "LeadershipDevelopment"
+    ]
+  },
+  {
+    "id": "when-productivity-comes-with-the-costs-of-apprenticeship",
+    "title": "Hu & Zhang (2026)",
+    "subtitle": "AI agents in research: when productivity comes at the cost of apprenticeship",
+    "summary": "Just finished reading Nature Correspondence \"AI agents in research: when productivity comes at the cost of apprenticeship\" by Jing Hu and Tony Huiquan Zhang.\n\nIn this correspondence, the authors reflect on their own experience as research supervisors who began relying heavily on AI assistants for tasks traditionally delegated to graduate research assistants - gaining productivity at the expense of their students' apprenticeship.\n\nWhile reading this, I wondered:\n1. Skill formation\nThe potential, differential impact is concerning. AI risks deskilling (losing competence through disuse) for experts, never-skilling (never developing it in the first place) for novices, and mis-skilling (internalising AI's errors and biases as learned judgement for those in between. Shen & Tamkin (2026) on AI's impact on skill formation is worth reading alongside this piece.\n\n2. Divergence in Task Classification\nWhat the authors describe, I think, maps onto a deeper structural problem. The project leads and research assistants are engaging with the same task through fundamentally different lenses (applying SCAN framework that Alina and I developed). The leads classify the task as a Complement one (human + AI, human in verification mode). The graduate assistants, however, preceive it as a non-negotiable scaffolded learning opportunity for professional development (Vygotsky's Zone of Proximal Development in action). When these classifications diverge, the coordination cost is thus visible to both parties. This is, to me, a sequential \"coordination failure\" with compounding, unintended consequences (gaining productivity at the cost of apprenticeship - as the title suggests).\n\nOverall, I suspect the deeper issue is behavioural, rather than a technological one. These daily choices - little as they are - would compound over time. What's needed is, I argue, a deliberate, explicit negotiation in the triadic relationship between teacher, learner, and GenAI - especially when no clear norms, or a systematic approach (SCAN?) govern it.\n\nMany thanks to Jing Hu and Tony Huiquan Zhang for a piece that deserves a wide circulation across academia and industry.",
+    "sourceUrl": "https://www.nature.com/articles/d41586-026-01440-9",
+    "linkedinUrl": "https://www.linkedin.com/posts/fenditsim_aiinresearch-humanaicollaboration-skillformation-share-7469889826637529088-ijHN/",
+    "keywords": [
+      "AIInResearch",
+      "HumanAICollaboration",
+      "SkillFormation",
+      "FutureOfWork",
+      "GraduateEducation",
+      "ResearchMentorship",
+      "AcademicLeadership",
+      "ResponsibleAI"
     ]
   },
   {
