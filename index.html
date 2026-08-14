@@ -15,9 +15,9 @@
     <style>
         /* --- Base Styles (Dark Mode Default) --- */
         body {
-            background-color: #222228; 
+            background-color: #1e1e24; /* Obsidian-like dark background */
             color: #e5e5e5;
-            font-family: Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
             padding: 0;
             overflow: hidden; 
@@ -105,7 +105,6 @@
             padding: 10px 14px;
             border-radius: 6px;
             border: 1px solid #000000;
-            font-family: Arial, sans-serif;
             font-size: 14px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.5);
             z-index: 9999;
@@ -163,9 +162,9 @@
             <circle id="progress-circle" cx="60" cy="60" r="50" fill="none" stroke="#e31b1b" stroke-width="8" 
                     stroke-linecap="round" stroke-dasharray="314.159" stroke-dashoffset="314.159"
                     transform="rotate(-90 60 60)"/>
-            <text id="progress-text" x="60" y="65" text-anchor="middle" fill="#e5e5e5" font-size="20" font-family="Arial, sans-serif">0%</text>
+            <text id="progress-text" x="60" y="65" text-anchor="middle" fill="#e5e5e5" font-size="20">0%</text>
         </svg>
-        <p class="text-[#e5e5e5] mt-5 font-sans" style="font-family: Arial, sans-serif;">Loading Network Graph...</p>
+        <p class="text-[#e5e5e5] mt-5 font-sans">Loading Network Graph...</p>
     </div>
 
     <!-- The Graph Container -->
@@ -306,6 +305,7 @@
         let isInteracting = false;   
         let isDarkMode = true;
         let lastTime = 0; 
+        const ZOOM_THRESHOLD = 0.6; // Scale below which labels hide
 
         // --- 1. Fetch Data ---
         async function loadData() {
@@ -320,13 +320,12 @@
                 console.warn(e.message);
                 console.log("Using large fallback demo data to demonstrate the sphere.");
                 
-                // GENERATE A LARGE FALLBACK DATASET (300 NODES) TO PROVE THE SPHERE SHAPE
+                // GENERATE A LARGE FALLBACK DATASET (150 NODES) TO PROVE THE SPHERE SHAPE
                 const fallbackData = [];
                 const possibleKeywords = ["AI", "LLM", "Tech", "Data Science", "Innovation", "Future", "ML", "Visualization", "R", "Python", "Cloud", "Business", "Strategy", "Design", "Web", "Dev", "Startups", "Growth", "Marketing"];
                 
-                for (let i = 1; i <= 300; i++) {
+                for (let i = 1; i <= 150; i++) {
                     const kws = [];
-                    // Give each node 2 to 4 random keywords to ensure lots of connections
                     const numKws = Math.floor(Math.random() * 3) + 2; 
                     for (let j = 0; j < numKws; j++) {
                         kws.push(possibleKeywords[Math.floor(Math.random() * possibleKeywords.length)]);
@@ -335,7 +334,7 @@
                         id: i,
                         title: "Generated Post " + i,
                         subtitle: "Demonstrating spherical layout",
-                        summary: "This is a placeholder node to show how the physics engine naturally forms a dense sphere when hundreds of interconnected nodes are present.",
+                        summary: "This is a placeholder node to show how the physics engine naturally forms a dense sphere.",
                         keywords: [...new Set(kws)]
                     });
                 }
@@ -354,7 +353,7 @@
             const nodes = rawData.map(item => {
                 return {
                     id: item.id,
-                    // NO LABEL PROPERTY so text doesn't clutter the graph
+                    label: item.title, // RESTORED LABEL for the Obsidian look
                     _title: item.title, 
                     _subtitle: item.subtitle,
                     _summary: item.summary,
@@ -364,12 +363,12 @@
                     title: undefined, 
                     shape: 'dot',
                     color: {
-                        background: '#9333ea', // ORIGINAL PURPLE
-                        border: '#7e22ce',
+                        background: '#9333ea', // Uniform purple
+                        border: '#9333ea', // No distinct border color, solid dot
                         highlight: { background: '#ffffff', border: '#ffffff' }
                     },
-                    // Small nodes, varied slightly by keyword count
-                    size: 3 + ((item.keywords ? item.keywords.length : 0) * 1.5),
+                    // MUCH SMALLER NODES
+                    size: 2 + ((item.keywords ? item.keywords.length : 0) * 0.5),
                     shadow: false
                 };
             });
@@ -390,7 +389,7 @@
                         edges.push({
                             from: rawData[i].id,
                             to: rawData[j].id,
-                            width: 0.5, 
+                            width: 0.2, // Very faint edges like Obsidian
                         });
                     }
                 }
@@ -404,13 +403,19 @@
             
             const options = {
                 nodes: { 
-                    borderWidth: 1, 
+                    borderWidth: 0, // Borderless dots look cleaner
+                    font: { 
+                        color: '#9ca3af', // Gray, subtle text
+                        size: 11, // Small font size
+                        face: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif',
+                        strokeWidth: 0, // Removes the white outline around text
+                        vadjust: -5 // Push label slightly away from the dot
+                    },
                     shadow: false
                 },
                 edges: { 
-                    smooth: false,
-                    // Faint, transparent edges so they don't overpower the dots
-                    color: { color: '#888888', opacity: 0.15 }
+                    smooth: false, // Straight lines like Obsidian
+                    color: { color: '#4b5563', opacity: 0.3 } // Subtle gray edges
                 },
                 physics: {
                     stabilization: {
@@ -420,12 +425,12 @@
                     },
                     solver: 'barnesHut',
                     barnesHut: {
-                        gravitationalConstant: -1500, // Balanced repulsion
-                        centralGravity: 0.5,          // Strong enough pull to force a sphere
-                        springLength: 50,             // Keeps connected clusters tight
-                        springConstant: 0.02,
+                        gravitationalConstant: -3000, // Strong repulsion to spread nodes out
+                        centralGravity: 0.15,         // Pulls everything evenly into a sphere
+                        springLength: 100,            // Length of connections
+                        springConstant: 0.03,         // Weaker springs so nodes can relax naturally
                         damping: 0.09,
-                        avoidOverlap: 0               // No strict overlap rules = natural density
+                        avoidOverlap: 0               
                     },
                     minVelocity: 0.75
                 },
@@ -461,11 +466,31 @@
                 
                 network.setOptions({ physics: { enabled: false } });
 
+                // Initial check for label visibility based on zoom scale
+                if (network.getScale() < ZOOM_THRESHOLD) {
+                    network.setOptions({ nodes: { font: { color: 'rgba(0,0,0,0)' } } });
+                }
+
                 loadingScreen.style.opacity = '0';
                 setTimeout(() => {
                     loadingScreen.style.display = 'none';
                     startRotationAnimation();
                 }, 500);
+            });
+
+            // ZOOM EVENT: Hide labels when zooming out
+            network.on("zoom", function(params) {
+                isInteracting = true;
+                setTimeout(() => isInteracting = false, 500);
+
+                if (params.scale < ZOOM_THRESHOLD) {
+                    // Hide labels (make transparent)
+                    network.setOptions({ nodes: { font: { color: 'rgba(0,0,0,0)' } } });
+                } else {
+                    // Show labels
+                    const targetColor = isDarkMode ? '#9ca3af' : '#4b5563';
+                    network.setOptions({ nodes: { font: { color: targetColor } } });
+                }
             });
 
             network.on("hoverNode", function(params) {
@@ -514,7 +539,6 @@
             
             network.on("dragStart", () => { isInteracting = true; });
             network.on("dragEnd", () => { isInteracting = false; });
-            network.on("zoom", () => { isInteracting = true; setTimeout(() => isInteracting = false, 500); });
         }
         
         function startRotationAnimation() {
@@ -605,6 +629,12 @@
             isDarkMode = !isDarkMode;
             document.body.classList.toggle('light-mode');
             themeIcon.innerText = isDarkMode ? '🌙 Dark' : '☀️ Light';
+
+            // Also update label color based on mode and current zoom
+            if (network && network.getScale() >= ZOOM_THRESHOLD) {
+                const targetColor = isDarkMode ? '#9ca3af' : '#4b5563';
+                network.setOptions({ nodes: { font: { color: targetColor } } });
+            }
         });
 
         document.addEventListener('mousemove', function(e) {
