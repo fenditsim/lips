@@ -15,7 +15,7 @@
     <style>
         /* --- Base Styles (Dark Mode Default) --- */
         body {
-            background-color: #222228; /* Slightly lighter dark background to match the galaxy feel */
+            background-color: #222228; 
             color: #e5e5e5;
             font-family: Arial, sans-serif;
             margin: 0;
@@ -313,16 +313,33 @@
                 const response = await fetch('posts_data.json');
                 if (!response.ok) throw new Error("JSON file not found, using fallback data");
                 const data = await response.json();
+                
+                // If they have their own data, use it!
                 initGraph(data);
             } catch (e) {
                 console.warn(e.message);
-                console.log("Using fallback demo data.");
-                const fallbackData = [
-                    { "id": 1, "title": "Generative AI in 2025", "subtitle": "The future of LLMs", "summary": "An exploration...", "keywords": ["AI", "LLM", "Future", "Tech"] },
-                    { "id": 2, "title": "Machine Learning Basics", "subtitle": "Getting started", "summary": "A primer...", "keywords": ["AI", "ML", "Data Science"] },
-                    { "id": 3, "title": "Tech Trends", "subtitle": "What to watch", "summary": "Analyzing shifts...", "keywords": ["Tech", "Future", "Innovation"] },
-                    { "id": 4, "title": "Data Visualization", "subtitle": "Seeing is believing", "summary": "Using R and JS...", "keywords": ["Data Science", "Visualization", "R"] }
-                ];
+                console.log("Using large fallback demo data to demonstrate the sphere.");
+                
+                // GENERATE A LARGE FALLBACK DATASET (300 NODES) TO PROVE THE SPHERE SHAPE
+                const fallbackData = [];
+                const possibleKeywords = ["AI", "LLM", "Tech", "Data Science", "Innovation", "Future", "ML", "Visualization", "R", "Python", "Cloud", "Business", "Strategy", "Design", "Web", "Dev", "Startups", "Growth", "Marketing"];
+                
+                for (let i = 1; i <= 300; i++) {
+                    const kws = [];
+                    // Give each node 2 to 4 random keywords to ensure lots of connections
+                    const numKws = Math.floor(Math.random() * 3) + 2; 
+                    for (let j = 0; j < numKws; j++) {
+                        kws.push(possibleKeywords[Math.floor(Math.random() * possibleKeywords.length)]);
+                    }
+                    fallbackData.push({
+                        id: i,
+                        title: "Generated Post " + i,
+                        subtitle: "Demonstrating spherical layout",
+                        summary: "This is a placeholder node to show how the physics engine naturally forms a dense sphere when hundreds of interconnected nodes are present.",
+                        keywords: [...new Set(kws)]
+                    });
+                }
+                
                 initGraph(fallbackData);
             }
         }
@@ -334,14 +351,10 @@
             if (nodeCountEl) nodeCountEl.innerText = rawData.length;
 
             // A. Prepare Nodes
-            const nodes = rawData.map((item, index) => {
-                // Determine color based on index or keywords to mimic the varied galaxy colors
-                const colors = ['#9333ea', '#3b82f6', '#10b981', '#6366f1'];
-                const nodeColor = colors[index % colors.length];
-
+            const nodes = rawData.map(item => {
                 return {
                     id: item.id,
-                    // REMOVED 'label' to hide text on the canvas
+                    // NO LABEL PROPERTY so text doesn't clutter the graph
                     _title: item.title, 
                     _subtitle: item.subtitle,
                     _summary: item.summary,
@@ -351,12 +364,12 @@
                     title: undefined, 
                     shape: 'dot',
                     color: {
-                        background: nodeColor,
-                        border: nodeColor,
+                        background: '#9333ea', // ORIGINAL PURPLE
+                        border: '#7e22ce',
                         highlight: { background: '#ffffff', border: '#ffffff' }
                     },
-                    // TINY NODE SIZES for Galaxy look
-                    size: 3 + ((item.keywords ? item.keywords.length : 0) * 0.5),
+                    // Small nodes, varied slightly by keyword count
+                    size: 3 + ((item.keywords ? item.keywords.length : 0) * 1.5),
                     shadow: false
                 };
             });
@@ -377,7 +390,7 @@
                         edges.push({
                             from: rawData[i].id,
                             to: rawData[j].id,
-                            width: 0.5, // Thin edges
+                            width: 0.5, 
                         });
                     }
                 }
@@ -396,24 +409,23 @@
                 },
                 edges: { 
                     smooth: false,
-                    // Faint, transparent edges for the galaxy look
+                    // Faint, transparent edges so they don't overpower the dots
                     color: { color: '#888888', opacity: 0.15 }
                 },
                 physics: {
                     stabilization: {
                         enabled: true,
-                        iterations: 1500,
+                        iterations: 2000,
                         updateInterval: 50,
                     },
-                    // BarnesHut is excellent for creating organic, dense spheres
                     solver: 'barnesHut',
                     barnesHut: {
-                        gravitationalConstant: -2000, // Strong repulsion
-                        centralGravity: 0.4,          // Strong pull to center to make a sphere
-                        springLength: 30,             // Short springs to cluster tightly
-                        springConstant: 0.04,
+                        gravitationalConstant: -1500, // Balanced repulsion
+                        centralGravity: 0.5,          // Strong enough pull to force a sphere
+                        springLength: 50,             // Keeps connected clusters tight
+                        springConstant: 0.02,
                         damping: 0.09,
-                        avoidOverlap: 0.1
+                        avoidOverlap: 0               // No strict overlap rules = natural density
                     },
                     minVelocity: 0.75
                 },
