@@ -15,30 +15,34 @@
     <style>
         /* --- Base Styles (Dark Mode Default) --- */
         body {
-            background-color: #1e1e24; /* Obsidian-like dark background */
+            background-color: #111111;
             color: #e5e5e5;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            overflow: hidden; 
+            overflow: hidden; /* Prevent scrolling on the main page */
             transition: background-color 0.3s ease, color 0.3s ease;
-            height: 100dvh; 
+            height: 100dvh; /* Use dynamic viewport height for mobile browsers */
             width: 100vw;
-            -webkit-tap-highlight-color: transparent; 
+            -webkit-tap-highlight-color: transparent; /* Remove mobile tap highlight box */
         }
 
         #network-graph {
             width: 100%;
             height: 100%;
             outline: none;
-            contain: strict; 
+            contain: strict; /* CSS containment: isolates repaints so the browser doesn't re-check the rest of the page on every frame */
         }
 
+        /* Force Firefox to promote the canvas to its own GPU compositor layer.
+           Chrome/Safari do this automatically; Firefox needs an explicit hint.
+           backface-visibility:hidden is the most reliable cross-browser trigger. */
         #network-graph canvas {
             backface-visibility: hidden;
             -moz-backface-visibility: hidden;
         }
         
+        /* Force hide default vis.js tooltip to prevent "white box" */
         div.vis-tooltip {
             display: none !important;
             visibility: hidden !important;
@@ -47,20 +51,22 @@
 
         /* --- Light Mode Overrides --- */
         body.light-mode {
-            background-color: #f3f4f6; 
-            color: #1f2937; 
+            background-color: #f3f4f6; /* Light gray bg */
+            color: #1f2937; /* Dark gray text */
         }
 
+        /* Light Mode: UI Components */
         body.light-mode #info-panel,
         body.light-mode #search-results,
         body.light-mode .modal-container,
         body.light-mode #custom-tooltip,
         body.light-mode #search-input {
             background-color: #ffffff;
-            border-color: #d1d5db; 
+            border-color: #d1d5db; /* Gray-300 */
             color: #1f2937;
         }
 
+        /* Light Mode: Buttons */
         body.light-mode #info-btn,
         body.light-mode #restart-btn,
         body.light-mode .modal-close,
@@ -81,10 +87,12 @@
             background-color: #f3f4f6;
         }
 
+        /* Light Mode: Search Results Hover */
         body.light-mode #search-results div:hover {
             background-color: #f3f4f6;
         }
 
+        /* Light Mode: Modal Text */
         body.light-mode #modal-subtitle { color: #4b5563; }
         body.light-mode #modal-summary { color: #374151; }
         body.light-mode .modal-header { border-bottom-color: #e5e7eb; }
@@ -92,12 +100,14 @@
         body.light-mode .modal-footer { border-top-color: #e5e7eb; }
         body.light-mode #modal-related-section { border-top-color: #e5e7eb; }
 
+        /* Light Mode: Keywords */
         body.light-mode #modal-keywords span {
             background-color: #e5e7eb;
             color: #374151;
         }
 
         /* --- Standard Styles --- */
+        /* Custom Tooltip Styling */
         #custom-tooltip {
             position: fixed;
             background-color: #1a1a1a;
@@ -105,15 +115,17 @@
             padding: 10px 14px;
             border-radius: 6px;
             border: 1px solid #000000;
+            font-family: Arial, sans-serif;
             font-size: 14px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.5);
             z-index: 9999;
-            pointer-events: none; 
+            pointer-events: none; /* Let clicks pass through */
             max-width: 350px;
             display: none;
+            /* Prevent tooltip from going off screen on mobile */
             left: 50%;
             transform: translateX(-50%);
-            top: 60px; 
+            top: 60px; /* Default top position if not following mouse */
         }
         
         @media (min-width: 768px) {
@@ -124,6 +136,7 @@
             }
         }
 
+        /* Modal Transitions */
         .modal {
             transition: opacity 0.25s ease;
         }
@@ -132,6 +145,7 @@
             overflow-y: hidden !important;
         }
 
+        /* Scrollbar for modal content */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -162,9 +176,9 @@
             <circle id="progress-circle" cx="60" cy="60" r="50" fill="none" stroke="#e31b1b" stroke-width="8" 
                     stroke-linecap="round" stroke-dasharray="314.159" stroke-dashoffset="314.159"
                     transform="rotate(-90 60 60)"/>
-            <text id="progress-text" x="60" y="65" text-anchor="middle" fill="#e5e5e5" font-size="20">0%</text>
+            <text id="progress-text" x="60" y="65" text-anchor="middle" fill="#e5e5e5" font-size="20" font-family="Arial, sans-serif">0%</text>
         </svg>
-        <p class="text-[#e5e5e5] mt-5 font-sans">Loading Network Graph...</p>
+        <p class="text-[#e5e5e5] mt-5 font-sans" style="font-family: Arial, sans-serif;">Loading Network Graph...</p>
     </div>
 
     <!-- The Graph Container -->
@@ -178,10 +192,14 @@
         
         <!-- Info Button & Panel -->
         <div class="relative">
+            <!-- Info Panel (Collapsible) -->
+            <!-- UPDATED POSITION: bottom-full right-0 aligns the right edge of panel to right edge of button. 
+                 Since panel is wider, it grows to the LEFT, sitting next to the search area. -->
             <div id="info-panel" class="hidden absolute bottom-full right-0 mb-3 w-64 max-w-[85vw] bg-[#1a1a1a] border border-[#444] rounded-lg shadow-xl p-4 text-sm text-[#e5e5e5] transition-colors duration-300">
                 <div class="space-y-3">
                     <div>
                         <p class="text-xs text-gray-500 uppercase tracking-wide">Creator</p>
+                        <!-- Updated Name -->
                         <p class="font-semibold">Señor Fendi</p>
                     </div>
                     <div>
@@ -190,11 +208,14 @@
                         <a href="https://github.com/fenditsim/lips" target="_blank" class="block text-purple-400 hover:text-purple-300">GitHub Repository</a>
                     </div>
                     
+                    <!-- Stats & Info -->
                     <div class="pt-2 border-t border-[#333]">
+                        <!-- Node Count -->
                         <p class="text-xs text-gray-500 mb-1">Total Nodes: <span id="node-count" class="font-bold text-purple-400">0</span></p>
                         <p class="text-xs text-gray-500">Updated: <span id="update-time"></span></p>
                     </div>
 
+                    <!-- Theme Toggle -->
                     <div class="pt-2 border-t border-[#333] flex justify-between items-center">
                         <span class="text-xs text-gray-500 uppercase">Appearance</span>
                         <button id="theme-toggle-btn" class="px-3 py-1 bg-[#333] hover:bg-[#444] rounded text-xs border border-[#444] transition-colors">
@@ -204,6 +225,7 @@
                 </div>
             </div>
 
+            <!-- Info Toggle Button -->
             <button id="info-btn" class="p-3 bg-[#1a1a1a] border border-[#444] rounded-lg text-white hover:bg-[#333] transition-colors shadow-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="12" cy="12" r="10"></circle>
@@ -215,6 +237,7 @@
 
         <!-- Search Container (Middle) -->
         <div class="relative group flex-grow">
+            <!-- Search Results (Pop-up) -->
             <div id="search-results" class="hidden bg-[#1a1a1a] border border-[#444] rounded-t-lg shadow-lg max-h-60 overflow-y-auto mb-0 w-full absolute bottom-full left-0 right-0 transition-colors duration-300">
                 <!-- Results injected here -->
             </div>
@@ -225,6 +248,7 @@
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
                     </svg>
                 </div>
+                <!-- UPDATED: text-base (16px) prevents iOS Safari auto-zoom on focus -->
                 <input type="text" id="search-input" 
                     class="block w-full p-3 pl-10 text-base text-white bg-[#1a1a1a] border border-[#444] rounded-lg focus:ring-purple-500 focus:border-purple-500 placeholder-gray-500 shadow-xl transition-all outline-none" 
                     placeholder="Search nodes..." autocomplete="off">
@@ -301,11 +325,10 @@
         let network = null;
         let nodesDataset = null;
         let edgesDataset = null;
-        let animationFrameId = null; 
-        let isInteracting = false;   
+        let animationFrameId = null; // Used for rotation loop
+        let isInteracting = false;   // Flag to pause animation
         let isDarkMode = true;
-        let lastTime = 0; 
-        const ZOOM_THRESHOLD = 0.6; // Scale below which labels hide
+        let lastTime = 0; // For delta time calculation
 
         // --- 1. Fetch Data ---
         async function loadData() {
@@ -313,32 +336,49 @@
                 const response = await fetch('posts_data.json');
                 if (!response.ok) throw new Error("JSON file not found, using fallback data");
                 const data = await response.json();
-                
-                // If they have their own data, use it!
                 initGraph(data);
             } catch (e) {
                 console.warn(e.message);
-                console.log("Using large fallback demo data to demonstrate the sphere.");
-                
-                // GENERATE A LARGE FALLBACK DATASET (150 NODES) TO PROVE THE SPHERE SHAPE
-                const fallbackData = [];
-                const possibleKeywords = ["AI", "LLM", "Tech", "Data Science", "Innovation", "Future", "ML", "Visualization", "R", "Python", "Cloud", "Business", "Strategy", "Design", "Web", "Dev", "Startups", "Growth", "Marketing"];
-                
-                for (let i = 1; i <= 150; i++) {
-                    const kws = [];
-                    const numKws = Math.floor(Math.random() * 3) + 2; 
-                    for (let j = 0; j < numKws; j++) {
-                        kws.push(possibleKeywords[Math.floor(Math.random() * possibleKeywords.length)]);
+                console.log("Using fallback demo data.");
+                // FALLBACK DATA 
+                const fallbackData = [
+                    {
+                        "id": 1,
+                        "title": "Generative AI in 2025",
+                        "subtitle": "The future of LLMs",
+                        "summary": "An exploration of how Large Language Models will evolve...",
+                        "sourceUrl": "#",
+                        "linkedinUrl": "#",
+                        "keywords": ["AI", "LLM", "Future", "Tech"]
+                    },
+                    {
+                        "id": 2,
+                        "title": "Machine Learning Basics",
+                        "subtitle": "Getting started",
+                        "summary": "A primer on supervised vs unsupervised learning.",
+                        "sourceUrl": "#",
+                        "linkedinUrl": "#",
+                        "keywords": ["AI", "ML", "Data Science"]
+                    },
+                    {
+                        "id": 3,
+                        "title": "Tech Trends",
+                        "subtitle": "What to watch",
+                        "summary": "Analyzing the biggest shifts in the industry.",
+                        "sourceUrl": "#",
+                        "linkedinUrl": "#",
+                        "keywords": ["Tech", "Future", "Innovation"]
+                    },
+                    {
+                        "id": 4,
+                        "title": "Data Visualization",
+                        "subtitle": "Seeing is believing",
+                        "summary": "Using R and JS to visualize complex networks.",
+                        "sourceUrl": "#",
+                        "linkedinUrl": "#",
+                        "keywords": ["Data Science", "Visualization", "R"]
                     }
-                    fallbackData.push({
-                        id: i,
-                        title: "Generated Post " + i,
-                        subtitle: "Demonstrating spherical layout",
-                        summary: "This is a placeholder node to show how the physics engine naturally forms a dense sphere.",
-                        keywords: [...new Set(kws)]
-                    });
-                }
-                
+                ];
                 initGraph(fallbackData);
             }
         }
@@ -346,32 +386,34 @@
         // --- 2. Process Data & Initialize Graph ---
         function initGraph(rawData) {
             
+            // Set Node Count
             const nodeCountEl = document.getElementById('node-count');
             if (nodeCountEl) nodeCountEl.innerText = rawData.length;
 
             // A. Prepare Nodes
-            const nodes = rawData.map(item => {
-                return {
-                    id: item.id,
-                    label: item.title, // RESTORED LABEL for the Obsidian look
-                    _title: item.title, 
-                    _subtitle: item.subtitle,
-                    _summary: item.summary,
-                    _sourceUrl: item.sourceUrl,
-                    _linkedinUrl: item.linkedinUrl,
-                    _keywords: item.keywords,
-                    title: undefined, 
-                    shape: 'dot',
-                    color: {
-                        background: '#9333ea', // Uniform purple
-                        border: '#9333ea', // No distinct border color, solid dot
-                        highlight: { background: '#ffffff', border: '#ffffff' }
-                    },
-                    // MUCH SMALLER NODES
-                    size: 2 + ((item.keywords ? item.keywords.length : 0) * 0.5),
-                    shadow: false
-                };
-            });
+            const nodes = rawData.map(item => ({
+                id: item.id,
+                label: item.title,
+                _subtitle: item.subtitle,
+                _summary: item.summary,
+                _sourceUrl: item.sourceUrl,
+                _linkedinUrl: item.linkedinUrl,
+                _keywords: item.keywords,
+                
+                // IMPORTANT: REMOVE TITLE to prevent default white box tooltip
+                title: undefined, 
+
+                shape: 'dot',
+                color: {
+                    background: '#9333ea',
+                    border: '#7e22ce',
+                    highlight: { background: '#9333ea', border: '#32cd32' }
+                },
+                
+                // SMALLER SIZE CALCULATION
+                size: 12 + ((item.keywords ? item.keywords.length : 0) * 1.0),
+                shadow: false
+            }));
 
             // B. Prepare Edges
             const edges = [];
@@ -389,7 +431,8 @@
                         edges.push({
                             from: rawData[i].id,
                             to: rawData[j].id,
-                            width: 0.2, // Very faint edges like Obsidian
+                            width: intersection.length, 
+                            color: { color: '#333333', highlight: '#32cd32', opacity: 0.4 }
                         });
                     }
                 }
@@ -403,34 +446,26 @@
             
             const options = {
                 nodes: { 
-                    borderWidth: 0, // Borderless dots look cleaner
-                    font: { 
-                        color: '#9ca3af', // Gray, subtle text
-                        size: 11, // Small font size
-                        face: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif',
-                        strokeWidth: 0, // Removes the white outline around text
-                        vadjust: -5 // Push label slightly away from the dot
-                    },
-                    shadow: false
+                    borderWidth: 2, 
+                    shadow: false,
+                    // DEFAULT FONT SET HERE (Dark Mode Default + Arial)
+                    font: { color: '#e5e5e5', size: 16, face: 'Arial' }
                 },
-                edges: { 
-                    smooth: false, // Straight lines like Obsidian
-                    color: { color: '#4b5563', opacity: 0.3 } // Subtle gray edges
-                },
+                edges: { smooth: false },
                 physics: {
                     stabilization: {
                         enabled: true,
-                        iterations: 2000,
-                        updateInterval: 50,
+                        iterations: 1000,
+                        updateInterval: 25,
                     },
-                    solver: 'barnesHut',
-                    barnesHut: {
-                        gravitationalConstant: -3000, // Strong repulsion to spread nodes out
-                        centralGravity: 0.15,         // Pulls everything evenly into a sphere
-                        springLength: 100,            // Length of connections
-                        springConstant: 0.03,         // Weaker springs so nodes can relax naturally
-                        damping: 0.09,
-                        avoidOverlap: 0               
+                    solver: 'forceAtlas2Based',
+                    forceAtlas2Based: {
+                        gravitationalConstant: -100,
+                        centralGravity: 0.003,
+                        springLength: 200,
+                        springConstant: 0.05,
+                        damping: 0.4,
+                        avoidOverlap: 0.5
                     },
                     minVelocity: 0.75
                 },
@@ -438,6 +473,7 @@
                     hover: true,
                     tooltipDelay: 0,
                     hideEdgesOnDrag: true,
+                    // Re-enabled connected edge selection so lines turn green on select
                     selectConnectedEdges: true 
                 }
             };
@@ -446,6 +482,7 @@
 
             // --- 3. Events ---
 
+            // Loading Progress
             network.on("stabilizationProgress", function(params) {
                 const progress = params.iterations / params.total;
                 const percent = Math.round(progress * 100);
@@ -464,65 +501,59 @@
                 document.getElementById('progress-circle').style.strokeDashoffset = 0;
                 const loadingScreen = document.getElementById('loading-screen');
                 
+                // IMPORTANT: Disable Physics to save CPU and improve animation smoothness
                 network.setOptions({ physics: { enabled: false } });
-
-                // Initial check for label visibility based on zoom scale
-                if (network.getScale() < ZOOM_THRESHOLD) {
-                    network.setOptions({ nodes: { font: { color: 'rgba(0,0,0,0)' } } });
-                }
 
                 loadingScreen.style.opacity = '0';
                 setTimeout(() => {
                     loadingScreen.style.display = 'none';
+                    // START ROTATION ANIMATION
                     startRotationAnimation();
                 }, 500);
             });
 
-            // ZOOM EVENT: Hide labels when zooming out
-            network.on("zoom", function(params) {
-                isInteracting = true;
-                setTimeout(() => isInteracting = false, 500);
-
-                if (params.scale < ZOOM_THRESHOLD) {
-                    // Hide labels (make transparent)
-                    network.setOptions({ nodes: { font: { color: 'rgba(0,0,0,0)' } } });
-                } else {
-                    // Show labels
-                    const targetColor = isDarkMode ? '#9ca3af' : '#4b5563';
-                    network.setOptions({ nodes: { font: { color: targetColor } } });
-                }
-            });
-
+            // DESKTOP: Hover Node (Tooltip follows mouse)
             network.on("hoverNode", function(params) {
+                // Only use mouse-follow tooltip on non-touch devices if possible
+                // Vis.js doesn't easily distinguish, but we can check simple touch support
                 const isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
                 
                 if (!isTouch) {
                     const nodeId = params.node;
                     const node = nodesDataset.get(nodeId);
                     const tooltip = document.getElementById('custom-tooltip');
-                    tooltip.innerHTML = `<b>${node._title}</b><br>${node._subtitle || ''}`;
+                    tooltip.innerHTML = `<b>${node.label}</b><br>${node._subtitle || ''}`;
                     tooltip.style.display = 'block';
                 }
             });
 
             network.on("blurNode", function(params) {
+                // Hide tooltip on blur (mouse out)
                 const isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
                 if (!isTouch) {
                     document.getElementById('custom-tooltip').style.display = 'none';
                 }
             });
 
+            // MOBILE/TABLET: Click/Tap Event
             network.on("click", function(params) {
                 const isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
                 const tooltip = document.getElementById('custom-tooltip');
                 
                 if (params.nodes.length > 0) {
+                    // Node clicked/tapped
                     const nodeId = params.nodes[0];
                     const node = nodesDataset.get(nodeId);
                     
-                    tooltip.innerHTML = `<b>${node._title}</b><br>${node._subtitle || ''}`;
+                    // Show Tooltip
+                    tooltip.innerHTML = `<b>${node.label}</b><br>${node._subtitle || ''}`;
                     tooltip.style.display = 'block';
+
+                    // On Mobile, we center the tooltip or put it at top
+                    // CSS handles "left: 50%" on mobile
+                    
                 } else {
+                    // Clicked on background -> Hide tooltip
                     if (isTouch) {
                          tooltip.style.display = 'none';
                     }
@@ -537,14 +568,22 @@
                 }
             });
             
+            // --- Pause Animation on Interaction ---
             network.on("dragStart", () => { isInteracting = true; });
             network.on("dragEnd", () => { isInteracting = false; });
+            network.on("zoom", () => { isInteracting = true; setTimeout(() => isInteracting = false, 500); });
         }
         
+        // --- Rotation Animation ---
         function startRotationAnimation() {
             if (animationFrameId) cancelAnimationFrame(animationFrameId);
             lastTime = performance.now();
             const rotationSpeed = 0.05;
+
+            // FIX: Cache node IDs once here, outside the per-frame loop.
+            // Calling nodesDataset.getIds() every frame allocates a new array each tick,
+            // creating constant GC pressure. Firefox's tighter GC pauses make this
+            // visibly choppy in a way Chrome/Safari hide with larger heaps.
             const nodeIds = nodesDataset.getIds();
             
             function animate(currentTime) {
@@ -555,6 +594,11 @@
                     return;
                 }
 
+                // FIX: Cap deltaTime to a max of ~3 frames (50ms).
+                // If the browser tab is briefly backgrounded or the rAF scheduler
+                // hiccups, the next frame would get a huge delta and the graph
+                // would visibly "jump". Firefox's rAF scheduler is more sensitive
+                // to these pauses than Chrome/Safari.
                 const deltaTime = Math.min((currentTime - lastTime) / 1000, 0.05);
                 lastTime = currentTime;
                 const angle = rotationSpeed * deltaTime;
@@ -577,6 +621,9 @@
             requestAnimationFrame(animate);
         }
 
+        // --- UI Interactions ---
+
+        // 1. Restart Button
         document.getElementById('restart-btn').addEventListener('click', function() {
             if (network) {
                 network.fit({
@@ -589,9 +636,12 @@
             }
         });
 
+        // 2. Info Panel Toggle
         const infoBtn = document.getElementById('info-btn');
         const infoPanel = document.getElementById('info-panel');
         
+        // AUTO-UPDATE: Set time based on document.lastModified (Server/Deployment Time)
+        // This ensures the date reflects when the file was last deployed/changed on the server.
         try {
             const date = new Date(document.lastModified);
             document.getElementById('update-time').innerText = date.toLocaleDateString(undefined, {
@@ -600,19 +650,26 @@
                 day: 'numeric'
             });
         } catch (e) {
+            // Fallback just in case
             document.getElementById('update-time').innerText = "January 2026";
         }
 
         infoBtn.addEventListener('click', function(e) {
             e.stopPropagation();
+            
+            // Refined positioning logic
             const rect = infoBtn.getBoundingClientRect();
+            
             if (rect.right < 270) { 
+                 // Mobile/Edge case
                  infoPanel.style.right = 'auto';
                  infoPanel.style.left = '0';
             } else {
+                 // Desktop/Safe case
                  infoPanel.style.left = 'auto';
                  infoPanel.style.right = '0';
             }
+            
             infoPanel.classList.toggle('hidden');
         });
 
@@ -622,22 +679,30 @@
             }
         });
 
+        // 3. Theme Toggle
         const themeBtn = document.getElementById('theme-toggle-btn');
         const themeIcon = document.getElementById('theme-icon');
 
         themeBtn.addEventListener('click', function() {
             isDarkMode = !isDarkMode;
             document.body.classList.toggle('light-mode');
+            
             themeIcon.innerText = isDarkMode ? '🌙 Dark' : '☀️ Light';
 
-            // Also update label color based on mode and current zoom
-            if (network && network.getScale() >= ZOOM_THRESHOLD) {
-                const targetColor = isDarkMode ? '#9ca3af' : '#4b5563';
-                network.setOptions({ nodes: { font: { color: targetColor } } });
+            if (network) {
+                const fontColor = isDarkMode ? '#e5e5e5' : '#000000'; 
+                const options = {
+                    nodes: {
+                        font: { color: fontColor }
+                    }
+                };
+                network.setOptions(options);
             }
         });
 
+        // --- Tooltip Positioning (Desktop) ---
         document.addEventListener('mousemove', function(e) {
+            // Only update position on non-touch devices or when mouse is present
             const isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
             if (!isTouch) {
                 const tooltip = document.getElementById('custom-tooltip');
@@ -648,14 +713,16 @@
             }
         });
 
+        // --- Modal Logic ---
         const modal = document.getElementById('node-modal');
         const modalClose = document.querySelectorAll('.modal-close');
         const modalOverlay = document.querySelector('.modal-overlay');
 
         function openModal(node) {
+            // Hide tooltip ensures it doesn't overlap the modal
             document.getElementById('custom-tooltip').style.display = 'none';
 
-            document.getElementById('modal-title').innerText = node._title;
+            document.getElementById('modal-title').innerText = node.label;
             document.getElementById('modal-subtitle').innerText = node._subtitle || '';
             document.getElementById('modal-summary').innerText = node._summary || 'No summary available.';
             document.getElementById('modal-source-btn').href = node._sourceUrl || '#';
@@ -672,14 +739,19 @@
                 });
             }
 
+            // --- Calculate 3-5 Most Relevant Nodes ---
             const connectedEdges = edgesDataset.get({
                 filter: function (item) {
                     return item.from === node.id || item.to === node.id;
                 }
             });
 
+            // Sort edges by weight (width) descending to find strongest connections
             connectedEdges.sort((a, b) => b.width - a.width);
+
+            // Get top 5 most relevant connections
             const topEdges = connectedEdges.slice(0, 5);
+
             const relatedContainer = document.getElementById('modal-related-posts');
             const relatedSection = document.getElementById('modal-related-section');
             
@@ -694,14 +766,16 @@
                     if (relatedNode) {
                         const a = document.createElement('a');
                         a.className = "block text-purple-400 hover:text-purple-300 text-sm mb-1 truncate cursor-pointer transition-colors";
-                        a.innerHTML = `→ ${relatedNode._title}`;
+                        a.innerHTML = `→ ${relatedNode.label}`;
                         a.onclick = (e) => {
                             e.preventDefault();
+                            // Focus the graph on the new node
                             network.focus(relatedNode.id, {
                                 scale: 1.2,
                                 animation: { duration: 800, easingFunction: "easeInOutQuad" }
                             });
                             network.selectNodes([relatedNode.id]);
+                            // Open modal for the clicked related node
                             openModal(relatedNode);
                         };
                         relatedContainer.appendChild(a);
@@ -713,13 +787,13 @@
 
             modal.classList.remove('opacity-0', 'pointer-events-none');
             document.body.classList.add('modal-active');
-            isInteracting = true; 
+            isInteracting = true; // Stop rotation
         }
 
         function closeModal() {
             modal.classList.add('opacity-0', 'pointer-events-none');
             document.body.classList.remove('modal-active');
-            isInteracting = false; 
+            isInteracting = false; // Resume rotation
         }
 
         modalClose.forEach(btn => btn.addEventListener('click', closeModal));
@@ -729,6 +803,7 @@
             if (evt.keyCode == 27) closeModal();
         };
 
+        // --- Search Logic ---
         const searchInput = document.getElementById('search-input');
         const searchResults = document.getElementById('search-results');
         
@@ -745,7 +820,7 @@
 
             const allNodes = nodesDataset.get();
             const matches = allNodes.filter(node => {
-                const titleMatch = node._title.toLowerCase().includes(val);
+                const titleMatch = node.label.toLowerCase().includes(val);
                 const subtitleMatch = node._subtitle && node._subtitle.toLowerCase().includes(val);
                 const keywordMatch = node._keywords && node._keywords.some(k => k.toLowerCase().includes(val));
                 return titleMatch || subtitleMatch || keywordMatch;
@@ -756,7 +831,7 @@
                 matches.forEach(node => {
                     const div = document.createElement('div');
                     div.className = "p-3 hover:bg-[#333] cursor-pointer text-sm border-b border-[#333] last:border-0";
-                    div.innerHTML = `<div class="font-bold text-[#e5e5e5]">${node._title}</div><div class="text-xs text-gray-400 truncate">${node._subtitle || ''}</div>`;
+                    div.innerHTML = `<div class="font-bold text-[#e5e5e5]">${node.label}</div><div class="text-xs text-gray-400 truncate">${node._subtitle || ''}</div>`;
                     
                     div.addEventListener('click', () => {
                         network.focus(node.id, {
@@ -783,6 +858,7 @@
             }
         });
 
+        // --- Init ---
         loadData();
 
     </script>
