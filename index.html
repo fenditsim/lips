@@ -458,14 +458,13 @@
                         iterations: 1000,
                         updateInterval: 25,
                     },
-                    solver: 'forceAtlas2Based',
-                    forceAtlas2Based: {
-                        gravitationalConstant: -80,
-                        centralGravity: 0.015,
-                        springLength: 100,
-                        springConstant: 0.08,
-                        damping: 0.4,
-                        avoidOverlap: 0.1
+                    solver: 'repulsion',
+                    repulsion: {
+                        centralGravity: 0.2,
+                        springLength: 120,
+                        springConstant: 0.05,
+                        nodeDistance: 130,
+                        damping: 0.09
                     },
                     minVelocity: 0.75
                 },
