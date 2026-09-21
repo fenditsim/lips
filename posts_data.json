@@ -90,6 +90,26 @@
     ]
   },
   {
+    "id": "ai-as-teammate",
+    "title": "Tsim et al. (2026)",
+    "subtitle": "AI as Teammate: Rethinking Task Distribution in Medical Training",
+    "summary": "Thrilled to share that our latest work \"AI as Teammate: Rethinking Task Distribution in Medical Training\" is now available as a preprint!\n\nAI, particularly GenAI, has entered medical training faster than the field's vocabulary to evaluate it. Institutions have responded with policy. Researchers have documented the behavioural fallout. Neither explains what, at a single task, makes an instance of AI use harmful or beneficial?\n\nThis paper tackles that gap head-on by making three core contributions:\n1. We advance the emerging social-constructivist conversation on AI in medical education through SCAN - a human-centric framework extending Vygotsky's Zone of Proximal Development into the AI era through two complementary developmental trajectories.\n\n2. We reframe AI 'misuse' as 'misclassification' - a specific, mechanistic failure of real-time metacognitive evaluation. This converts a vague concern into a falsifiable construct with concrete pathways for curriculum design, clinical supervision, and assessment.\n\n3. We offer a testable, individual-level account of skill acquisition and failure, grounding each pathway in specific cognitive biases in behavioural science.\n\nThis last contribution has a personal thread I'm excited to share. \n\nBack in April, I, as a panelist, previewed the triad of skill failure (de-skilling, never-skilling, and mis-skilling) I found in medical education literature at the BehSci Meets AI event about human capabilities in the age of AI. Also, I've had the opportunity to explore deskilling further on Susan's podcast (https://lnkd.in/eKKbUizc) and Anya's podcast (https://lnkd.in/eJNB6sCR). Seeing these early conversations crystallise into a full theoretical framework has been rewarding.\n\nNone of this would exist without my brilliant co-authors! Alina (always!), Anthony, and Nicole from Beth Israel Deaconess Medical Center and Harvard Medical School - your dedication made this interdisciplinary piece possible in ways I couldn't have achieved alone - hats off to y'all!\n\nAnthony deserves a special mention! Our first call in January (right after our SCAN framework preprint dropped) opened my eyes to medical education in ways I hadn't considered. I've learned a lot from him, and this paper is just the beginning - stay tuned for more from our collaboration!!\n\nIf you work in medical education, clinical supervision, cognitive science, behavioural science, or AI-assisted learning, I'd love for you to read this and share your thoughts. This is the kind of conversation that needs many disciplines at the table at the moment.\n\nSSRN: https://lnkd.in/eHGwG-Mk\nArXiv: https://lnkd.in/euMHa_wS\n\nP.S. This work was independently developed by the authors, and the views expressed do not necessarily represent those of the Behavioral AI Institute.",
+    "sourceUrl": "https://arxiv.org/abs/2608.28373",
+    "linkedinUrl": "https://www.linkedin.com/posts/fendi-tsim_ai-as-teammate-rethinking-task-distro-in-activity-7500779631545937920-bcCa/",
+    "keywords": [
+      "MedicalEducation",
+      "GenerativeAI",
+      "ClinicalReasoning",
+      "HealthProfessionsEducation",
+      "AIinMedicine",
+      "CognitiveScience",
+      "MedEd",
+      "FutureOfLearning",
+      "BehavioralScience",
+      "HumanAILearning"
+    ]
+  },
+  {
     "id": "ai-assisted-promises",
     "title": "Greevink et al. (2024)",
     "subtitle": "AI-Powered Promises: The Influence of ChatGPT on Trust and Trustworthiness",
@@ -214,6 +234,24 @@
       "EducationalPolicy",
       "DigitalTransformation",
       "BehaviouralScience"
+    ]
+  },
+  {
+    "id": "ai-induced-never-skilling-in-medicial-education",
+    "title": "Ke et al. (2026)",
+    "subtitle": "AI-induced never-skilling in medical education",
+    "summary": "Just finished reading \"AI-induced never-skilling in medical education\" by Ke et al..\n\nIn this Perspective, the authors proposed 'never-skilling' (the risk of never developing independent reasoning due to early AI use). They then offered a three-phase framework (AI-free baseline, calibration training, supervised integration) as a research agenda to answer how AI can be integrated into medical education without undermining clinical reasoning. \n\nWhile reading this, I wondered: \n1. Timing is everything\nUnlike prior technologies that shifted the type of cognitive work required, AI can execute the entire diagnostic chain autonomously. It's available from day one, before any reasoning architecture has formed - this is a substitution for trainee's cognitive effort. \n\nThis, to me, echoes Chinese idiom \"pulling up the seedlings to help them grow\". Rushing development without a strong foundation leaves nothing standing when conditions get hard.\n\n2. Cognitive Moral Hazard\nI love this term! It happens when epistemic responsibility gets abdicated, as the trainee can't distinguish appropriate delegation from uncritical acceptance. This is a great economic metaphor applied!\n\nVerification requires a cognitive standard to verify against. Without it, every AI interaction becomes 'a leap of faith'.\n\n3. The three-phase framework\nIt is a solid starting point - I appreciate the Phase 1's emphasis on structured, AI-free problem-based learning before progression. It is, as they suggested, similar to how pilots must demonstrate manual flight proficiency before relying on autopilot.\n\nInterestingly, their framework maps similarly like SCAN framework Alina and I developed, which profiles learners by knowledge level and the task type, and  allocates them across four subzones. Might mapping trainees onto SCAN's subzones instead of treating \"AI integration\" as one monolithic exposure offer a more useful way?\n\n4. Triad of Skill Failure\nI flag an unresolved, open question the authors raise: of the three failure modes (deskilling, mis-skilling, never-skilling), which is hardest to detect and reverse? I suspect it is mis-skilling (I don't know what I don't know I learned wrong).\n\nI appreciate the limitation authors address about never-skilling - there's no direct evidence in clinical trainees yet. It is, as they noted, presented as a risk model, not an established phenomenon. It'd be great to read longitudinal clinical evidence.\n\nMany thanks to Ke Yuhe, Liyuan Jin, Jasmine Ong, Arun Thirunavukarasu, Josip Car, Carol Cheung, Yih Chung Tham 覃宇宗, Daniel Ting, Marcus Eng Hock Ong, Scott Compton, Aditee Narayan, Pearse Keane, Tien Yin Wong 黄天荫, David Bates, Patrick Tan, MD-PhD, and Nan Liu, PhD, FAMIA for this thought-provoking piece, and to Serene Koh for sharing it here. Looking forward to watching this research path evolve!",
+    "sourceUrl": "https://www.nature.com/articles/s41591-026-04438-y",
+    "linkedinUrl": "https://www.linkedin.com/posts/fendi-tsim_medicaleducation-clinicalreasoning-aiinhealthcare-activity-7497518071293706240-qYuS/",
+    "keywords": [
+      "MedicalEducation",
+      "ClinicalReasoning",
+      "AIinHealthcare",
+      "HumanAICollaboration",
+      "MedEd",
+      "ClinicalCompetency",
+      "FutureOfMedicine",
+      "AIethics"
     ]
   },
   {
@@ -799,6 +837,24 @@
     ]
   },
   {
+    "id": "genai-integrated-flipped-classrooms",
+    "title": "Rajaram & Tsim (2026)",
+    "subtitle": "GenAI-Integrated Flipped Classroom Learning Design in Management Education: A Conceptual Behavioral Stakeholder Framework",
+    "summary": "Thrilled to share that our latest work \"GenAI-Integrated Flipped Classroom Learning Design in Management Education: A Conceptual Behavioral Stakeholder Framework\" is now available as a preprint! \n\nIn this theoretical piece, we are interested in through what mechanisms does GenAI strengthen or substitute, support or displace, the learning processes each flipped classroom phase is designed to build? \n\nThis breaks into three questions: \n1. When does GenAI strengthen versus substitute for self-directed learning during pre-class phase? \n2. When does it support versus displace social learning dynamics during in-class activities? \n3. What happens to educator and student identity when GenAI becomes a persistent, non-human participant in the room?\n\nThis paper makes three contributions:\n1. We propose a Behavioural Stakeholder Model that grounds GenAI's role in self-directed, self-regulated, and social learning theories.\n\n2. We propose three original constructs: Designer-Conductor (teacher), Autonomous Co-Constructor (student), Dynamic Pedagogical Agent (GenAI). These aim to capture an identity shift in each actor through a triadic lens.\n\n3. We make a claim that the flipped classroom's pedagogical distinctiveness is strengthened by GenAI integration, provided the triadic relationships (educator-student-GenAI) are designed with intention.\n\nMany thanks to my co-author Kumaran RAJARAM, PhD from Nanyang Technological University Singapore for sharing his deep expertise in management education - I've learned a great deal from him! More importantly, I'm glad this collaboration gave me a chance to apply some game-theoretical and behavioural thinking to the stakeholder framework. \n\nLooking forward to more work together in this space!",
+    "sourceUrl": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7418558",
+    "linkedinUrl": "https://www.linkedin.com/posts/fendi-tsim_genai-flipped-classroom-in-management-education-activity-7504225752859635712-DSTi/",
+    "keywords": [
+      "GenerativeAI",
+      "FlippedClassroom",
+      "ManagementEducation",
+      "HigherEducation",
+      "EdTech",
+      "AIinEducation",
+      "PedagogicalInnovation",
+      "FutureOfLearning"
+    ]
+  },
+  {
     "id": "genai-mko-medical-education",
     "title": "Tran et al. (2025)",
     "subtitle": "Generative artificial intelligence: the 'more knowledgeable other' in a social constructivist framework of medical education",
@@ -1020,6 +1076,24 @@
     ]
   },
   {
+    "id": "individual-level-intervention-against-sycophantic-ai",
+    "title": "Ye et al. (2026)",
+    "subtitle": "Individual-level interventions against sycophantic AI reduce its appeal but not its persuasiveness",
+    "summary": "Recently finished reading \"Individual-level interventions against sycophantic AI reduce its appeal but not its persuasiveness\" by Ye et al..\n\nIn this research, the researchers examined whether individual-level interventions (e.g., warning labels or videos exposing AI's unselective validation) can reduce sycophantic AI's appeal and persuasive influence on users.\n\nThe researchers coin 'sycophancy blindness' for users' failure to notice an AI's excessive agreement even when it's present. One cited study found users rated sycophantic chatbots as unbiased, despite third-party annotators judged them as biased. Another found that 71% of users failed to notice a chatbot's sycophancy that harmed their performance.\n\nThey ran two preregistered experiments. Study 1 warned participants about sycophancy before they chatted with a sycophantic AI. Study 2 showed them a video of the same AI validating both sides of identical conflicts. \n\nBoth interventions worked on perception. Participants rated the AI as less objective, trustworthy, and enjoyable. However, neither intervention affected its persuasiveness - attitude certainty and extremity stayed unchanged. Pooling with four other interventions confirmed the pattern.\n\nWhat I found intriguing were: \n1. Participants became more confident in their ability to spot sycophancy after the intervention.\n2. Even after watching the AI validate both sides of a conflict, nearly half did not rate the sycophantic AI as more biased than the neutral one. \n\nThese findings, to me, have real implications for how we think about AI safety. Warning labels, disclosures, AI literacy are tools we advocate and lean on. They may change how people feel about a sycophantic AI without changing what it does to their beliefs. \n\nI appreciate that they connect their findings briefly to Professors Nick Chater and George Loewenstein's 'i-frame/s-frame' distinction: individual-level fixes (warnings, literacy, disclosures) put the burden on users, while the underlying problem may require more than that, for instance, model-level changes. \n\nFor future directions, I wonder:\n- Could in-conversation flagging succeed where static warnings fall short? \n- Would forcing an AI's arguments into premises-conclusion form make sycophantic reasoning easier to catch? \n- Could \"LLM council\" approaches (surfacing divergent views rather than a single validating voice) mitigate persuasive influence in a way a one-time warning cannot? \n- Do these effects compound, fade, or look entirely different once is measured longitudinally?\n\nMany thanks to Meryl Ye (for generous conversation after I finished reading it last week!!), Professor Robert Kraut and Professor Steve Rathje for this insightful work - this is relevant to behavioural science.\n\nLooking forward to seeing where this research goes!",
+    "sourceUrl": "https://arxiv.org/abs/2607.25166v3",
+    "linkedinUrl": "https://www.linkedin.com/posts/fendi-tsim_individual-level-intervention-against-sycophantic-activity-7495343726500732928-dlYQ/",
+    "keywords": [
+      "AI",
+      "Sycophancy",
+      "BehavioralScience",
+      "AISafety",
+      "HumanAIInteraction",
+      "DecisionMaking",
+      "AIliteracy",
+      "ResponsibleAI"
+    ]
+  },
+  {
     "id": "is-ai-making-us-stupid",
     "title": "Cash et al. (2026)",
     "subtitle": "Is AI making us stupid?",
@@ -1161,6 +1235,24 @@
       "HumanAICollaboration",
       "CognitiveScience",
       "AIEthics"
+    ]
+  },
+  {
+    "id": "ownership-in-ai-assisted-everyday-tasks",
+    "title": "Wei et al. (2026)",
+    "subtitle": "Ownership in AI-Assisted Everyday Tasks",
+    "summary": "Just finished reading a preprint \"Ownership in AI-Assisted Everyday Tasks\" by Wei et al..\n\nIn this research, the authors are interested in understanding how using AI in everyday tasks affect people's sense of ownership over their daily life decisions and work. In particular, participants were asked to describe two recent tasks completed with AI: one that felt like their own, one that didn't. \n\nThey conducted a qualitative survey with 117 participants (52 complete responses and 64 responses containing at least one task reflection) recruited via professional networks, social media, and university channels between in August 2026. The sample, as the authors indicated, skews toward mid-to-late career, highly educated, white, heavy AI users who can afford it out of pocket.\n\nWhat the survey revealed is that felt ownership depends on the process rather than the output. People retain ownership when they lead, iterate, or rewrite. However, they disown work when they merely approve AI's suggestions (\"I was in the loop, but I wasn't in charge\"). \n\nInterestingly, respondents were less certain they could have done their high-ownership task without AI (42% \"definitely yes\") than their low-ownership task (63%). \n\nI also found two other findings intriguing. First, comprehension matters for ownership. People who couldn't understand their own AI-assisted codebase felt no responsibility for maintaining it. \n\nSecondly, the willingness to disclose AI use is shaped by the community norms and fear of credit erasure, instead of how owned the work feels. At the workplace, I suspect, this appears when employees is taxed for a psychological cost of using AI (reminding me of Harvard Business Review's \"The Hidden Penalty of Using AI at Work\" by Professor Oguz A. Acar and his colleagues). \n\nAn open question I'd love to see tested experimentally: does the ownership fluctuate - as people move from unstructured to structured AI use (e.g., learning when to think with AI, and when not to; SCAN Framework that Alina and I developed) over time? Pairing interaction-level data (something like my side project COST for measuring cognitive offloading within multi-turn conversations) with post-hoc ownership reflections could reveal more when someone decides \"I led this\" - which is a significant indicator of ownership.\n\nOverall, this research reminds me of Dr. Upol Ehsan, PhD and his colleagues' work on professional identity, and to my recent research with Kumaran on GenAI in flipped classrooms. Both point to the same underlying question: as AI absorbs more of the processes, how do we restructure the roles?\n\nMany thanks to Megan W., Melanie Subbiah, Audrey Lee, Annya Dahmani, Dave Edwards, Helen Edwards, Ellie Pavlick for this interesting piece.",
+    "sourceUrl": "https://arxiv.org/abs/2609.20658",
+    "linkedinUrl": "https://www.linkedin.com/posts/fendi-tsim_ownership-in-ai-assisted-everyday-tasks-activity-7507665317586878464-T9HC/",
+    "keywords": [
+      "HumanAICollaboration",
+      "AIOwnership",
+      "FutureOfWork",
+      "CognitiveOffloading",
+      "AIAdoption",
+      "ResponsibleAI",
+      "WorkplacePsychology",
+      "HumanCenteredAI"
     ]
   },
   {
@@ -1576,6 +1668,24 @@
       "WorkforceTransformation",
       "EducationInnovation",
       "LeadershipDevelopment"
+    ]
+  },
+  {
+    "id": "what-counts-as-ai-sycophancy",
+    "title": "Ye et al. (2026)",
+    "subtitle": "What Counts as AI Sycophancy? A Taxonomy and Expert Survey of a Fragmented Construct",
+    "summary": "Just finished reading \"What Counts as AI Sycophancy? A Taxonomy and Expert Survey of a Fragmented Construct\" by Ye et al..\n\nIn this paper, the authors addressed the \"AI Sycophancy\" inconsistent definition problem, and investigated whether experts actually agree on which model behaviours count as sycophantic. They did so by building a taxonomy from 70 papers (between 2023-2026) and surveying 106 experts.\n\nTheir taxonomy is built on two dimensions: \n- Referent: does the model respond to the user's Position, or to the user as a Person?\n- Explicitness: overt agreement/praise vs. subtler framing, omission, tone \n\nMapping 70 papers onto this grid reveals a clear gap. Most research clusters are around Position-Verifiable/Explicit sycophancy (factual capitulation), while Person and Implicit behaviours remain understudied. The latter got my attention due to the growing demand to advice-giving and emotional support use cases (reminding me of our recent BehSci Meets AI's event with Dr Hamilton Morrin and Dr Tom Pollak about \"AI-Associated Delusions\").\n\nThe expert survey reports intriguing findings. First, 94.3% of experts agree sycophancy is a significant problem. Yet, individual-rater reliability was low (evidence of a fragmented construct). Secondly, Position behaviours get flagged as sycophantic whether explicit or implicit, and only explicit flattery gets flagged for Person behaviours. Softer signals (e.g., a warmer tone or gentler feedback meant to please the user) mostly slip under the radar.\n\nThat asymmetry in the latter worries me. Person-Implicit sycophancy, I suspect, compounds across multi-turn conversations (and thus reinforcing a user's beliefs and emotional state subtly over time) rather than showing up in a single exchange. Use cases like emotional support and advice-giving are growing fastest (reminding me of Marc Zao-Sanders' Harvard Business Review article \"How People Are Really Using AI in 2026\" that therapy/companionship is the top AI use case).\n\nI appreciate their taxonomy's applications on explaining AI companies' framing. OpenAI frames sycophancy as a breach of accuracy (Position-focused), while Anthropic frames it as a character failure (Person-focused). Neither fully addresses implicit behaviours. I suspect this implies the interventions each company optimises for may leave the other's blind spot untouched.\n\nI wonder: could this paper's approach serve as a blueprint for disentangling other fuzzy human-AI interaction constructs such as adoption, augmentation, or over-reliance?\n\nMany thanks to Meryl Ye, Lujain Ibrahim, Jessica Bo, Myra Cheng, Ida Mattsson, Daniel Vennemeyer, Professor Robert Kraut, and Professor Steve Rathje for this work, and also for the opportunity to have contributed as one of the surveyed experts.\n\nLooking forward to seeing where this line of research goes next!",
+    "sourceUrl": "https://arxiv.org/abs/2605.21778",
+    "linkedinUrl": "https://www.linkedin.com/posts/fendi-tsim_what-counts-as-ai-sycophancy-activity-7492807020274753536-gfKy/",
+    "keywords": [
+      "AISycophancy",
+      "HumanAIInteraction",
+      "ResponsibleAI",
+      "AISafety",
+      "LLM",
+      "AIGovernance",
+      "AIResearch",
+      "BehavioralScience"
     ]
   },
   {
